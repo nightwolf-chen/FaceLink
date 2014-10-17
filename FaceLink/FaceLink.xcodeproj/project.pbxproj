@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		126C4C4219EFB4F300F18654 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4C4119EFB4F300F18654 /* main.m */; };
 		126C4C4519EFB4F300F18654 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4C4419EFB4F300F18654 /* AppDelegate.m */; };
-		126C4C4819EFB4F300F18654 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4C4719EFB4F300F18654 /* ViewController.m */; };
-		126C4C4B19EFB4F300F18654 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 126C4C4919EFB4F300F18654 /* Main.storyboard */; };
 		126C4C4D19EFB4F300F18654 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126C4C4C19EFB4F300F18654 /* Images.xcassets */; };
 		126C4C5019EFB4F300F18654 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126C4C4E19EFB4F300F18654 /* LaunchScreen.xib */; };
 		126C4C5C19EFB4F300F18654 /* FaceLinkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4C5B19EFB4F300F18654 /* FaceLinkTests.m */; };
 		126C4C7819F0B11700F18654 /* FLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4C7719F0B11700F18654 /* FLMainViewController.m */; };
 		126C4CA619F0FBE900F18654 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4CA519F0FBE900F18654 /* KxMenu.m */; };
+		126C4CA919F0FF7F00F18654 /* FLControllerCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4CA819F0FF7F00F18654 /* FLControllerCoordinator.m */; };
+		126C4CAD19F103AA00F18654 /* FLRecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4CAB19F103AA00F18654 /* FLRecentViewController.m */; };
+		126C4CAE19F103AA00F18654 /* FLRecentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126C4CAC19F103AA00F18654 /* FLRecentViewController.xib */; };
+		126C4CB219F103C000F18654 /* FLHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4CB019F103C000F18654 /* FLHotViewController.m */; };
+		126C4CB319F103C000F18654 /* FLHotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126C4CB119F103C000F18654 /* FLHotViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +37,6 @@
 		126C4C4119EFB4F300F18654 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		126C4C4319EFB4F300F18654 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		126C4C4419EFB4F300F18654 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		126C4C4619EFB4F300F18654 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		126C4C4719EFB4F300F18654 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		126C4C4A19EFB4F300F18654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		126C4C4C19EFB4F300F18654 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		126C4C4F19EFB4F300F18654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		126C4C5519EFB4F300F18654 /* FaceLinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceLinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +47,14 @@
 		126C4C7A19F0B54900F18654 /* FMMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMMacros.h; sourceTree = "<group>"; };
 		126C4CA419F0FBE900F18654 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		126C4CA519F0FBE900F18654 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
+		126C4CA719F0FF7F00F18654 /* FLControllerCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLControllerCoordinator.h; sourceTree = "<group>"; };
+		126C4CA819F0FF7F00F18654 /* FLControllerCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLControllerCoordinator.m; sourceTree = "<group>"; };
+		126C4CAA19F103AA00F18654 /* FLRecentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLRecentViewController.h; sourceTree = "<group>"; };
+		126C4CAB19F103AA00F18654 /* FLRecentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLRecentViewController.m; sourceTree = "<group>"; };
+		126C4CAC19F103AA00F18654 /* FLRecentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLRecentViewController.xib; sourceTree = "<group>"; };
+		126C4CAF19F103C000F18654 /* FLHotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLHotViewController.h; sourceTree = "<group>"; };
+		126C4CB019F103C000F18654 /* FLHotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLHotViewController.m; sourceTree = "<group>"; };
+		126C4CB119F103C000F18654 /* FLHotViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLHotViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,9 +101,6 @@
 				126C4C7519F0B07C00F18654 /* ViewControllers */,
 				126C4C4319EFB4F300F18654 /* AppDelegate.h */,
 				126C4C4419EFB4F300F18654 /* AppDelegate.m */,
-				126C4C4619EFB4F300F18654 /* ViewController.h */,
-				126C4C4719EFB4F300F18654 /* ViewController.m */,
-				126C4C4919EFB4F300F18654 /* Main.storyboard */,
 				126C4C4C19EFB4F300F18654 /* Images.xcassets */,
 				126C4C4E19EFB4F300F18654 /* LaunchScreen.xib */,
 				126C4C3F19EFB4F300F18654 /* Supporting Files */,
@@ -134,6 +139,14 @@
 			children = (
 				126C4C7619F0B11700F18654 /* FLMainViewController.h */,
 				126C4C7719F0B11700F18654 /* FLMainViewController.m */,
+				126C4CA719F0FF7F00F18654 /* FLControllerCoordinator.h */,
+				126C4CA819F0FF7F00F18654 /* FLControllerCoordinator.m */,
+				126C4CAA19F103AA00F18654 /* FLRecentViewController.h */,
+				126C4CAB19F103AA00F18654 /* FLRecentViewController.m */,
+				126C4CAC19F103AA00F18654 /* FLRecentViewController.xib */,
+				126C4CAF19F103C000F18654 /* FLHotViewController.h */,
+				126C4CB019F103C000F18654 /* FLHotViewController.m */,
+				126C4CB119F103C000F18654 /* FLHotViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -235,8 +248,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				126C4C4B19EFB4F300F18654 /* Main.storyboard in Resources */,
+				126C4CB319F103C000F18654 /* FLHotViewController.xib in Resources */,
 				126C4C5019EFB4F300F18654 /* LaunchScreen.xib in Resources */,
+				126C4CAE19F103AA00F18654 /* FLRecentViewController.xib in Resources */,
 				126C4C4D19EFB4F300F18654 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,11 +269,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				126C4C4819EFB4F300F18654 /* ViewController.m in Sources */,
 				126C4C4519EFB4F300F18654 /* AppDelegate.m in Sources */,
+				126C4CA919F0FF7F00F18654 /* FLControllerCoordinator.m in Sources */,
 				126C4CA619F0FBE900F18654 /* KxMenu.m in Sources */,
 				126C4C4219EFB4F300F18654 /* main.m in Sources */,
 				126C4C7819F0B11700F18654 /* FLMainViewController.m in Sources */,
+				126C4CAD19F103AA00F18654 /* FLRecentViewController.m in Sources */,
+				126C4CB219F103C000F18654 /* FLHotViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,14 +298,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		126C4C4919EFB4F300F18654 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				126C4C4A19EFB4F300F18654 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		126C4C4E19EFB4F300F18654 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

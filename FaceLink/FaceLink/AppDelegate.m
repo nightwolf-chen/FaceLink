@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <UIKit/UIKit.h>
+#import "FLMainViewController.h"
+#import "FLControllerCoordinator.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    FLMainViewController *rootViewController = [[FLMainViewController alloc] initWithNibName:nil bundle:nil];
+    
+    self.window.rootViewController = rootViewController;
+    
+    [FLControllerCoordinator sharedInstance].mainViewController = rootViewController;
+    
     return YES;
 }
 

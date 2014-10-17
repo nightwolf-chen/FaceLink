@@ -9,6 +9,9 @@
 #import "FLMainViewController.h"
 #import "FMMacros.h"
 #import "KxMenu.h"
+#import "FLRecentViewController.h"
+#import "FLHotViewController.h"
+
 
 NS_ENUM(NSInteger, FLButtonTag){
     FLButtonCamare,
@@ -28,6 +31,9 @@ static const CGFloat kMenuButtonWidth = 30;
 @property (nonatomic,strong) UIView *headViewContainer;
 @property (nonatomic,strong) UIView *contentViewContainer;
 @property (nonatomic,strong) UIView *controlPanelViewContainer;
+
+@property (nonatomic,strong) UIViewController *recentController;
+@property (nonatomic,strong) UIViewController *hotController;
 
 @end
 
@@ -113,6 +119,24 @@ static const CGFloat kMenuButtonWidth = 30;
     [_headViewContainer addSubview:usernameLabel];
 }
 
+- (void)p_setupViewControlls
+{
+    self.recentController = [[FLRecentViewController alloc] initWithNibName:nil bundle:nil];
+    self.hotController = [[FLHotViewController alloc] initWithNibName:nil bundle:nil];
+    
+    [self addChildViewController:_recentController];
+    [self addChildViewController:_hotController];
+    
+    [self p_activateViewController:_recentController];
+}
+
+- (void)p_activateViewController:(UIViewController *)viewController
+{
+    [viewController.view removeFromSuperview];
+    viewController.view.frame = _contentViewContainer.bounds;
+    [_contentViewContainer addSubview:viewController.view];
+}
+
 - (KxMenuItem *)p_itemWithName:(NSString *)name
 {
     return [KxMenuItem menuItem:name
@@ -148,12 +172,12 @@ static const CGFloat kMenuButtonWidth = 30;
             break;
         case FLButtonRecent:
         {
-            
+            [self p_activateViewController:_recentController];
         }
             break;
         case FLButtonHot:
         {
-            
+            [self p_activateViewController:_hotController];
         }
             break;
          case FLButtonMenu:
@@ -169,12 +193,18 @@ static const CGFloat kMenuButtonWidth = 30;
     [self p_setupContainers];
     [self p_setControlLPanelView];
     [self p_setupHeadView];
+    [self p_setupViewControlls];
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)shouldAutorotate
+{
+    return NO;
 }
 
 @end
