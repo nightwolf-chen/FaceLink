@@ -19,6 +19,7 @@
 		126C4CAE19F103AA00F18654 /* FLRecentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126C4CAC19F103AA00F18654 /* FLRecentViewController.xib */; };
 		126C4CB219F103C000F18654 /* FLHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4CB019F103C000F18654 /* FLHotViewController.m */; };
 		126C4CB319F103C000F18654 /* FLHotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126C4CB119F103C000F18654 /* FLHotViewController.xib */; };
+		126C4CBC19F1186000F18654 /* FLCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4CBB19F1186000F18654 /* FLCameraViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		126C4CAF19F103C000F18654 /* FLHotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLHotViewController.h; sourceTree = "<group>"; };
 		126C4CB019F103C000F18654 /* FLHotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLHotViewController.m; sourceTree = "<group>"; };
 		126C4CB119F103C000F18654 /* FLHotViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLHotViewController.xib; sourceTree = "<group>"; };
+		126C4CBA19F1186000F18654 /* FLCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLCameraViewController.h; sourceTree = "<group>"; };
+		126C4CBB19F1186000F18654 /* FLCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLCameraViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				126C4CAF19F103C000F18654 /* FLHotViewController.h */,
 				126C4CB019F103C000F18654 /* FLHotViewController.m */,
 				126C4CB119F103C000F18654 /* FLHotViewController.xib */,
+				126C4CBA19F1186000F18654 /* FLCameraViewController.h */,
+				126C4CBB19F1186000F18654 /* FLCameraViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				126C4CBC19F1186000F18654 /* FLCameraViewController.m in Sources */,
 				126C4C4519EFB4F300F18654 /* AppDelegate.m in Sources */,
 				126C4CA919F0FF7F00F18654 /* FLControllerCoordinator.m in Sources */,
 				126C4CA619F0FBE900F18654 /* KxMenu.m in Sources */,

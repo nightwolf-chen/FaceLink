@@ -11,7 +11,8 @@
 #import "KxMenu.h"
 #import "FLRecentViewController.h"
 #import "FLHotViewController.h"
-
+#import "AROverlayViewController.h"
+#import "FLCameraViewController.h"
 
 NS_ENUM(NSInteger, FLButtonTag){
     FLButtonCamare,
@@ -167,7 +168,9 @@ static const CGFloat kMenuButtonWidth = 30;
     switch (theButton.tag) {
         case FLButtonCamare:
         {
-            
+            UIViewController *ctr = [[FLCameraViewController alloc] initWithNibName:nil bundle:nil];
+            [self presentViewController:ctr animated:YES completion:^{
+            }];
         }
             break;
         case FLButtonRecent:
