@@ -15,6 +15,7 @@
 		126C4C5019EFB4F300F18654 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126C4C4E19EFB4F300F18654 /* LaunchScreen.xib */; };
 		126C4C5C19EFB4F300F18654 /* FaceLinkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4C5B19EFB4F300F18654 /* FaceLinkTests.m */; };
 		126C4C7819F0B11700F18654 /* FLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4C7719F0B11700F18654 /* FLMainViewController.m */; };
+		126C4CA619F0FBE900F18654 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4CA519F0FBE900F18654 /* KxMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		126C4C7619F0B11700F18654 /* FLMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLMainViewController.h; sourceTree = "<group>"; };
 		126C4C7719F0B11700F18654 /* FLMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLMainViewController.m; sourceTree = "<group>"; };
 		126C4C7A19F0B54900F18654 /* FMMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMMacros.h; sourceTree = "<group>"; };
+		126C4CA419F0FBE900F18654 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
+		126C4CA519F0FBE900F18654 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,7 @@
 		126C4C3E19EFB4F300F18654 /* FaceLink */ = {
 			isa = PBXGroup;
 			children = (
+				126C4CA319F0FBE900F18654 /* controls */,
 				126C4C7919F0B54900F18654 /* util */,
 				126C4C7519F0B07C00F18654 /* ViewControllers */,
 				126C4C4319EFB4F300F18654 /* AppDelegate.h */,
@@ -140,6 +144,15 @@
 				126C4C7A19F0B54900F18654 /* FMMacros.h */,
 			);
 			path = util;
+			sourceTree = "<group>";
+		};
+		126C4CA319F0FBE900F18654 /* controls */ = {
+			isa = PBXGroup;
+			children = (
+				126C4CA419F0FBE900F18654 /* KxMenu.h */,
+				126C4CA519F0FBE900F18654 /* KxMenu.m */,
+			);
+			path = controls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +257,7 @@
 			files = (
 				126C4C4819EFB4F300F18654 /* ViewController.m in Sources */,
 				126C4C4519EFB4F300F18654 /* AppDelegate.m in Sources */,
+				126C4CA619F0FBE900F18654 /* KxMenu.m in Sources */,
 				126C4C4219EFB4F300F18654 /* main.m in Sources */,
 				126C4C7819F0B11700F18654 /* FLMainViewController.m in Sources */,
 			);

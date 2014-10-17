@@ -8,9 +8,19 @@
 
 #import "FLMainViewController.h"
 #import "FMMacros.h"
+#import "KxMenu.h"
+
+NS_ENUM(NSInteger, FLButtonTag){
+    FLButtonCamare,
+    FLButtonRecent,
+    FLButtonHot,
+    FLButtonMenu
+};
 
 static const int kHeadHight = 40;
-static const int kControlPannelHight = 50;
+static const int kControlPannelHight = 45;
+static const CGFloat kMenuLeftMargin = 15;
+static const CGFloat kMenuButtonWidth = 30;
 
 @interface FLMainViewController ()
 
@@ -40,7 +50,7 @@ static const int kControlPannelHight = 50;
     
     self.controlPanelViewContainer = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_HIGHT-kControlPannelHight, SCREEN_WIDTH, kControlPannelHight)];
     
-    self.statusbarContainer.backgroundColor = [UIColor blackColor];
+    self.statusbarContainer.backgroundColor = [UIColor grayColor];
     self.headViewContainer.backgroundColor = [UIColor redColor];
     self.contentViewContainer.backgroundColor = [UIColor greenColor];
     self.controlPanelViewContainer.opaque = NO;
@@ -58,17 +68,23 @@ static const int kControlPannelHight = 50;
     
     UIButton *cameraButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, cameraButtonLength, cameraButtonLength)];
     cameraButton.center = CGPointMake(SCREEN_WIDTH / 2.0f, kControlPannelHight / 2.0f);
+    cameraButton.tag = FLButtonCamare;
+    [cameraButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     
     CGFloat recentButtonWidth = (SCREEN_WIDTH - cameraButtonLength) / 2.0f;
     UIButton *recentButton = [[UIButton alloc] initWithFrame:CGRectMake(0,
                                                                         kControlPannelHight - sideButtonHight,
                                                                         (SCREEN_WIDTH - cameraButtonLength)/2.0f,
                                                                         sideButtonHight)];
+    recentButton.tag = FLButtonRecent;
+    [recentButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *hotButton = [[UIButton alloc] initWithFrame:CGRectMake(cameraButtonLength+recentButtonWidth,
                                                                     kControlPannelHight - sideButtonHight,
                                                                     recentButtonWidth,
                                                                     sideButtonHight)];
+    hotButton.tag = FLButtonHot;
+    [hotButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     
     cameraButton.backgroundColor = [UIColor blackColor];
     recentButton.backgroundColor = [UIColor grayColor];
@@ -79,10 +95,80 @@ static const int kControlPannelHight = 50;
     [_controlPanelViewContainer addSubview:hotButton];
 }
 
+- (void)p_setupHeadView
+{
+    UILabel *usernameLabel = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH*0.2, 0, SCREEN_WIDTH*0.6, kHeadHight)];
+    usernameLabel.text = @"咔咔";
+    usernameLabel.textAlignment = NSTextAlignmentCenter;
+
+    UIButton *menuButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - kMenuLeftMargin - kMenuButtonWidth,
+                                                                     (kHeadHight - kMenuButtonWidth) / 2.0f,
+                                                                     kMenuButtonWidth,
+                                                                     kMenuButtonWidth)];
+    menuButton.tag = FLButtonMenu;
+    menuButton.backgroundColor = [UIColor blackColor];
+    [menuButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+
+    [_headViewContainer addSubview:menuButton];
+    [_headViewContainer addSubview:usernameLabel];
+}
+
+- (KxMenuItem *)p_itemWithName:(NSString *)name
+{
+    return [KxMenuItem menuItem:name
+                          image:nil
+                         target:nil
+                         action:nil];
+}
+
+- (void)p_showDropdownMenu:(UIView *)targetView
+{
+    NSArray *menuItems = @[
+                           [self p_itemWithName:@"修改资料"],
+                           [self p_itemWithName:@"更换头像"],
+                           [self p_itemWithName:@"我的相册"],
+                           [self p_itemWithName:@"聊天模式"],
+                           ];
+    
+    KxMenuItem *firstItem = menuItems[0];
+    firstItem.foreColor = [UIColor whiteColor];
+    
+    [KxMenu showMenuInView:self.view fromRect:targetView.frame menuItems:menuItems];
+}
+
+- (void)buttonClick:(id)sender
+{
+    UIButton *theButton = (UIButton *)sender;
+    
+    switch (theButton.tag) {
+        case FLButtonCamare:
+        {
+            
+        }
+            break;
+        case FLButtonRecent:
+        {
+            
+        }
+            break;
+        case FLButtonHot:
+        {
+            
+        }
+            break;
+         case FLButtonMenu:
+        {
+            [self p_showDropdownMenu:theButton];
+        }
+            break;
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self p_setupContainers];
     [self p_setControlLPanelView];
+    [self p_setupHeadView];
     // Do any additional setup after loading the view.
 }
 
