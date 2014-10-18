@@ -7,6 +7,7 @@
 //
 
 #import "FLHotViewController.h"
+#import "FMMacros.h"
 
 @interface FLHotViewController ()
 
@@ -16,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    CGSize contentSize = SCREEN_SIZE;
+    contentSize.height *= 1.2f;
+    _baseScrollView.contentSize = contentSize ;
     // Do any additional setup after loading the view from its nib.
 }
 

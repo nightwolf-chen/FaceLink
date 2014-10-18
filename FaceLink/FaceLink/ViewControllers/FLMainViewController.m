@@ -11,8 +11,8 @@
 #import "KxMenu.h"
 #import "FLRecentViewController.h"
 #import "FLHotViewController.h"
-#import "AROverlayViewController.h"
 #import "FLCameraViewController.h"
+#import "Globals.h"
 
 NS_ENUM(NSInteger, FLButtonTag){
     FLButtonCamare,
@@ -21,10 +21,6 @@ NS_ENUM(NSInteger, FLButtonTag){
     FLButtonMenu
 };
 
-static const int kHeadHight = 40;
-static const int kControlPannelHight = 45;
-static const CGFloat kMenuLeftMargin = 15;
-static const CGFloat kMenuButtonWidth = 30;
 
 @interface FLMainViewController ()
 
@@ -44,6 +40,9 @@ static const CGFloat kMenuButtonWidth = 30;
     self.headViewContainer = nil;
     self.contentViewContainer = nil;
     self.controlPanelViewContainer = nil;
+    self.statusbarContainer = nil;
+    self.recentController = nil;
+    self.hotController = nil;
 }
 
 - (void)p_setupContainers
@@ -70,28 +69,29 @@ static const CGFloat kMenuButtonWidth = 30;
 
 - (void)p_setControlLPanelView
 {
-    CGFloat cameraButtonLength = kControlPannelHight * 1.5;
     CGFloat sideButtonHight = kControlPannelHight * 0.80f;
     
-    UIButton *cameraButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, cameraButtonLength, cameraButtonLength)];
+    UIButton *cameraButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kCameraButtonWidth, kCameraButtonHeight)];
     cameraButton.center = CGPointMake(SCREEN_WIDTH / 2.0f, kControlPannelHight / 2.0f);
     cameraButton.tag = FLButtonCamare;
     [cameraButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     
-    CGFloat recentButtonWidth = (SCREEN_WIDTH - cameraButtonLength) / 2.0f;
+    CGFloat recentButtonWidth = (SCREEN_WIDTH - kCameraButtonWidth) / 2.0f;
     UIButton *recentButton = [[UIButton alloc] initWithFrame:CGRectMake(0,
                                                                         kControlPannelHight - sideButtonHight,
-                                                                        (SCREEN_WIDTH - cameraButtonLength)/2.0f,
+                                                                        recentButtonWidth,
                                                                         sideButtonHight)];
     recentButton.tag = FLButtonRecent;
     [recentButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [recentButton setTitle:@"最近看过" forState:UIControlStateNormal];
     
-    UIButton *hotButton = [[UIButton alloc] initWithFrame:CGRectMake(cameraButtonLength+recentButtonWidth,
+    UIButton *hotButton = [[UIButton alloc] initWithFrame:CGRectMake(kCameraButtonWidth+recentButtonWidth,
                                                                     kControlPannelHight - sideButtonHight,
                                                                     recentButtonWidth,
                                                                     sideButtonHight)];
     hotButton.tag = FLButtonHot;
     [hotButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [hotButton setTitle:@"有缘人" forState:UIControlStateNormal];
     
     cameraButton.backgroundColor = [UIColor blackColor];
     recentButton.backgroundColor = [UIColor grayColor];

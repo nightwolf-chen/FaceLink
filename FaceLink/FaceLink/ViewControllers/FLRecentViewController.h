@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FLRecentViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIScrollView *baseScrollView;
 
 @end
