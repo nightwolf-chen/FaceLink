@@ -9,6 +9,7 @@
 #import "FLCameraViewController.h"
 #import "FMMacros.h"
 #import "Globals.h"
+#import "FLSingleOptionMenu.h"
 
 NS_ENUM(NSInteger, FLCameraViewButtonTag){
     FLCameraViewButtonBack,
@@ -202,9 +203,9 @@ static const CGFloat kCloseTemplateButtonWidth = 50;
     [_controlPanelViewContainer addSubview:cameraButton];
 }
 
-- (void)p_showMenu
+- (void)p_showMenu:(UIView *)view
 {
-    
+    [[[FLSingleOptionMenu alloc] init] showMenuInView:self.view fromRect:view.frame];
 }
 
 - (void)buttonClicked:(id)sender
@@ -219,7 +220,7 @@ static const CGFloat kCloseTemplateButtonWidth = 50;
             break;
         case FLCameraViewButtonMenu:
         {
-            [self p_showMenu];
+            [self p_showMenu:theButton];
         }
             break;
     }
