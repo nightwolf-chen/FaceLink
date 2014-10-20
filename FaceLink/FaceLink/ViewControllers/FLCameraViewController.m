@@ -26,6 +26,11 @@ NS_ENUM(NSInteger, FLScrollViewDirection){
         FLScrollViewDirectionRight
 };
 
+typedef enum FLPhotoTemplateState{
+    FLPhotoTemplateStateShowing,
+    FLPhotoTemplateStateHidden
+}FLPhotoTemplateState;
+
 
 static const CGFloat kCameraPreviewHight = 320;
 
@@ -41,8 +46,9 @@ static const CGFloat kMoreMenuButtonHeight = 32;
 static const CGFloat kHeadButtonsMarginHorizontal = 15;
 
 static const CGFloat kSideArrowWidth = 24;
-static const CGFloat kCloseTemplateButtonHeight = 15;
-static const CGFloat kCloseTemplateButtonWidth = 50;
+static const CGFloat kCloseTemplateButtonHeight = 20;
+static const CGFloat kCloseTemplateBtnIndicatorWidth = 40;
+static const CGFloat kCloseTemplateBtnIndicatorHeight = 5;
 
 
 @interface FLCameraViewController ()
@@ -56,6 +62,8 @@ static const CGFloat kCloseTemplateButtonWidth = 50;
 @property (nonatomic,strong) UIView *templateViewContainer;
 
 @property (nonatomic,assign) UIScrollView *templateScrollView;
+@property (nonatomic,assign) CGRect templateScrollFrameOrigin;
+@property (nonatomic,assign) FLPhotoTemplateState templateState;
 
 @end
 
@@ -115,7 +123,17 @@ static const CGFloat kCloseTemplateButtonWidth = 50;
     controllerView.frame = frame;
     controllerView.alpha = 0.0;
     imagePickerController.showsCameraControls=NO;
+    
     [_cameraPreviewContainer addSubview:controllerView];
+    
+    UIView *mask = [[UIView alloc] initWithFrame:_cameraPreviewContainer.bounds];
+    mask.backgroundColor = [UIColor clearColor];
+    mask.userInteractionEnabled = YES;
+    UISwipeGestureRecognizer *reconizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showTemplateArea:)];
+    reconizer.direction = UISwipeGestureRecognizerDirectionUp;
+    [mask addGestureRecognizer:reconizer];
+    
+    [_cameraPreviewContainer addSubview:mask];
     
     [UIView animateWithDuration:0.3
                           delay:0.0
@@ -149,6 +167,11 @@ static const CGFloat kCloseTemplateButtonWidth = 50;
     
     [menuButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, kHeadHight)];
+    titleLabel.text = @"拍一下";
+    titleLabel.center = CGPointMake((SCREEN_WIDTH - kHorizontalGap*2) / 2.0f, kHeadHight / 2.0f);
+    
+    [_headViewContainer addSubview:titleLabel];
     [_headViewContainer addSubview:backButton];
     [_headViewContainer addSubview:menuButton];
 }
@@ -211,7 +234,7 @@ static const CGFloat kCloseTemplateButtonWidth = 50;
     templateControlFrame.origin.x = 0;
     templateControlFrame.origin.y -= kCloseTemplateButtonHeight;
     templateControlFrame.size.width = SCREEN_WIDTH;
-    templateControlFrame.size.height = kCloseTemplateButtonHeight + _controlPanelViewContainer.frame.size.height;
+    templateControlFrame.size.height = kCloseTemplateButtonHeight + _templateViewContainer.frame.size.height;
     UIView *templateControlView = [[UIView alloc] initWithFrame:templateControlFrame];
     
     [_templateViewContainer removeFromSuperview];
@@ -225,15 +248,26 @@ static const CGFloat kCloseTemplateButtonWidth = 50;
     UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, kCloseTemplateButtonHeight)];
     closeButton.tag = FLCameraViewButtonCloseTemplate;
     closeButton.backgroundColor = RGB_UICOLOR(49, 144, 168);
+    UIView *closeIndicator = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                                     0,
+                                                                     kCloseTemplateBtnIndicatorWidth,
+                                                                     kCloseTemplateBtnIndicatorHeight)];
+    closeIndicator.backgroundColor = RGB_UICOLOR(221, 244, 240);
+    closeIndicator.center = CGPointMake(SCREEN_WIDTH/2.0f, kCloseTemplateButtonHeight/2.0f);
+    [closeButton addSubview:closeIndicator];
     [closeButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [templateControlView addSubview:closeButton];
     
     [_templateViewContainer addSubview:templateScrollView];
     [_templateViewContainer addSubview:leftArrowButton];
     [_templateViewContainer addSubview:rightArrowButton];
-    [_templateViewContainer addSubview:closeButton];
     
-    [self.view addSubview:templateControlView]; 
+    [self.view addSubview:templateControlView];
+    
+    self.templateViewContainer = templateControlView;
+    
+    self.templateState = FLPhotoTemplateStateShowing;
+    _templateViewContainer.alpha = 0.6;
 }
 
 - (void)p_setupControlPanelView
@@ -297,11 +331,7 @@ static const CGFloat kCloseTemplateButtonWidth = 50;
             break;
         case FLCameraViewButtonCloseTemplate:
         {
-            [UIView animateWithDuration:0.5 animations:^{
-                CGRect frame = _templateViewContainer.frame;
-                frame.origin.y += SCREEN_HIGHT;
-                _templateViewContainer.frame = frame;
-            }];
+            [self hideTemplateArea];
         }
             break;
         case FLCameraViewButtonLeftArrow:
@@ -316,6 +346,38 @@ static const CGFloat kCloseTemplateButtonWidth = 50;
             break;
             
     }
+}
+
+- (void)hideTemplateArea
+{
+    if (FLPhotoTemplateStateHidden == self.templateState) {
+        return;
+    }else{
+        self.templateState = FLPhotoTemplateStateHidden;
+    }
+    
+    self.templateScrollFrameOrigin = _templateViewContainer.frame;
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        CGRect frame = _templateViewContainer.frame;
+        frame.origin.y += SCREEN_HIGHT;
+        _templateViewContainer.frame = frame;
+    }];
+}
+
+- (void)showTemplateArea:(UIGestureRecognizer *)recognizer
+{
+    if (FLPhotoTemplateStateShowing == self.templateState) {
+        return;
+    }else{
+        self.templateState = FLPhotoTemplateStateShowing;
+    }
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        CGRect frame = _templateViewContainer.frame;
+        frame.origin.y += SCREEN_HIGHT;
+        _templateViewContainer.frame = _templateScrollFrameOrigin;
+    }];
 }
 
 #pragma mark - imagepicker delegate 
