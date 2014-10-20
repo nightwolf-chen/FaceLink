@@ -94,15 +94,15 @@ static const CGFloat kHorizontalMargin = 10;
         
         if (animated) {
             
-            _contentView.hidden = YES;
-            [UIView animateWithDuration:0.2
-                             animations:^(void) {
-                                 self.alpha = 0;
-                             } completion:^(BOOL finished) {
-                                 if ([self.superview isKindOfClass:[FLMenuOverlay class]])
-                                     [self.superview removeFromSuperview];
-                                 [self removeFromSuperview];
-                             }];
+        _contentView.hidden = YES;
+        [UIView animateWithDuration:0.2
+        animations:^(void) {
+        self.alpha = 0;
+        } completion:^(BOOL finished) {
+        if ([self.superview isKindOfClass:[FLMenuOverlay class]])
+         [self.superview removeFromSuperview];
+        [self removeFromSuperview];
+        }];
             
         } else {
             
