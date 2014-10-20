@@ -8,10 +8,16 @@
 
 #import "FLRecentViewController.h"
 #import "FMMacros.h"
+#import "Globals.h"
+#import "FLFaceView.h"
+
+const double kPictureGapHorizontal = 10;
+const double kPictureGapVertical = 10;
 
 @interface FLRecentViewController ()
-@property (weak, nonatomic) IBOutlet UIView *textFieldContainer;
 
+@property (weak, nonatomic) IBOutlet UIView *textFieldContainer;
+@property (nonatomic, strong) NSArray *pictures;
 
 @end
 
@@ -22,9 +28,136 @@
    
     CGSize contentSize = SCREEN_SIZE;
     contentSize.height *= 1.2f;
-    _baseScrollView.contentSize = contentSize ;
+    _baseScrollView.contentSize = contentSize;
     
-    // Do any additional setup after loading the view from its nib.
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                           action:@selector(scrollViewDidTap:)];
+    [_baseScrollView addGestureRecognizer:tapGestureRecognizer];
+    
+    _headerView.layer.cornerRadius = kRoundedCornerRaduis;
+    _headerView.layer.masksToBounds = YES;
+    
+
+    [self showPhotos];
+}
+
+- (void)showPhotos
+{
+    NSMutableArray *tmpArray = [NSMutableArray array];
+    NSArray *names = @[@"翠翠",@"阿花",@"阿花",@"阿花",@"阿美",@"阿花",@"阿花",@"阿花",@"阿花"];
+    const int photoscount = 9;
+    for(int i = 0 ;i < photoscount ;i++){
+        FLFaceViewType type ;
+        if (i == 4) {
+            type = FLFaceViewTypeBig;
+        }else{
+            type = FLFaceViewTypeSmall;
+        }
+        [tmpArray addObject:[FLFaceView faceViewWithType:type name:names[i]]];
+    }
+    
+    self.pictures = tmpArray;
+    
+    [self layoutPictures:tmpArray];
+}
+
+- (void)layoutPictures:(NSArray *)pictures
+{
+    const int startX = kPictureGapHorizontal;
+    const int startY = kPictureGapVertical;
+    
+    int cx = startX;
+    int cy = startY;
+    int lx = 0;
+    int ly = 0;
+    
+    int index = 0;
+    UIButton *aView = nil;
+    CGRect frame;
+    for(; index < 4 ;index++){
+ 
+        cx += lx;
+        cy += ly;
+        
+        aView = pictures[index];
+        frame = aView.frame;
+        frame.origin.x = cx;
+        frame.origin.y = cy;
+        aView.frame = frame;
+        
+        lx = frame.size.width + kPictureGapHorizontal;
+        [self showPicture:aView withIndex:index];
+    }
+    
+    aView = pictures[index];
+    cx = startX;
+    cy = startY + frame.size.height + kPictureGapVertical;
+    frame = aView.frame;
+    frame.origin.x = cx;
+    frame.origin.y = cy;
+    aView.frame = frame;
+    lx = frame.size.width + kPictureGapVertical;
+    [self showPicture:aView withIndex:index];
+    index++;
+    
+    for(; index < 7 ;index++){
+        
+        cx += lx;
+        cy += ly;
+        aView = pictures[index];
+        frame = aView.frame;
+        frame.origin.x = cx;
+        frame.origin.y = cy;
+        aView.frame = frame;
+        
+        lx = frame.size.width + kPictureGapHorizontal;
+        [self showPicture:aView withIndex:index];
+    }
+    
+    ly = 0;
+    cy = startY + 2*(frame.size.height + kPictureGapVertical);
+    
+    cx = startX + 2*(frame.size.width + kPictureGapHorizontal);
+    lx = frame.size.width + kPictureGapHorizontal;
+    
+    for(; index < 9 ;index++){
+        
+        aView = pictures[index];
+        frame = aView.frame;
+        frame.origin.x = cx;
+        frame.origin.y = cy;
+        aView.frame = frame;
+        
+        lx = frame.size.width + kPictureGapHorizontal;
+        [self showPicture:aView withIndex:index];
+        
+        cx += lx;
+        cy += ly;
+    }
+}
+
+- (void)showPicture:(UIButton *)aPicture withIndex:(int)index
+{
+    aPicture.tag = index;
+    [aPicture addTarget:self action:@selector(pictureClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [_photoContainer addSubview:aPicture];
+}
+
+- (void)pictureClicked:(id)sender
+{
+    UIButton *theButton = sender;
+
+    NSString *username = ((FLFaceView *)_pictures[theButton.tag]).username;
+    
+    if (username) {
+        //Start a chatview controller.
+    }
+}
+- (void)scrollViewDidTap:(UIGestureRecognizer *)recognizer
+{
+    if ([_searchTextField isFirstResponder]) {
+        [_searchTextField resignFirstResponder];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,5 +177,16 @@
     }
 }
 
+
+- (IBAction)searchButtonClicked:(id)sender {
+    [_searchTextField becomeFirstResponder];
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [_searchTextField resignFirstResponder];
+}
 
 @end

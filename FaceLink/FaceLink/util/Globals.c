@@ -14,4 +14,6 @@ const double kMenuLeftMargin = 15;
 const double kMenuButtonWidth = 30;
 const double kCameraButtonHeight = kControlPannelHight;
 const double kCameraButtonWidth = 75;
-
+const double kVerticalGap = 2;
+const double kHorizontalGap = 4;
+const double kRoundedCornerRaduis = 5;

@@ -37,6 +37,7 @@
 		12C9AB4219F4F0DD007BA823 /* search_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB3919F4F0DD007BA823 /* search_icon@2x.png */; };
 		12C9AB4319F4F0DD007BA823 /* search_word@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB3A19F4F0DD007BA823 /* search_word@2x.png */; };
 		12C9AB4419F4F0DD007BA823 /* select_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB3B19F4F0DD007BA823 /* select_icon@2x.png */; };
+		12C9AB5819F50893007BA823 /* FLFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AB5719F50893007BA823 /* FLFaceView.m */; };
 		30CF80E619F2A9B800FDF633 /* Globals.c in Sources */ = {isa = PBXBuildFile; fileRef = 30CF80E419F2A9B800FDF633 /* Globals.c */; };
 		30D45CF319F35CF700135746 /* FLSingleOptionMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D45CF219F35CF700135746 /* FLSingleOptionMenu.m */; };
 		30D45CF619F3706B00135746 /* FLAppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D45CF519F3706B00135746 /* FLAppSettings.m */; };
@@ -101,6 +102,8 @@
 		12C9AB3919F4F0DD007BA823 /* search_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_icon@2x.png"; sourceTree = "<group>"; };
 		12C9AB3A19F4F0DD007BA823 /* search_word@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_word@2x.png"; sourceTree = "<group>"; };
 		12C9AB3B19F4F0DD007BA823 /* select_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_icon@2x.png"; sourceTree = "<group>"; };
+		12C9AB5619F50893007BA823 /* FLFaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLFaceView.h; sourceTree = "<group>"; };
+		12C9AB5719F50893007BA823 /* FLFaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLFaceView.m; sourceTree = "<group>"; };
 		30CF80E419F2A9B800FDF633 /* Globals.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Globals.c; sourceTree = "<group>"; };
 		30CF80E519F2A9B800FDF633 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		30D45CF119F35CF700135746 /* FLSingleOptionMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLSingleOptionMenu.h; sourceTree = "<group>"; };
@@ -193,6 +196,7 @@
 		126C4C7519F0B07C00F18654 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				12C9AB5519F50857007BA823 /* views */,
 				126C4C7619F0B11700F18654 /* FLMainViewController.h */,
 				126C4C7719F0B11700F18654 /* FLMainViewController.m */,
 				126C4CA719F0FF7F00F18654 /* FLControllerCoordinator.h */,
@@ -277,6 +281,15 @@
 				12C9AB3B19F4F0DD007BA823 /* select_icon@2x.png */,
 			);
 			path = ControllerMain;
+			sourceTree = "<group>";
+		};
+		12C9AB5519F50857007BA823 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				12C9AB5619F50893007BA823 /* FLFaceView.h */,
+				12C9AB5719F50893007BA823 /* FLFaceView.m */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,6 +422,7 @@
 				12C9AB1919F4CF83007BA823 /* FLILikeViewController.m in Sources */,
 				126C4CAD19F103AA00F18654 /* FLRecentViewController.m in Sources */,
 				126C4CB219F103C000F18654 /* FLHotViewController.m in Sources */,
+				12C9AB5819F50893007BA823 /* FLFaceView.m in Sources */,
 				12C9AB1419F4CF6B007BA823 /* FLLikeMeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,9 +21,7 @@ NS_ENUM(NSInteger, FLButtonTag){
     FLButtonMenu
 };
 
-static const CGFloat kVerticalGap = 2;
-static const CGFloat kHorizontalGap = 4;
-static const CGFloat kRoundedCornerRaduis = 5;
+
 
 @interface FLMainViewController ()
 
@@ -74,7 +72,7 @@ static const CGFloat kRoundedCornerRaduis = 5;
 
 - (void)p_setControlLPanelView
 {
-    CGFloat sideButtonHight = kControlPannelHight;
+    CGFloat sideButtonHight = kControlPannelHight * 0.8;
     
     UIButton *cameraButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kCameraButtonWidth, kCameraButtonHeight)];
     cameraButton.center = CGPointMake(SCREEN_WIDTH / 2.0f, kControlPannelHight / 2.0f);
@@ -90,7 +88,6 @@ static const CGFloat kRoundedCornerRaduis = 5;
                                                                         sideButtonHight)];
     recentButton.tag = FLButtonRecent;
     [recentButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-//    [recentButton setTitle:@"最近看过" forState:UIControlStateNormal];
     [recentButton setImage:[UIImage imageNamed:@"recent_connect"] forState:UIControlStateSelected];
     [recentButton setImage:[UIImage imageNamed:@"recent_connect"] forState:UIControlStateNormal];
     
@@ -100,7 +97,6 @@ static const CGFloat kRoundedCornerRaduis = 5;
                                                                     sideButtonHight)];
     hotButton.tag = FLButtonHot;
     [hotButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-//    [hotButton setTitle:@"有缘人" forState:UIControlStateNormal];
     [hotButton setImage:[UIImage imageNamed:@"predestine"] forState:UIControlStateNormal];
     [hotButton setImage:[UIImage imageNamed:@"predestine"] forState:UIControlStateSelected];
     
@@ -152,6 +148,9 @@ static const CGFloat kRoundedCornerRaduis = 5;
     [viewController.view removeFromSuperview];
     viewController.view.frame = _contentViewContainer.bounds;
     [_contentViewContainer addSubview:viewController.view];
+    [_contentViewContainer bringSubviewToFront:_controlPanelViewContainer];
+    [_contentViewContainer bringSubviewToFront:_headViewContainer];
+    [_contentViewContainer bringSubviewToFront:_statusbarContainer];
 }
 
 - (KxMenuItem *)p_itemWithName:(NSString *)name

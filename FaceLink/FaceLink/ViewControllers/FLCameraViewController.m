@@ -29,8 +29,8 @@ NS_ENUM(NSInteger, FLScrollViewDirection){
 
 static const CGFloat kCameraPreviewHight = 320;
 
-static const CGFloat kTemplateWidth = 85;
-static const CGFloat kTemplateHeight = 100;
+static const CGFloat kTemplateWidth = 68;
+static const CGFloat kTemplateHeight = 68;
 static const CGFloat kTemplateGap = 15;
 static const int kTemplateCount = 8;
 
@@ -40,8 +40,8 @@ static const CGFloat kMoreMenuButtonWidth = 32;
 static const CGFloat kMoreMenuButtonHeight = 32;
 static const CGFloat kHeadButtonsMarginHorizontal = 15;
 
-static const CGFloat kSideArrowWidth = 30;
-static const CGFloat kCloseTemplateButtonHeight = 30;
+static const CGFloat kSideArrowWidth = 24;
+static const CGFloat kCloseTemplateButtonHeight = 15;
 static const CGFloat kCloseTemplateButtonWidth = 50;
 
 
@@ -65,7 +65,7 @@ static const CGFloat kCloseTemplateButtonWidth = 50;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.view.backgroundColor = [UIColor clearColor];
+        self.view.backgroundColor = RGB_UICOLOR(112, 196, 241);
     }
     return self;
 }
@@ -73,26 +73,24 @@ static const CGFloat kCloseTemplateButtonWidth = 50;
 - (void)p_setupContainners
 {
     self.cameraPreviewContainer = [[UIView alloc] initWithFrame:CGRectMake(0,STATUSBAR_HIGHT+kHeadHight, SCREEN_WIDTH, kCameraPreviewHight)];
-    self.cameraPreviewContainer.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HIGHT);
+    self.cameraPreviewContainer.frame = CGRectMake(0, 18, SCREEN_WIDTH, SCREEN_HIGHT);
     
     self.statusContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH,STATUSBAR_HIGHT)];
-    self.statusContainer.backgroundColor = [UIColor grayColor];
-    self.statusContainer.alpha = 0.5;
+    self.statusContainer.backgroundColor = RGB_UICOLOR(112, 196, 241);
     
-    self.headViewContainer = [[UIView alloc] initWithFrame:CGRectMake(0, STATUSBAR_HIGHT, SCREEN_WIDTH, kHeadHight)];
-    self.headViewContainer.backgroundColor = [UIColor  grayColor];
-    self.headViewContainer.alpha = 0.5;
+    self.headViewContainer = [[UIView alloc] initWithFrame:CGRectMake(kHorizontalGap, STATUSBAR_HIGHT, SCREEN_WIDTH - 2*kHorizontalGap, kHeadHight)];
+    self.headViewContainer.backgroundColor = RGB_UICOLOR(221, 244, 240);
+    self.headViewContainer.layer.cornerRadius = kRoundedCornerRaduis;
+    self.headViewContainer.layer.masksToBounds = YES;
     
     self.templateViewContainer = [[UIView alloc] initWithFrame:CGRectMake(0,
                                                                           STATUSBAR_HIGHT+kHeadHight+kCameraPreviewHight,
                                                                           SCREEN_WIDTH,
-                                                                          SCREEN_HIGHT-STATUSBAR_HIGHT-kHeadHight-kControlPannelHight/2.0f-kCameraPreviewHight)];
-    self.templateViewContainer.backgroundColor = [UIColor blueColor];
-    self.templateViewContainer.alpha = 0.5;
+                                                                          SCREEN_HIGHT-STATUSBAR_HIGHT-kHeadHight-kControlPannelHight-kCameraPreviewHight)];
+    self.templateViewContainer.backgroundColor = RGB_UICOLOR(221, 244, 240);
     
     self.controlPanelViewContainer = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_HIGHT - kControlPannelHight, SCREEN_WIDTH, kControlPannelHight)];
-    self.controlPanelViewContainer.backgroundColor = [UIColor clearColor];
-    self.controlPanelViewContainer.alpha = 0.5;
+    self.controlPanelViewContainer.backgroundColor = RGB_UICOLOR(49, 144, 168);
     
     
     [self.view addSubview:_cameraPreviewContainer];
@@ -146,7 +144,9 @@ static const CGFloat kCloseTemplateButtonWidth = 50;
                                                                      kMoreMenuButtonWidth,
                                                                      kMoreMenuButtonHeight)];
     menuButton.tag = FLCameraViewButtonMenu;
-    menuButton.backgroundColor = [UIColor blueColor];
+    [menuButton setImage:[UIImage imageNamed:@"select_icon"] forState:UIControlStateNormal];
+    [menuButton setImage:[UIImage imageNamed:@"select_icon"] forState:UIControlStateSelected];
+    
     [menuButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     [_headViewContainer addSubview:backButton];
@@ -155,15 +155,17 @@ static const CGFloat kCloseTemplateButtonWidth = 50;
 
 - (void)p_setupTemplateView
 {
-    const int scrollViewHeight = kTemplateHeight + kTemplateGap;
-    const int scrollViewWidth = SCREEN_WIDTH - kSideArrowWidth*2;
-    CGRect scrollViewFrame = CGRectMake(kSideArrowWidth,
-                                        kCloseTemplateButtonHeight,
+    const int whiteBorder = 6;
+    
+    const int scrollViewHeight = _templateViewContainer.frame.size.height - whiteBorder*2;
+    const int scrollViewWidth = SCREEN_WIDTH - kSideArrowWidth*2 - whiteBorder*2;
+    CGRect scrollViewFrame = CGRectMake(kSideArrowWidth + whiteBorder,
+                                        whiteBorder,
                                         scrollViewWidth,
                                         scrollViewHeight);
     
     UIScrollView *templateScrollView = [[UIScrollView alloc] initWithFrame:scrollViewFrame];
-    templateScrollView.backgroundColor = [UIColor grayColor];
+    templateScrollView.backgroundColor = RGB_UICOLOR(17, 96, 96);
     CGSize contentSize = scrollViewFrame.size;
     contentSize.width = kTemplateGap * (kTemplateCount + 1) + kTemplateWidth * kTemplateCount;
     templateScrollView.contentSize = contentSize;
@@ -180,17 +182,12 @@ static const CGFloat kCloseTemplateButtonWidth = 50;
                                           kTemplateWidth,
                                           kTemplateHeight);
         
-        UIView *aTemplateView = [[UIView alloc] initWithFrame:templateFrame];
-        aTemplateView.backgroundColor = [UIColor greenColor];
+        UIImageView *aTemplateView = [[UIImageView alloc] initWithFrame:templateFrame];
+        aTemplateView.layer.borderWidth = 2.0f;
+        aTemplateView.layer.borderColor = [UIColor whiteColor].CGColor;
+        aTemplateView.image = [UIImage imageNamed:@"pic_small"];
         [templateScrollView addSubview:aTemplateView];
     }
-    
-    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-kCloseTemplateButtonWidth)/2.0f,
-                                                                      0,
-                                                                      kCloseTemplateButtonWidth,
-                                                                      kCloseTemplateButtonHeight)];
-    closeButton.tag = FLCameraViewButtonCloseTemplate;
-    [closeButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *leftArrowButton = [[UIButton alloc] initWithFrame:CGRectMake(0,
                                                                            0,
@@ -206,14 +203,37 @@ static const CGFloat kCloseTemplateButtonWidth = 50;
     rightArrowButton.tag = FLCameraViewButtonRightArrow;
     [rightArrowButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
-    closeButton.backgroundColor = [UIColor redColor];
-    leftArrowButton.backgroundColor = [UIColor yellowColor];
-    rightArrowButton.backgroundColor = [UIColor yellowColor];
+    leftArrowButton.backgroundColor = RGB_UICOLOR(229, 81, 115);
+    rightArrowButton.backgroundColor = RGB_UICOLOR(229, 81, 115);
+    
+    
+    CGRect templateControlFrame = _templateViewContainer.frame;
+    templateControlFrame.origin.x = 0;
+    templateControlFrame.origin.y -= kCloseTemplateButtonHeight;
+    templateControlFrame.size.width = SCREEN_WIDTH;
+    templateControlFrame.size.height = kCloseTemplateButtonHeight + _controlPanelViewContainer.frame.size.height;
+    UIView *templateControlView = [[UIView alloc] initWithFrame:templateControlFrame];
+    
+    [_templateViewContainer removeFromSuperview];
+    CGRect tempNewFrame = _templateViewContainer.frame;
+    tempNewFrame.origin.x = 0;
+    tempNewFrame.origin.y = kCloseTemplateButtonHeight;
+    _templateViewContainer.frame = tempNewFrame;
+    
+    [templateControlView addSubview:_templateViewContainer];
+    
+    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, kCloseTemplateButtonHeight)];
+    closeButton.tag = FLCameraViewButtonCloseTemplate;
+    closeButton.backgroundColor = RGB_UICOLOR(49, 144, 168);
+    [closeButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [templateControlView addSubview:closeButton];
     
     [_templateViewContainer addSubview:templateScrollView];
-    [_templateViewContainer addSubview:closeButton];
     [_templateViewContainer addSubview:leftArrowButton];
     [_templateViewContainer addSubview:rightArrowButton];
+    [_templateViewContainer addSubview:closeButton];
+    
+    [self.view addSubview:templateControlView]; 
 }
 
 - (void)p_setupControlPanelView
@@ -222,9 +242,10 @@ static const CGFloat kCloseTemplateButtonWidth = 50;
                                                                         0,
                                                                         kCameraButtonWidth,
                                                                         kCameraButtonHeight)];
-    cameraButton.backgroundColor = [UIColor redColor];
     cameraButton.tag = FLCameraViewButtonCamera;
     [cameraButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [cameraButton setImage:[UIImage imageNamed:@"camera_btn"] forState:UIControlStateSelected];
+    [cameraButton setImage:[UIImage imageNamed:@"camera_btn"] forState:UIControlStateNormal];
     
     [_controlPanelViewContainer addSubview:cameraButton];
 }

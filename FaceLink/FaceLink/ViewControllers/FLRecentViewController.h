@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FLRecentViewController : UIViewController<UITextFieldDelegate>
+@interface FLRecentViewController : UIViewController<UITextFieldDelegate,UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *baseScrollView;
 
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
+@property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UIView *photoContainer;
 
 @end

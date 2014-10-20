@@ -16,5 +16,8 @@ extern const double kMenuLeftMargin;
 extern const double kMenuButtonWidth;
 extern const double kCameraButtonHeight;
 extern const double kCameraButtonWidth;
+extern const double kVerticalGap ;
+extern const double kHorizontalGap ;
+extern const double kRoundedCornerRaduis ;
 
 #endif /* defined(__FaceLink__Globals__) */

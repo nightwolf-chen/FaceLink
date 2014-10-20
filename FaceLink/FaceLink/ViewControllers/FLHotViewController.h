@@ -10,5 +10,7 @@
 
 @interface FLHotViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *baseScrollView;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
 @end
