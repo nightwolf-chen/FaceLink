@@ -22,6 +22,12 @@
 		126C4CBC19F1186000F18654 /* FLCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4CBB19F1186000F18654 /* FLCameraViewController.m */; };
 		12C9AADB19F4B3ED007BA823 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AAD819F4B3ED007BA823 /* ProgressHUD.bundle */; };
 		12C9AADC19F4B3ED007BA823 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AADA19F4B3ED007BA823 /* ProgressHUD.m */; };
+		12C9AB1419F4CF6B007BA823 /* FLLikeMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AB1219F4CF6B007BA823 /* FLLikeMeViewController.m */; };
+		12C9AB1519F4CF6B007BA823 /* FLLikeMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB1319F4CF6B007BA823 /* FLLikeMeViewController.xib */; };
+		12C9AB1919F4CF83007BA823 /* FLILikeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AB1719F4CF83007BA823 /* FLILikeViewController.m */; };
+		12C9AB1A19F4CF83007BA823 /* FLILikeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB1819F4CF83007BA823 /* FLILikeViewController.xib */; };
+		12C9AB1E19F4CF95007BA823 /* FLChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AB1C19F4CF95007BA823 /* FLChatViewController.m */; };
+		12C9AB1F19F4CF95007BA823 /* FLChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB1D19F4CF95007BA823 /* FLChatViewController.xib */; };
 		30CF80E619F2A9B800FDF633 /* Globals.c in Sources */ = {isa = PBXBuildFile; fileRef = 30CF80E419F2A9B800FDF633 /* Globals.c */; };
 		30D45CF319F35CF700135746 /* FLSingleOptionMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D45CF219F35CF700135746 /* FLSingleOptionMenu.m */; };
 		30D45CF619F3706B00135746 /* FLAppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D45CF519F3706B00135746 /* FLAppSettings.m */; };
@@ -68,6 +74,15 @@
 		12C9AAD819F4B3ED007BA823 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		12C9AAD919F4B3ED007BA823 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		12C9AADA19F4B3ED007BA823 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		12C9AB1119F4CF6B007BA823 /* FLLikeMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLLikeMeViewController.h; sourceTree = "<group>"; };
+		12C9AB1219F4CF6B007BA823 /* FLLikeMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLLikeMeViewController.m; sourceTree = "<group>"; };
+		12C9AB1319F4CF6B007BA823 /* FLLikeMeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLLikeMeViewController.xib; sourceTree = "<group>"; };
+		12C9AB1619F4CF83007BA823 /* FLILikeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLILikeViewController.h; sourceTree = "<group>"; };
+		12C9AB1719F4CF83007BA823 /* FLILikeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLILikeViewController.m; sourceTree = "<group>"; };
+		12C9AB1819F4CF83007BA823 /* FLILikeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLILikeViewController.xib; sourceTree = "<group>"; };
+		12C9AB1B19F4CF95007BA823 /* FLChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLChatViewController.h; sourceTree = "<group>"; };
+		12C9AB1C19F4CF95007BA823 /* FLChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLChatViewController.m; sourceTree = "<group>"; };
+		12C9AB1D19F4CF95007BA823 /* FLChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLChatViewController.xib; sourceTree = "<group>"; };
 		30CF80E419F2A9B800FDF633 /* Globals.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Globals.c; sourceTree = "<group>"; };
 		30CF80E519F2A9B800FDF633 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		30D45CF119F35CF700135746 /* FLSingleOptionMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLSingleOptionMenu.h; sourceTree = "<group>"; };
@@ -174,6 +189,15 @@
 				30D45CF719F3E19900135746 /* FLPhotoMatchingController.h */,
 				30D45CF819F3E19900135746 /* FLPhotoMatchingController.m */,
 				30D45CF919F3E19900135746 /* FLPhotoMatchingController.xib */,
+				12C9AB1119F4CF6B007BA823 /* FLLikeMeViewController.h */,
+				12C9AB1219F4CF6B007BA823 /* FLLikeMeViewController.m */,
+				12C9AB1319F4CF6B007BA823 /* FLLikeMeViewController.xib */,
+				12C9AB1619F4CF83007BA823 /* FLILikeViewController.h */,
+				12C9AB1719F4CF83007BA823 /* FLILikeViewController.m */,
+				12C9AB1819F4CF83007BA823 /* FLILikeViewController.xib */,
+				12C9AB1B19F4CF95007BA823 /* FLChatViewController.h */,
+				12C9AB1C19F4CF95007BA823 /* FLChatViewController.m */,
+				12C9AB1D19F4CF95007BA823 /* FLChatViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -293,11 +317,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				30D45CFB19F3E19900135746 /* FLPhotoMatchingController.xib in Resources */,
+				12C9AB1A19F4CF83007BA823 /* FLILikeViewController.xib in Resources */,
 				126C4CB319F103C000F18654 /* FLHotViewController.xib in Resources */,
 				12C9AADB19F4B3ED007BA823 /* ProgressHUD.bundle in Resources */,
 				126C4C5019EFB4F300F18654 /* LaunchScreen.xib in Resources */,
 				126C4CAE19F103AA00F18654 /* FLRecentViewController.xib in Resources */,
 				126C4C4D19EFB4F300F18654 /* Images.xcassets in Resources */,
+				12C9AB1F19F4CF95007BA823 /* FLChatViewController.xib in Resources */,
+				12C9AB1519F4CF6B007BA823 /* FLLikeMeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +344,7 @@
 			files = (
 				126C4CBC19F1186000F18654 /* FLCameraViewController.m in Sources */,
 				12C9AADC19F4B3ED007BA823 /* ProgressHUD.m in Sources */,
+				12C9AB1E19F4CF95007BA823 /* FLChatViewController.m in Sources */,
 				30D45CFA19F3E19900135746 /* FLPhotoMatchingController.m in Sources */,
 				30CF80E619F2A9B800FDF633 /* Globals.c in Sources */,
 				126C4C4519EFB4F300F18654 /* AppDelegate.m in Sources */,
@@ -326,8 +354,10 @@
 				30D45CF319F35CF700135746 /* FLSingleOptionMenu.m in Sources */,
 				126C4C4219EFB4F300F18654 /* main.m in Sources */,
 				126C4C7819F0B11700F18654 /* FLMainViewController.m in Sources */,
+				12C9AB1919F4CF83007BA823 /* FLILikeViewController.m in Sources */,
 				126C4CAD19F103AA00F18654 /* FLRecentViewController.m in Sources */,
 				126C4CB219F103C000F18654 /* FLHotViewController.m in Sources */,
+				12C9AB1419F4CF6B007BA823 /* FLLikeMeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

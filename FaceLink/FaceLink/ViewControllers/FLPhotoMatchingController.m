@@ -43,7 +43,9 @@ NS_ENUM(NSInteger, FLPhotoMatchingState){
     _userImageView.backgroundColor = [UIColor yellowColor];
 }
 - (IBAction)buttonClicked:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    if (_matchingState != FLPhotoMatchingStateMatching) {
+        [self dismissViewControllerAnimated:YES completion:^{}];
+    }
 }
 
 - (void)viewDidLoad {

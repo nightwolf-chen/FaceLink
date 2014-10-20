@@ -8,7 +8,17 @@
 
 #import "FLAppSettings.h"
 
+static NSString *const kPrefix = @"FLAppSettings_";
+
 static NSString *const kLedLight = @"kLedLight";
+static NSString *const kUsername = @"kUsername";
+static NSString *const kImageUrl = @"kImageUrl";
+
+@interface FLAppSettings ()
+
+@property (nonatomic,readonly,retain) NSString *userKey;
+
+@end
 
 @implementation FLAppSettings
 
@@ -22,6 +32,66 @@ static NSString *const kLedLight = @"kLedLight";
     
     return s_instance;
 }
+
+
++ (instancetype)infoWithUin:(NSString *)username
+{
+    return [[self.class alloc] initWithUsername:username];
+}
+
+- (id)initWithUsername:(NSString *)username
+{
+    if ( self = [super init] ) {
+        _username  = username;
+        _userKey = [NSString stringWithFormat:@"%@_%@",kPrefix,_username];
+        
+        //Register for default values.
+        NSDictionary *infoDic = @{};
+        
+        NSDictionary *defaultValue = @{_userKey: infoDic};
+        [[NSUserDefaults standardUserDefaults] registerDefaults:defaultValue];
+    }
+    
+    return self;
+}
+
++ (BOOL)saveInfoToDisk
+{
+    return [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)p_setObject:(id)obj forKey:(NSString *)key
+{
+    NSDictionary *info = [[NSUserDefaults standardUserDefaults] objectForKey:_userKey];
+    NSMutableDictionary *mutableInfo = [info mutableCopy] ;
+    [mutableInfo setObject:obj forKey:key];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:mutableInfo forKey:_userKey];
+}
+
+- (id)p_objectForKey:(NSString *)key
+{
+    NSDictionary *info = [[NSUserDefaults standardUserDefaults] objectForKey:_userKey];
+    return [info objectForKey:key];
+}
+
+#pragma mark - Getters and Setters
+- (void)setUsername:(NSString *)username
+{
+    _username = username;
+    [self p_setObject:username forKey:kUsername];
+}
+
+- (void)setImageUrl:(NSString *)imageUrl
+{
+    [self p_setObject:imageUrl forKey:kImageUrl];
+}
+
+- (NSString*)imageUrl
+{
+    return [self p_objectForKey:kImageUrl];
+}
+
 
 - (BOOL)ledLight
 {

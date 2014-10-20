@@ -9,7 +9,6 @@
 #ifndef __FaceLink__Globals__
 #define __FaceLink__Globals__
 
-#include <stdio.h>
 
 extern const int kHeadHight;
 extern const int kControlPannelHight;
@@ -17,7 +16,5 @@ extern const double kMenuLeftMargin;
 extern const double kMenuButtonWidth;
 extern const double kCameraButtonHeight;
 extern const double kCameraButtonWidth;
-
-
 
 #endif /* defined(__FaceLink__Globals__) */
