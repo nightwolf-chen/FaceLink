@@ -20,6 +20,8 @@
 		126C4CB219F103C000F18654 /* FLHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4CB019F103C000F18654 /* FLHotViewController.m */; };
 		126C4CB319F103C000F18654 /* FLHotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126C4CB119F103C000F18654 /* FLHotViewController.xib */; };
 		126C4CBC19F1186000F18654 /* FLCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4CBB19F1186000F18654 /* FLCameraViewController.m */; };
+		12C9AADB19F4B3ED007BA823 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AAD819F4B3ED007BA823 /* ProgressHUD.bundle */; };
+		12C9AADC19F4B3ED007BA823 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AADA19F4B3ED007BA823 /* ProgressHUD.m */; };
 		30CF80E619F2A9B800FDF633 /* Globals.c in Sources */ = {isa = PBXBuildFile; fileRef = 30CF80E419F2A9B800FDF633 /* Globals.c */; };
 		30D45CF319F35CF700135746 /* FLSingleOptionMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D45CF219F35CF700135746 /* FLSingleOptionMenu.m */; };
 		30D45CF619F3706B00135746 /* FLAppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D45CF519F3706B00135746 /* FLAppSettings.m */; };
@@ -63,6 +65,9 @@
 		126C4CB119F103C000F18654 /* FLHotViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLHotViewController.xib; sourceTree = "<group>"; };
 		126C4CBA19F1186000F18654 /* FLCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLCameraViewController.h; sourceTree = "<group>"; };
 		126C4CBB19F1186000F18654 /* FLCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLCameraViewController.m; sourceTree = "<group>"; };
+		12C9AAD819F4B3ED007BA823 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		12C9AAD919F4B3ED007BA823 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		12C9AADA19F4B3ED007BA823 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		30CF80E419F2A9B800FDF633 /* Globals.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Globals.c; sourceTree = "<group>"; };
 		30CF80E519F2A9B800FDF633 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		30D45CF119F35CF700135746 /* FLSingleOptionMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLSingleOptionMenu.h; sourceTree = "<group>"; };
@@ -188,12 +193,23 @@
 		126C4CA319F0FBE900F18654 /* controls */ = {
 			isa = PBXGroup;
 			children = (
+				12C9AAD719F4B3ED007BA823 /* ProgressHUD */,
 				126C4CA419F0FBE900F18654 /* KxMenu.h */,
 				126C4CA519F0FBE900F18654 /* KxMenu.m */,
 				30D45CF119F35CF700135746 /* FLSingleOptionMenu.h */,
 				30D45CF219F35CF700135746 /* FLSingleOptionMenu.m */,
 			);
 			path = controls;
+			sourceTree = "<group>";
+		};
+		12C9AAD719F4B3ED007BA823 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				12C9AAD819F4B3ED007BA823 /* ProgressHUD.bundle */,
+				12C9AAD919F4B3ED007BA823 /* ProgressHUD.h */,
+				12C9AADA19F4B3ED007BA823 /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +294,7 @@
 			files = (
 				30D45CFB19F3E19900135746 /* FLPhotoMatchingController.xib in Resources */,
 				126C4CB319F103C000F18654 /* FLHotViewController.xib in Resources */,
+				12C9AADB19F4B3ED007BA823 /* ProgressHUD.bundle in Resources */,
 				126C4C5019EFB4F300F18654 /* LaunchScreen.xib in Resources */,
 				126C4CAE19F103AA00F18654 /* FLRecentViewController.xib in Resources */,
 				126C4C4D19EFB4F300F18654 /* Images.xcassets in Resources */,
@@ -299,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				126C4CBC19F1186000F18654 /* FLCameraViewController.m in Sources */,
+				12C9AADC19F4B3ED007BA823 /* ProgressHUD.m in Sources */,
 				30D45CFA19F3E19900135746 /* FLPhotoMatchingController.m in Sources */,
 				30CF80E619F2A9B800FDF633 /* Globals.c in Sources */,
 				126C4C4519EFB4F300F18654 /* AppDelegate.m in Sources */,
