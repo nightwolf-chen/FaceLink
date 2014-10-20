@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FLRecentViewController : UIViewController
+@interface FLRecentViewController : UIViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *baseScrollView;
+
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+
 
 @end

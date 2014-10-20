@@ -9,9 +9,9 @@
 #include "Globals.h"
 
 const int kHeadHight = 40;
-const int kControlPannelHight = 50;
+const int kControlPannelHight = 65;
 const double kMenuLeftMargin = 15;
 const double kMenuButtonWidth = 30;
 const double kCameraButtonHeight = kControlPannelHight;
-const double kCameraButtonWidth = kCameraButtonHeight * 1.5;
+const double kCameraButtonWidth = 75;
 

@@ -21,6 +21,9 @@ NS_ENUM(NSInteger, FLButtonTag){
     FLButtonMenu
 };
 
+static const CGFloat kVerticalGap = 2;
+static const CGFloat kHorizontalGap = 4;
+static const CGFloat kRoundedCornerRaduis = 5;
 
 @interface FLMainViewController ()
 
@@ -49,17 +52,19 @@ NS_ENUM(NSInteger, FLButtonTag){
 {
     self.statusbarContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, STATUSBAR_HIGHT)];
     
-    self.headViewContainer = [[UIView alloc] initWithFrame:CGRectMake(0, STATUSBAR_HIGHT,SCREEN_WIDTH, kHeadHight)];
+    CGFloat headViewWidth = SCREEN_WIDTH - 2*kHorizontalGap;
+    self.headViewContainer = [[UIView alloc] initWithFrame:CGRectMake(kHorizontalGap, STATUSBAR_HIGHT,headViewWidth, kHeadHight)];
+    self.headViewContainer.backgroundColor = CONTROL_BG_COLOR;
+    self.headViewContainer.layer.cornerRadius = kRoundedCornerRaduis;
+    self.headViewContainer.layer.masksToBounds = YES;
     
     CGFloat contentHight = SCREEN_HIGHT - STATUSBAR_HIGHT - kHeadHight - kControlPannelHight / 2.0f;
-    self.contentViewContainer = [[UIView alloc] initWithFrame:CGRectMake(0, kHeadHight + STATUSBAR_HIGHT,SCREEN_WIDTH,contentHight)];
+    self.contentViewContainer = [[UIView alloc] initWithFrame:CGRectMake(0, kHeadHight + STATUSBAR_HIGHT + kVerticalGap,SCREEN_WIDTH,contentHight)];
     
     self.controlPanelViewContainer = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_HIGHT-kControlPannelHight, SCREEN_WIDTH, kControlPannelHight)];
     
-    self.statusbarContainer.backgroundColor = [UIColor grayColor];
-    self.headViewContainer.backgroundColor = [UIColor redColor];
-    self.contentViewContainer.backgroundColor = [UIColor greenColor];
-    self.controlPanelViewContainer.opaque = NO;
+    self.statusbarContainer.backgroundColor = MAIN_BG_COLOR;
+    self.contentViewContainer.backgroundColor = CONTROL_BG_COLOR;
     
     [self.view addSubview:_statusbarContainer];
     [self.view addSubview:_headViewContainer];
@@ -69,12 +74,14 @@ NS_ENUM(NSInteger, FLButtonTag){
 
 - (void)p_setControlLPanelView
 {
-    CGFloat sideButtonHight = kControlPannelHight * 0.80f;
+    CGFloat sideButtonHight = kControlPannelHight;
     
     UIButton *cameraButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kCameraButtonWidth, kCameraButtonHeight)];
     cameraButton.center = CGPointMake(SCREEN_WIDTH / 2.0f, kControlPannelHight / 2.0f);
     cameraButton.tag = FLButtonCamare;
     [cameraButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [cameraButton setImage:[UIImage imageNamed:@"camera_btn"] forState:UIControlStateNormal];
+    [cameraButton setImage:[UIImage imageNamed:@"camera_btn"] forState:UIControlStateSelected];
     
     CGFloat recentButtonWidth = (SCREEN_WIDTH - kCameraButtonWidth) / 2.0f;
     UIButton *recentButton = [[UIButton alloc] initWithFrame:CGRectMake(0,
@@ -83,7 +90,9 @@ NS_ENUM(NSInteger, FLButtonTag){
                                                                         sideButtonHight)];
     recentButton.tag = FLButtonRecent;
     [recentButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [recentButton setTitle:@"最近看过" forState:UIControlStateNormal];
+//    [recentButton setTitle:@"最近看过" forState:UIControlStateNormal];
+    [recentButton setImage:[UIImage imageNamed:@"recent_connect"] forState:UIControlStateSelected];
+    [recentButton setImage:[UIImage imageNamed:@"recent_connect"] forState:UIControlStateNormal];
     
     UIButton *hotButton = [[UIButton alloc] initWithFrame:CGRectMake(kCameraButtonWidth+recentButtonWidth,
                                                                     kControlPannelHight - sideButtonHight,
@@ -91,11 +100,13 @@ NS_ENUM(NSInteger, FLButtonTag){
                                                                     sideButtonHight)];
     hotButton.tag = FLButtonHot;
     [hotButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [hotButton setTitle:@"有缘人" forState:UIControlStateNormal];
+//    [hotButton setTitle:@"有缘人" forState:UIControlStateNormal];
+    [hotButton setImage:[UIImage imageNamed:@"predestine"] forState:UIControlStateNormal];
+    [hotButton setImage:[UIImage imageNamed:@"predestine"] forState:UIControlStateSelected];
     
-    cameraButton.backgroundColor = [UIColor blackColor];
-    recentButton.backgroundColor = [UIColor grayColor];
-    hotButton.backgroundColor = [UIColor grayColor];
+    
+    recentButton.backgroundColor = RGB_UICOLOR(49, 144, 168);
+    hotButton.backgroundColor = RGB_UICOLOR(49, 144, 168);
     
     [_controlPanelViewContainer addSubview:cameraButton];
     [_controlPanelViewContainer addSubview:recentButton];
@@ -106,16 +117,21 @@ NS_ENUM(NSInteger, FLButtonTag){
 {
     UILabel *usernameLabel = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH*0.2, 0, SCREEN_WIDTH*0.6, kHeadHight)];
     usernameLabel.text = @"咔咔";
+    
     usernameLabel.textAlignment = NSTextAlignmentCenter;
-
+    
+//    UIImageView *kakaImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"kaka_word"]];
+//    kakaImageView.center = CGPointMake(_headViewContainer.frame.size.width/2.0f, _headViewContainer.frame.size.height/2.0f);
+//
     UIButton *menuButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - kMenuLeftMargin - kMenuButtonWidth,
                                                                      (kHeadHight - kMenuButtonWidth) / 2.0f,
                                                                      kMenuButtonWidth,
                                                                      kMenuButtonWidth)];
     menuButton.tag = FLButtonMenu;
-    menuButton.backgroundColor = [UIColor blackColor];
+    [menuButton setImage:[UIImage imageNamed:@"select_icon"] forState:UIControlStateNormal];
+    [menuButton setImage:[UIImage imageNamed:@"select_icon"] forState:UIControlStateSelected];
     [menuButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-
+    
     [_headViewContainer addSubview:menuButton];
     [_headViewContainer addSubview:usernameLabel];
 }
@@ -193,6 +209,8 @@ NS_ENUM(NSInteger, FLButtonTag){
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = MAIN_BG_COLOR;
     [self p_setupContainers];
     [self p_setControlLPanelView];
     [self p_setupHeadView];

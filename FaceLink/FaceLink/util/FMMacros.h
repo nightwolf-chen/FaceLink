@@ -25,4 +25,10 @@
 
 #define APP_DELEGATE ((FMAppDelegate *)[UIApplication sharedApplication].delegate)
 
+#define RGB_UICOLOR(r,g,b) [UIColor colorWithRed: r/255.f green: g/255.f blue:b/255.f alpha:1]
+
+#define MAIN_BG_COLOR RGB_UICOLOR(112.f,196.f,241.f)
+
+#define CONTROL_BG_COLOR RGB_UICOLOR(221.f,244.f,240.f)
+
 #endif
