@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FLChatViewController : UIViewController
+@interface FLChatViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic,copy) NSString *username;
 
 @end

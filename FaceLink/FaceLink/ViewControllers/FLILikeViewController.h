@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FLILikeViewController : UIViewController
+@interface FLILikeViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+
 
 @end

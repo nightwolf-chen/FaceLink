@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FLLikeMeViewController : UIViewController
+@interface FLLikeMeViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @end

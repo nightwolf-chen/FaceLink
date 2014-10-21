@@ -9,6 +9,10 @@
 #import "FLHotViewController.h"
 #import "FMMacros.h"
 #import "Globals.h"
+#import "FLControllerCoordinator.h"
+#import "FLLikeMeViewController.h"
+#import "FLILikeViewController.h"
+
 @interface FLHotViewController ()
 
 @end
@@ -36,6 +40,14 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     [_searchTextField resignFirstResponder];
+}
+- (IBAction)likeMeClicked:(id)sender {
+    FLLikeMeViewController *controller = [[FLLikeMeViewController alloc] initWithNibName:nil bundle:nil];
+    [[FLControllerCoordinator sharedInstance] navigateTo:controller];
+}
+- (IBAction)ILikeClicked:(id)sender {
+    FLILikeViewController *controller = [[FLILikeViewController alloc] initWithNibName:nil bundle:nil];
+    [[FLControllerCoordinator sharedInstance] navigateTo:controller];
 }
 
 @end

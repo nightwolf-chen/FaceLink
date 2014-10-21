@@ -220,6 +220,9 @@ static const CGFloat kCloseTemplateBtnIndicatorHeight = 5;
                                                                            _templateViewContainer.frame.size.height)];
     leftArrowButton.tag = FLCameraViewButtonLeftArrow;
     [leftArrowButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    UIImageView *leftArrowView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"go_back"]];
+    leftArrowView.center = CGPointMake(kSideArrowWidth/2.0f, _templateViewContainer.frame.size.height / 2.0f);
+    [leftArrowButton addSubview:leftArrowView];
     
     UIButton *rightArrowButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-kSideArrowWidth,
                                                                             0,
@@ -227,6 +230,9 @@ static const CGFloat kCloseTemplateBtnIndicatorHeight = 5;
                                                                             _templateViewContainer.frame.size.height)];
     rightArrowButton.tag = FLCameraViewButtonRightArrow;
     [rightArrowButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    UIImageView *rightArrowView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"go_forward"]];
+    rightArrowView.center = CGPointMake(kSideArrowWidth/2.0f, _templateViewContainer.frame.size.height / 2.0f);
+    [rightArrowButton addSubview:rightArrowView];
     
     leftArrowButton.backgroundColor = RGB_UICOLOR(229, 81, 115);
     rightArrowButton.backgroundColor = RGB_UICOLOR(229, 81, 115);

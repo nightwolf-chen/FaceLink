@@ -45,10 +45,16 @@
 		12C9AB6F19F5FF5F007BA823 /* pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB5F19F5FF5F007BA823 /* pic.png */; };
 		12C9AB7019F5FF5F007BA823 /* select_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB6019F5FF5F007BA823 /* select_up.png */; };
 		12C9AB7119F5FF5F007BA823 /* take_pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB6119F5FF5F007BA823 /* take_pic@2x.png */; };
-		12C9AB7319F5FF5F007BA823 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB6419F5FF5F007BA823 /* save.png */; };
+		12C9AB7319F5FF5F007BA823 /* save@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB6419F5FF5F007BA823 /* save@2x.png */; };
 		12C9AB7519F5FF5F007BA823 /* camera_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB6719F5FF5F007BA823 /* camera_active@2x.png */; };
 		12C9AB7619F5FF5F007BA823 /* hand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB6819F5FF5F007BA823 /* hand@2x.png */; };
 		12C9AB7719F5FF5F007BA823 /* success_word@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB6919F5FF5F007BA823 /* success_word@2x.png */; };
+		12C9AB7B19F63CEF007BA823 /* FLViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AB7919F63CEF007BA823 /* FLViewCell.m */; };
+		12C9AB7C19F63CEF007BA823 /* FLViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB7A19F63CEF007BA823 /* FLViewCell.xib */; };
+		12C9AB8019F6577A007BA823 /* FLChatOutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AB7E19F6577A007BA823 /* FLChatOutCell.m */; };
+		12C9AB8119F6577A007BA823 /* FLChatOutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB7F19F6577A007BA823 /* FLChatOutCell.xib */; };
+		12C9AB8519F657D7007BA823 /* FLChatInCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AB8319F657D7007BA823 /* FLChatInCell.m */; };
+		12C9AB8619F657D7007BA823 /* FLChatInCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB8419F657D7007BA823 /* FLChatInCell.xib */; };
 		30CF80E619F2A9B800FDF633 /* Globals.c in Sources */ = {isa = PBXBuildFile; fileRef = 30CF80E419F2A9B800FDF633 /* Globals.c */; };
 		30D45CF319F35CF700135746 /* FLSingleOptionMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D45CF219F35CF700135746 /* FLSingleOptionMenu.m */; };
 		30D45CF619F3706B00135746 /* FLAppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D45CF519F3706B00135746 /* FLAppSettings.m */; };
@@ -122,10 +128,19 @@
 		12C9AB5F19F5FF5F007BA823 /* pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic.png; sourceTree = "<group>"; };
 		12C9AB6019F5FF5F007BA823 /* select_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_up.png; sourceTree = "<group>"; };
 		12C9AB6119F5FF5F007BA823 /* take_pic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "take_pic@2x.png"; sourceTree = "<group>"; };
-		12C9AB6419F5FF5F007BA823 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
+		12C9AB6419F5FF5F007BA823 /* save@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save@2x.png"; sourceTree = "<group>"; };
 		12C9AB6719F5FF5F007BA823 /* camera_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera_active@2x.png"; sourceTree = "<group>"; };
 		12C9AB6819F5FF5F007BA823 /* hand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hand@2x.png"; sourceTree = "<group>"; };
 		12C9AB6919F5FF5F007BA823 /* success_word@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "success_word@2x.png"; sourceTree = "<group>"; };
+		12C9AB7819F63CEF007BA823 /* FLViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLViewCell.h; sourceTree = "<group>"; };
+		12C9AB7919F63CEF007BA823 /* FLViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLViewCell.m; sourceTree = "<group>"; };
+		12C9AB7A19F63CEF007BA823 /* FLViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLViewCell.xib; sourceTree = "<group>"; };
+		12C9AB7D19F6577A007BA823 /* FLChatOutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLChatOutCell.h; sourceTree = "<group>"; };
+		12C9AB7E19F6577A007BA823 /* FLChatOutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLChatOutCell.m; sourceTree = "<group>"; };
+		12C9AB7F19F6577A007BA823 /* FLChatOutCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLChatOutCell.xib; sourceTree = "<group>"; };
+		12C9AB8219F657D7007BA823 /* FLChatInCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLChatInCell.h; sourceTree = "<group>"; };
+		12C9AB8319F657D7007BA823 /* FLChatInCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLChatInCell.m; sourceTree = "<group>"; };
+		12C9AB8419F657D7007BA823 /* FLChatInCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLChatInCell.xib; sourceTree = "<group>"; };
 		30CF80E419F2A9B800FDF633 /* Globals.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Globals.c; sourceTree = "<group>"; };
 		30CF80E519F2A9B800FDF633 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		30D45CF119F35CF700135746 /* FLSingleOptionMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLSingleOptionMenu.h; sourceTree = "<group>"; };
@@ -313,6 +328,15 @@
 			children = (
 				12C9AB5619F50893007BA823 /* FLFaceView.h */,
 				12C9AB5719F50893007BA823 /* FLFaceView.m */,
+				12C9AB7819F63CEF007BA823 /* FLViewCell.h */,
+				12C9AB7919F63CEF007BA823 /* FLViewCell.m */,
+				12C9AB7A19F63CEF007BA823 /* FLViewCell.xib */,
+				12C9AB7D19F6577A007BA823 /* FLChatOutCell.h */,
+				12C9AB7E19F6577A007BA823 /* FLChatOutCell.m */,
+				12C9AB7F19F6577A007BA823 /* FLChatOutCell.xib */,
+				12C9AB8219F657D7007BA823 /* FLChatInCell.h */,
+				12C9AB8319F657D7007BA823 /* FLChatInCell.m */,
+				12C9AB8419F657D7007BA823 /* FLChatInCell.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -334,7 +358,7 @@
 		12C9AB6219F5FF5F007BA823 /* LikeCtr */ = {
 			isa = PBXGroup;
 			children = (
-				12C9AB6419F5FF5F007BA823 /* save.png */,
+				12C9AB6419F5FF5F007BA823 /* save@2x.png */,
 			);
 			path = LikeCtr;
 			sourceTree = "<group>";
@@ -431,6 +455,7 @@
 			files = (
 				30D45CFB19F3E19900135746 /* FLPhotoMatchingController.xib in Resources */,
 				12C9AB1A19F4CF83007BA823 /* FLILikeViewController.xib in Resources */,
+				12C9AB8119F6577A007BA823 /* FLChatOutCell.xib in Resources */,
 				12C9AB3C19F4F0DD007BA823 /* camera_btn@2x.png in Resources */,
 				126C4CB319F103C000F18654 /* FLHotViewController.xib in Resources */,
 				12C9AB7619F5FF5F007BA823 /* hand@2x.png in Resources */,
@@ -438,6 +463,7 @@
 				12C9AB3E19F4F0DD007BA823 /* pic_big@2x.png in Resources */,
 				12C9AADB19F4B3ED007BA823 /* ProgressHUD.bundle in Resources */,
 				12C9AB6F19F5FF5F007BA823 /* pic.png in Resources */,
+				12C9AB8619F657D7007BA823 /* FLChatInCell.xib in Resources */,
 				126C4C5019EFB4F300F18654 /* LaunchScreen.xib in Resources */,
 				126C4CAE19F103AA00F18654 /* FLRecentViewController.xib in Resources */,
 				126C4C4D19EFB4F300F18654 /* Images.xcassets in Resources */,
@@ -451,11 +477,12 @@
 				12C9AB4019F4F0DD007BA823 /* predestine@2x.png in Resources */,
 				12C9AB7719F5FF5F007BA823 /* success_word@2x.png in Resources */,
 				12C9AB6E19F5FF5F007BA823 /* go_forward@2x.png in Resources */,
+				12C9AB7C19F63CEF007BA823 /* FLViewCell.xib in Resources */,
 				12C9AB6C19F5FF5F007BA823 /* fill_light_word.png in Resources */,
 				12C9AB4219F4F0DD007BA823 /* search_icon@2x.png in Resources */,
 				12C9AB3F19F4F0DD007BA823 /* pic_small@2x.png in Resources */,
 				12C9AB3D19F4F0DD007BA823 /* kaka_word@2x.png in Resources */,
-				12C9AB7319F5FF5F007BA823 /* save.png in Resources */,
+				12C9AB7319F5FF5F007BA823 /* save@2x.png in Resources */,
 				12C9AB6D19F5FF5F007BA823 /* go_back@2x.png in Resources */,
 				12C9AB7519F5FF5F007BA823 /* camera_active@2x.png in Resources */,
 			);
@@ -477,12 +504,15 @@
 			files = (
 				126C4CBC19F1186000F18654 /* FLCameraViewController.m in Sources */,
 				12C9AADC19F4B3ED007BA823 /* ProgressHUD.m in Sources */,
+				12C9AB8019F6577A007BA823 /* FLChatOutCell.m in Sources */,
 				12C9AB1E19F4CF95007BA823 /* FLChatViewController.m in Sources */,
 				30D45CFA19F3E19900135746 /* FLPhotoMatchingController.m in Sources */,
 				30CF80E619F2A9B800FDF633 /* Globals.c in Sources */,
 				126C4C4519EFB4F300F18654 /* AppDelegate.m in Sources */,
 				126C4CA919F0FF7F00F18654 /* FLControllerCoordinator.m in Sources */,
 				126C4CA619F0FBE900F18654 /* KxMenu.m in Sources */,
+				12C9AB7B19F63CEF007BA823 /* FLViewCell.m in Sources */,
+				12C9AB8519F657D7007BA823 /* FLChatInCell.m in Sources */,
 				30D45CF619F3706B00135746 /* FLAppSettings.m in Sources */,
 				30D45CF319F35CF700135746 /* FLSingleOptionMenu.m in Sources */,
 				126C4C4219EFB4F300F18654 /* main.m in Sources */,

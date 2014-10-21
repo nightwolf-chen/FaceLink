@@ -57,6 +57,9 @@
                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="ILikeClicked:" destination="-1" eventType="touchUpInside" id="R6C-kQ-LwZ"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tE6-fp-6pR">
                                     <rect key="frame" x="13" y="207" width="89" height="30"/>
@@ -66,6 +69,9 @@
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="likeMeClicked:" destination="-1" eventType="touchUpInside" id="QPL-hk-5UC"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.43921568630000002" green="0.76862745099999996" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -82,7 +88,7 @@
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="0.43921568630000002" green="0.76862745099999996" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-            <point key="canvasLocation" x="-370" y="435"/>
+            <point key="canvasLocation" x="-393" y="25"/>
         </view>
     </objects>
     <resources>

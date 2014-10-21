@@ -174,6 +174,7 @@ NS_ENUM(NSInteger, FLButtonTag){
     firstItem.foreColor = [UIColor whiteColor];
     
     [KxMenu showMenuInView:self.view fromRect:targetView.frame menuItems:menuItems];
+    [KxMenu setTintColor:RGB_UICOLOR(228, 78, 108)];
 }
 
 - (void)buttonClick:(id)sender

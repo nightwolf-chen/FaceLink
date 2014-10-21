@@ -10,6 +10,8 @@
 #import "FMMacros.h"
 #import "Globals.h"
 #import "FLFaceView.h"
+#import "FLChatViewController.h"
+#import "FLControllerCoordinator.h"
 
 const double kPictureGapHorizontal = 10;
 const double kPictureGapVertical = 10;
@@ -151,6 +153,8 @@ const double kPictureGapVertical = 10;
     
     if (username) {
         //Start a chatview controller.
+        FLChatViewController *chatController = [[FLChatViewController alloc] initWithNibName:nil bundle:nil];
+        [[FLControllerCoordinator sharedInstance] navigateTo:chatController];
     }
 }
 - (void)scrollViewDidTap:(UIGestureRecognizer *)recognizer

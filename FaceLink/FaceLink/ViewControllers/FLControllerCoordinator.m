@@ -12,7 +12,7 @@
 
 @interface FLControllerCoordinator ()
 
-@property (nonatomic,strong) UIViewController *activeViewController;
+@property (nonatomic,assign) UIViewController *activeViewController;
 
 @end
 
@@ -37,5 +37,24 @@
     
     return self;
 }
+
+- (void)navigateTo:(UIViewController *)controller
+{
+    [self.mainViewController
+     presentViewController:controller
+     animated:YES
+     completion:^{}];
+    
+    
+    self.activeViewController = controller;
+}
+
+- (void)backToRoot
+{
+    if (_activeViewController && [_activeViewController respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]) {
+        [_activeViewController dismissViewControllerAnimated:YES completion:^{}];
+    }
+}
+
 
 @end

@@ -15,4 +15,7 @@
 
 + (instancetype)sharedInstance;
 
+- (void)navigateTo:(UIViewController *)controller;
+- (void)backToRoot;
+
 @end
