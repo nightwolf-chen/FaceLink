@@ -8,6 +8,8 @@
 
 #import "FLPhotoMatchingController.h"
 #import "ProgressHUD.h"
+#import "FMMacros.h"
+#import "Globals.h"
 
 static NSString *const kMatchingText = @"正在寻找同时拍照的人...";
 static NSString *const kMatchingSuccessText = @"恭喜你们成功互换了照片";
@@ -51,6 +53,10 @@ NS_ENUM(NSInteger, FLPhotoMatchingState){
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _headView.frame = CGRectMake(kHorizontalGap,kVerticalGap + STATUSBAR_HIGHT, SCREEN_WIDTH-2*kHorizontalGap, kHeadHight);
+    _headView.layer.cornerRadius = kRoundedCornerRaduis;
+    _headView.layer.masksToBounds = YES;
+    
     [self p_setupUserImageView];
     [self p_hideViews:YES];
 }
@@ -66,7 +72,6 @@ NS_ENUM(NSInteger, FLPhotoMatchingState){
 
 - (void)p_setupUserImageView
 {
-    _userImageView.contentMode = UIViewContentModeScaleAspectFit;
     _userImageView.userInteractionEnabled = YES;
     _userImageView.image = _useImage;
     
@@ -89,6 +94,7 @@ NS_ENUM(NSInteger, FLPhotoMatchingState){
 
 - (void)p_startMatching
 {
+    _userImageView.contentMode = UIViewContentModeScaleAspectFit;
     _userImageView.image = _useImage;
     
     self.matchingState = FLPhotoMatchingStateMatching;
@@ -108,6 +114,8 @@ NS_ENUM(NSInteger, FLPhotoMatchingState){
         } completion:^(BOOL finished){
             
             self.view.layer.transform = CATransform3DMakeRotation(M_PI,0.0,0.0,0.0);
+            _userImageView.contentMode = UIViewContentModeScaleToFill;
+            _userImageView.image = [UIImage imageNamed:@"pic_big"];
             [self p_hideViews:NO];
             _statusLabel.text = kMatchingSuccessText;
             self.matchingState = FLPhotoMatchingStateSuccess;

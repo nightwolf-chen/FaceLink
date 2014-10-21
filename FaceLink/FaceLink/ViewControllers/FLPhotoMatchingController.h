@@ -26,4 +26,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *complainButton;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *headView;
+
 @end

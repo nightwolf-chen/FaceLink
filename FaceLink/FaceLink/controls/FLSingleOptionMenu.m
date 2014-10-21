@@ -60,7 +60,7 @@ static const CGFloat kHorizontalMargin = 10;
 {
     
     UIView *baseView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMenuWidth, kMenuHeight)];
-    baseView.backgroundColor = [UIColor blackColor];
+    baseView.backgroundColor = RGBA_UICOLOR(237, 152, 169,0.6);
     
     UILabel *text = [[UILabel alloc] initWithFrame:CGRectMake(kHorizontalMargin,
                                                               (kMenuHeight-kLabelHeight)/2.0f,

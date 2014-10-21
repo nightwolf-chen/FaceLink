@@ -149,12 +149,14 @@ static const CGFloat kCloseTemplateBtnIndicatorHeight = 5;
 
 - (void)p_setupHeadView
 {
-    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(kHeadButtonsMarginHorizontal,
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(kHeadButtonsMarginHorizontal-8,
                                                                      (_headViewContainer.frame.size.height - kBackButtonHeight)/2.0f,
                                                                      kBackButtonWidth,
                                                                      kBackButtonHeight)];
     backButton.tag = FLCameraViewButtonBack;
-    backButton.backgroundColor = [UIColor blueColor];
+    [backButton setImage:[UIImage imageNamed:@"back_icon"] forState:UIControlStateNormal];
+    [backButton setImage:[UIImage imageNamed:@"back_icon"] forState:UIControlStateSelected];
+    backButton.contentMode = UIViewContentModeCenter;
     [backButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *menuButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-kHeadButtonsMarginHorizontal-kMoreMenuButtonWidth,
