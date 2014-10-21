@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FLChatViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface FLChatViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 
 @property (nonatomic,copy) NSString *username;
+@property (weak, nonatomic) IBOutlet UIView *headView;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+
+@property (weak, nonatomic) IBOutlet UIView *textPanelView;
 
 @end

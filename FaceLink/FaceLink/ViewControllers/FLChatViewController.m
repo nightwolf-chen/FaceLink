@@ -11,21 +11,130 @@
 #import "FLChatInCell.h"
 #import "FLChatOutCell.h"
 #import "FLMessageModel.h"
+#import "Globals.h"
+
+typedef enum FLViewKeyboardState{
+    FLViewKeyboardStateShowing,
+    FLViewKeyboardStateHidden
+}FLViewKeyboardState;
+
 
 @interface FLChatViewController ()
 
-@property (nonatomic,strong) NSArray *msgModels;
+@property (nonatomic,strong) NSMutableArray *msgModels;
 @property (weak, nonatomic) IBOutlet UITableView *chatTableView;
+@property (assign ,nonatomic) FLViewKeyboardState keyboardState;
+
+@property (assign,nonatomic) CGRect textPanelOriginRect;
+@property (assign,nonatomic) CGRect tableViewFrameRect;
 
 @end
 
 @implementation FLChatViewController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(keyboradWillShow:)
+                                                     name:UIKeyboardWillShowNotification
+                                                   object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(keyboardWillHide:)
+                                                     name:UIKeyboardWillHideNotification
+                                                   object:nil];
+        
+        _keyboardState = FLViewKeyboardStateHidden;
+    }
+    
+    return self;
+}
+
+- (void)keyboradWillShow:(NSNotification *)notification
+{
+    NSDictionary *userInfo = notification.userInfo;
+    CGRect kFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    [UIView animateWithDuration:0.2
+                     animations:^{
+                         CGRect newPanelFrame = _textPanelOriginRect;
+                         newPanelFrame.origin.y -= kFrame.size.height;
+                         _textPanelView.frame = newPanelFrame;
+                         
+                         CGRect newTableFrame = _tableViewFrameRect;
+                         newTableFrame.size.height -= kFrame.size.height;
+                         _chatTableView.frame = newTableFrame;
+                         
+                     }
+                     completion:^(BOOL finished){
+                         
+                         self.keyboardState = FLViewKeyboardStateShowing;
+                     }];
+    
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    [UIView animateWithDuration:0.2
+                     animations:^{
+                         _textPanelView.frame = _textPanelOriginRect;
+                         _chatTableView.frame = _tableViewFrameRect;
+                     }
+                     completion:^(BOOL finished){
+                         
+                         self.keyboardState = FLViewKeyboardStateHidden;
+                     }];
+
+}
+
+- (void)scrollChatTableToBottom:(BOOL)animated
+{
+    CGPoint offset = CGPointMake(0, _chatTableView.contentSize.height - _chatTableView.frame.size.height);
+    [_chatTableView setContentOffset:offset animated:animated];
+}
+
+- (void)appendMessage:(FLMessageModel *)msgModel
+{
+    [_msgModels addObject:msgModel];
+    [_chatTableView reloadData];
+    [self scrollChatTableToBottom:YES];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.textPanelOriginRect = _textPanelView.frame;
+    self.tableViewFrameRect = _chatTableView.frame;
+    
     [_chatTableView reloadData];
+    
+    _headView.layer.cornerRadius = kRoundedCornerRaduis;
+    _headView.layer.masksToBounds = YES;
+    
+    
+    
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self scrollChatTableToBottom:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [_textField resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,7 +168,7 @@
     [_chatTableView reloadData];
     
 }
-#pragma mark - UITableViewDelegate 
+#pragma mark - UITableViewDelegate  UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -114,10 +223,28 @@
 }
 
 
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (_textField.isFirstResponder) {
+        [_textField resignFirstResponder];
+    }
+    return YES;
+}
 
 
-#pragma mark - UITableViewDataSource
-
-
+- (IBAction)sendButtonClicked:(id)sender {
+    
+    FLMessageModel *model = [[FLMessageModel alloc] init];
+    model.username = _username;
+    model.msgType = FLMessageTypeOut;
+    model.content = _textField.text;
+    
+    [self appendMessage:model];
+    
+    _textField.text = @"";
+    [_textField resignFirstResponder];
+}
 
 @end
