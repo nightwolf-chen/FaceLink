@@ -12,6 +12,7 @@
 #import "FLChatOutCell.h"
 #import "FLMessageModel.h"
 #import "Globals.h"
+#import "ProgressHUD.h"
 
 typedef enum FLViewKeyboardState{
     FLViewKeyboardStateShowing,
@@ -67,6 +68,10 @@ typedef enum FLViewKeyboardState{
                          newTableFrame.size.height -= kFrame.size.height;
                          _chatTableView.frame = newTableFrame;
                          
+                         
+                         CGPoint offset = CGPointMake(0, _chatTableView.contentSize.height - _chatTableView.frame.size.height);
+                         _chatTableView.contentOffset = offset;
+                         
                      }
                      completion:^(BOOL finished){
                          
@@ -85,6 +90,8 @@ typedef enum FLViewKeyboardState{
                      completion:^(BOOL finished){
                          
                          self.keyboardState = FLViewKeyboardStateHidden;
+                         CGPoint offset = CGPointMake(0, _chatTableView.contentSize.height - _chatTableView.frame.size.height);
+                         _chatTableView.contentOffset = offset;
                      }];
 
 }
@@ -236,6 +243,11 @@ typedef enum FLViewKeyboardState{
 
 - (IBAction)sendButtonClicked:(id)sender {
     
+    if (_textField.text == nil || [_textField.text isEqualToString:@""]) {
+        [ProgressHUD showError:@"内容为空"];
+        return;
+    }
+    
     FLMessageModel *model = [[FLMessageModel alloc] init];
     model.username = _username;
     model.msgType = FLMessageTypeOut;
@@ -244,7 +256,6 @@ typedef enum FLViewKeyboardState{
     [self appendMessage:model];
     
     _textField.text = @"";
-    [_textField resignFirstResponder];
 }
 
 @end
