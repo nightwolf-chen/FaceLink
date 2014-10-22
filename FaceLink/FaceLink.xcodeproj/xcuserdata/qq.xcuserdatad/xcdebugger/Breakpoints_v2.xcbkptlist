@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FaceLink/ViewControllers/FLChatViewController.m"
-            timestampString = "435587096.133968"
+            timestampString = "435640925.778243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-keyboardWillHide:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FaceLink/ViewControllers/FLChatViewController.m"
-            timestampString = "435587096.133968"
+            timestampString = "435640925.778243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "-setUsername:"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "-keyboradWillShow:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FaceLink/ViewControllers/FLChatViewController.m"
-            timestampString = "435587096.133968"
+            timestampString = "435640925.778243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "-tableView:numberOfRowsInSection:"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-keyboradWillShow:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

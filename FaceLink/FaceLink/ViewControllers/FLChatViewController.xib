@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A386a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FLChatViewController">
             <connections>
+                <outlet property="baseView" destination="i5M-Pr-FkT" id="fid-Hx-pRk"/>
                 <outlet property="chatTableView" destination="yJ7-ER-0b2" id="mIT-ly-stO"/>
                 <outlet property="headView" destination="rba-hv-YL6" id="B80-se-Dff"/>
+                <outlet property="nameLabel" destination="Hef-3f-adM" id="qHY-Lo-5Nd"/>
                 <outlet property="textField" destination="o88-Fo-Ek9" id="Cab-jh-bi0"/>
                 <outlet property="textPanelView" destination="pCj-fU-mmK" id="8ch-yv-mk7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -19,9 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yJ7-ER-0b2">
-                    <rect key="frame" x="0.0" y="60" width="320" height="458"/>
+                    <rect key="frame" x="0.0" y="70" width="320" height="448"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="TbY-vo-GcQ"/>
                         <outlet property="delegate" destination="-1" id="BtH-V5-CXw"/>
@@ -49,16 +52,19 @@
                                 <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="menuButtonClicked:" destination="-1" eventType="touchUpInside" id="HGn-zX-Ida"/>
+                            </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hef-3f-adM">
-                            <rect key="frame" x="127" y="9" width="42" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hef-3f-adM">
+                            <rect key="frame" x="135" y="9" width="42" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.86666666670000003" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.86666666670000003" green="0.95686274510000002" blue="0.94509803920000002" alpha="0.83999999999999997" colorSpace="calibratedRGB"/>
                     <color key="tintColor" red="0.85507417929999996" green="0.85507417929999996" blue="0.85507417929999996" alpha="0.16" colorSpace="calibratedRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="pCj-fU-mmK">
@@ -102,11 +108,11 @@
                             </connections>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.43921568630000002" green="0.76862745099999996" blue="0.94509803920000002" alpha="0.64000000000000001" colorSpace="calibratedRGB"/>
                     <color key="tintColor" red="0.85507417929999996" green="0.85507417929999996" blue="0.85507417929999996" alpha="0.16" colorSpace="calibratedRGB"/>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.43921568630000002" green="0.76862745099999996" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
             <point key="canvasLocation" x="256" y="89"/>
         </view>
     </objects>

@@ -13,6 +13,8 @@
 #import "FLMessageModel.h"
 #import "Globals.h"
 #import "ProgressHUD.h"
+#import "FMMacros.h"
+#import "KxMenu.h"
 
 typedef enum FLViewKeyboardState{
     FLViewKeyboardStateShowing,
@@ -125,9 +127,23 @@ typedef enum FLViewKeyboardState{
     _headView.layer.cornerRadius = kRoundedCornerRaduis;
     _headView.layer.masksToBounds = YES;
     
+    UIView *tableBgView = [[UIView alloc] initWithFrame:self.view.bounds];
+    UIImageView *bgImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pic_big"]];
+    bgImgView.frame = tableBgView.bounds;
+    bgImgView.contentMode = UIViewContentModeScaleToFill;
+    [tableBgView addSubview:bgImgView];
     
+    UIView *mastView = [[UIView alloc] initWithFrame:self.view.bounds];
+    mastView.backgroundColor = RGBA_UICOLOR(96,146,161,0.5);
+    [tableBgView addSubview:mastView];
     
-    // Do any additional setup after loading the view from its nib.
+    [self.view insertSubview:tableBgView belowSubview:_headView];
+    [self.view bringSubviewToFront:_chatTableView];
+    _chatTableView.backgroundColor = [UIColor clearColor];
+    _chatTableView.backgroundView.backgroundColor = [UIColor clearColor];
+    
+    _nameLabel.text = _username;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -173,8 +189,10 @@ typedef enum FLViewKeyboardState{
     self.msgModels = tmpArray;
     
     [_chatTableView reloadData];
-    
+
+    _nameLabel.text = _username;
 }
+
 #pragma mark - UITableViewDelegate  UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -219,12 +237,18 @@ typedef enum FLViewKeyboardState{
             FLChatInCell *inCell = (FLChatInCell *)cell;
             inCell.contentTextView.text = model.content;
             inCell.nameLabel.text = model.username;
+            inCell.headImageView.layer.borderColor = [UIColor whiteColor].CGColor;
+            inCell.headImageView.layer.borderWidth = 2;
         }else{
             FLChatOutCell *outCell = (FLChatOutCell *)cell;
             outCell.contentTextView.text = model.content;
+            outCell.headImageView.layer.borderColor = [UIColor whiteColor].CGColor;
+            outCell.headImageView.layer.borderWidth = 2;
         }
         
     }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
@@ -240,6 +264,14 @@ typedef enum FLViewKeyboardState{
     return YES;
 }
 
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (self.keyboardState ==  FLViewKeyboardStateShowing && [_textField isFirstResponder]) {
+        [_textField resignFirstResponder];
+    }
+}
 
 - (IBAction)sendButtonClicked:(id)sender {
     
@@ -257,5 +289,31 @@ typedef enum FLViewKeyboardState{
     
     _textField.text = @"";
 }
+- (IBAction)menuButtonClicked:(id)sender {
+    [self p_showDropdownMenu:((UIView *)sender)];
+}
 
+- (KxMenuItem *)p_itemWithName:(NSString *)name
+{
+    return [KxMenuItem menuItem:name
+                          image:nil
+                         target:nil
+                         action:nil];
+}
+
+- (void)p_showDropdownMenu:(UIView *)targetView
+{
+    NSArray *menuItems = @[
+                           [self p_itemWithName:@"备注"],
+                           [self p_itemWithName:@"详细资料"],
+                           [self p_itemWithName:@"删除此人"],
+                           [self p_itemWithName:@"拉黑"],
+                           ];
+    
+    KxMenuItem *firstItem = menuItems[0];
+    firstItem.foreColor = [UIColor whiteColor];
+    
+    [KxMenu showMenuInView:self.view fromRect:targetView.frame menuItems:menuItems];
+    [KxMenu setTintColor:RGB_UICOLOR(228, 78, 108)];
+}
 @end
