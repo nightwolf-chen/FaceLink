@@ -16,5 +16,5 @@ typedef enum FLMainViewSubController{
 
 @interface FLMainViewController : UIViewController
 
-- (void)activateController:(FLMainViewSubController)subController;
+- (void)activateController:(FLMainViewSubController)subController activater:(FLMainViewSubController)caller;
 @end

@@ -35,6 +35,8 @@ NS_ENUM(NSInteger, FLButtonTag){
 @property (nonatomic,strong) UIViewController *hotController;
 @property (nonatomic,strong) UIViewController *searchController;
 
+@property (nonatomic,assign) UIViewController *activeController;
+
 @end
 
 @implementation FLMainViewController
@@ -152,14 +154,18 @@ NS_ENUM(NSInteger, FLButtonTag){
     if (viewController.view.superview) {
         [viewController.view removeFromSuperview];
     }
+    
+    [_activeController.view removeFromSuperview];
+    
     viewController.view.frame = _contentViewContainer.bounds;
     [_contentViewContainer addSubview:viewController.view];
     [_contentViewContainer bringSubviewToFront:_controlPanelViewContainer];
     [_contentViewContainer bringSubviewToFront:_headViewContainer];
     [_contentViewContainer bringSubviewToFront:_statusbarContainer];
+    self.activeController = viewController;
 }
 
-- (void)activateController:(FLMainViewSubController)subController
+- (void)activateController:(FLMainViewSubController)subController activater:(FLMainViewSubController)caller
 {
     switch (subController) {
         case FLMainViewSubControllerHot:
@@ -169,7 +175,10 @@ NS_ENUM(NSInteger, FLButtonTag){
             [self p_activateViewController:_recentController];
             break;
         case FLMainViewSubControllerSearch:
+        {
+            ((FLSearchViewController *)_searchController).searchCaller = caller;
             [self p_activateViewController:_searchController];
+        }
             break;
     }
 }

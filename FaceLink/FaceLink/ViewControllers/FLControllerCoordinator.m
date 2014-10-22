@@ -56,11 +56,11 @@
     }
 }
 
-- (void)navigateWithinMain:(FLMainViewSubController)subController
+- (void)navigateWithinMain:(FLMainViewSubController)subController caller:(FLMainViewSubController)caller
 {
     FLMainViewController *main = (FLMainViewController *)_mainViewController;
     
-    [main activateController:subController];
+    [main activateController:subController activater:caller];
 }
 
 

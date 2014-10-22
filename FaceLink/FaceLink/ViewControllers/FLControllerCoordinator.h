@@ -19,6 +19,6 @@
 - (void)navigateTo:(UIViewController *)controller;
 - (void)backToRoot;
 
-- (void)navigateWithinMain:(FLMainViewSubController)subController;
+- (void)navigateWithinMain:(FLMainViewSubController)subController caller:(FLMainViewSubController)caller;
 
 @end

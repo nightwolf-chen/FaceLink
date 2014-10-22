@@ -49,5 +49,10 @@
     FLILikeViewController *controller = [[FLILikeViewController alloc] initWithNibName:nil bundle:nil];
     [[FLControllerCoordinator sharedInstance] navigateTo:controller];
 }
+- (IBAction)searchButtonClicked:(id)sender {
+    [[FLControllerCoordinator sharedInstance] navigateWithinMain:FLMainViewSubControllerSearch caller:FLMainViewSubControllerHot];
+}
+
+
 
 @end

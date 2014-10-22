@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FLMainViewController.h"
 
-@interface FLSearchViewController : UIViewController
+@interface FLSearchViewController : UIViewController<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIView *headView;
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+@property (nonatomic,assign) FLMainViewSubController searchCaller;
+@property (weak, nonatomic) IBOutlet UITableView *searchTableView;
 
 @end

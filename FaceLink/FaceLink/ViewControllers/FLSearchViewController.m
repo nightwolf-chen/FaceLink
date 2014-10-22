@@ -8,8 +8,13 @@
 
 #import "FLSearchViewController.h"
 #import "FLViewCell.h"
+#import "Globals.h"
+#import "FLControllerCoordinator.h"
 
 @interface FLSearchViewController ()
+
+@property (nonatomic,strong) NSArray *users;
+@property (nonatomic,strong) NSArray *originUsers;
 
 @end
 
@@ -17,7 +22,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    _headView.layer.cornerRadius = kRoundedCornerRaduis;
+    _headView.layer.masksToBounds = YES;
+    
+    [self contructTestData];
+    
+    [_searchTableView reloadData];
+}
+
+- (void)contructTestData
+{
+    NSArray *tmp = @[@"翠翠",@"小花",@"翠花",@"阿花",@"阿美",@"阿龙",@"阿肯",@"阿鬼",@"阿里"];
+    self.originUsers = [tmp copy];
+    self.users = [tmp copy];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,6 +43,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [_searchTextField becomeFirstResponder];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [_searchTextField resignFirstResponder];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [_searchTableView reloadData];
+}
 
 #pragma mark - UITableViewDataSource
 
@@ -48,6 +82,8 @@
         cell = [nib objectAtIndex:0];
     }
     
+    cell.nameLabel.text = _users[indexPath.row];
+    
     return cell;
 }
 
@@ -60,9 +96,63 @@
     
     return cell.frame.size.height;
 }
+- (IBAction)cancleSearchClicked:(id)sender {
+    [_searchTextField resignFirstResponder];
+    _searchTextField.text = @"";
+    
+    [[FLControllerCoordinator sharedInstance] navigateWithinMain:_searchCaller caller:FLMainViewSubControllerSearch];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return _users.count;
 }
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if ([_searchTextField isFirstResponder]) {
+        [_searchTextField resignFirstResponder];
+    }
+    
+    return YES;
+}
+
+- (IBAction)textChanged:(id)sender {
+    
+    NSString *key = ((UITextField *)sender).text;
+    
+    if (key != nil && ![key isEqualToString:@""]) {
+        [self showSearchResults:key];
+    }
+    
+}
+
+- (void)showSearchResults:(NSString *)key
+{
+    self.users = [self searchForKey:key];
+    [_searchTableView reloadData];
+}
+
+- (NSArray *)searchForKey:(NSString *)key
+{
+    NSMutableArray *tmp = [NSMutableArray array];
+    
+    for(NSString *str in _originUsers){
+        if ([str containsString:key]) {
+            [tmp addObject:str];
+        }
+    }
+    
+    return tmp;
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [_searchTextField resignFirstResponder];
+}
+
 @end

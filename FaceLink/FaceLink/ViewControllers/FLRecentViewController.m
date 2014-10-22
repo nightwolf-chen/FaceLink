@@ -185,7 +185,7 @@ const double kPictureGapVertical = 10;
 
 
 - (IBAction)searchButtonClicked:(id)sender {
-    [[FLControllerCoordinator sharedInstance] navigateWithinMain:FLMainViewSubControllerSearch];
+    [[FLControllerCoordinator sharedInstance] navigateWithinMain:FLMainViewSubControllerSearch caller:FLMainViewSubControllerRecent];
 }
 
 #pragma mark - UIScrollViewDelegate
