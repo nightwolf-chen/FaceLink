@@ -63,6 +63,14 @@
 		30D45CFB19F3E19900135746 /* FLPhotoMatchingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D45CF919F3E19900135746 /* FLPhotoMatchingController.xib */; };
 		30E73F3D19F7708D009FF850 /* FLSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E73F3B19F7708D009FF850 /* FLSearchViewController.m */; };
 		30E73F3E19F7708D009FF850 /* FLSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F3C19F7708D009FF850 /* FLSearchViewController.xib */; };
+		30E73F4719F7E929009FF850 /* confirm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4019F7E929009FF850 /* confirm@2x.png */; };
+		30E73F4819F7E929009FF850 /* more_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4119F7E929009FF850 /* more_icon@2x.png */; };
+		30E73F4919F7E929009FF850 /* new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4219F7E929009FF850 /* new@2x.png */; };
+		30E73F4A19F7E929009FF850 /* photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4319F7E929009FF850 /* photo@2x.png */; };
+		30E73F4B19F7E929009FF850 /* red_point@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4419F7E929009FF850 /* red_point@2x.png */; };
+		30E73F4C19F7E929009FF850 /* red_point_one@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4519F7E929009FF850 /* red_point_one@2x.png */; };
+		30E73F4D19F7E929009FF850 /* smile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4619F7E929009FF850 /* smile@2x.png */; };
+		30E73F4F19F7E984009FF850 /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4E19F7E984009FF850 /* delete@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +166,14 @@
 		30E73F3A19F7708D009FF850 /* FLSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLSearchViewController.h; sourceTree = "<group>"; };
 		30E73F3B19F7708D009FF850 /* FLSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLSearchViewController.m; sourceTree = "<group>"; };
 		30E73F3C19F7708D009FF850 /* FLSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLSearchViewController.xib; sourceTree = "<group>"; };
+		30E73F4019F7E929009FF850 /* confirm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "confirm@2x.png"; sourceTree = "<group>"; };
+		30E73F4119F7E929009FF850 /* more_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_icon@2x.png"; sourceTree = "<group>"; };
+		30E73F4219F7E929009FF850 /* new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new@2x.png"; sourceTree = "<group>"; };
+		30E73F4319F7E929009FF850 /* photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo@2x.png"; sourceTree = "<group>"; };
+		30E73F4419F7E929009FF850 /* red_point@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_point@2x.png"; sourceTree = "<group>"; };
+		30E73F4519F7E929009FF850 /* red_point_one@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_point_one@2x.png"; sourceTree = "<group>"; };
+		30E73F4619F7E929009FF850 /* smile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smile@2x.png"; sourceTree = "<group>"; };
+		30E73F4E19F7E984009FF850 /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +327,7 @@
 		12C9AB3119F4F0DD007BA823 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				30E73F3F19F7E929009FF850 /* chat */,
 				12C9AB5919F5FF5F007BA823 /* CameraCtr */,
 				12C9AB6219F5FF5F007BA823 /* LikeCtr */,
 				12C9AB6519F5FF5F007BA823 /* MatchingCtr */,
@@ -322,6 +339,7 @@
 		12C9AB3219F4F0DD007BA823 /* ControllerMain */ = {
 			isa = PBXGroup;
 			children = (
+				30E73F4E19F7E984009FF850 /* delete@2x.png */,
 				12C9AB3319F4F0DD007BA823 /* camera_btn@2x.png */,
 				12C9AB3419F4F0DD007BA823 /* kaka_word@2x.png */,
 				12C9AB3519F4F0DD007BA823 /* pic_big@2x.png */,
@@ -392,6 +410,20 @@
 				12C9AB9919F6820A007BA823 /* FLMessageModel.m */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		30E73F3F19F7E929009FF850 /* chat */ = {
+			isa = PBXGroup;
+			children = (
+				30E73F4019F7E929009FF850 /* confirm@2x.png */,
+				30E73F4119F7E929009FF850 /* more_icon@2x.png */,
+				30E73F4219F7E929009FF850 /* new@2x.png */,
+				30E73F4319F7E929009FF850 /* photo@2x.png */,
+				30E73F4419F7E929009FF850 /* red_point@2x.png */,
+				30E73F4519F7E929009FF850 /* red_point_one@2x.png */,
+				30E73F4619F7E929009FF850 /* smile@2x.png */,
+			);
+			path = chat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,6 +517,8 @@
 				12C9AADB19F4B3ED007BA823 /* ProgressHUD.bundle in Resources */,
 				12C9AB6F19F5FF5F007BA823 /* pic.png in Resources */,
 				12C9AB8619F657D7007BA823 /* FLChatInCell.xib in Resources */,
+				30E73F4B19F7E929009FF850 /* red_point@2x.png in Resources */,
+				30E73F4819F7E929009FF850 /* more_icon@2x.png in Resources */,
 				126C4C5019EFB4F300F18654 /* LaunchScreen.xib in Resources */,
 				126C4CAE19F103AA00F18654 /* FLRecentViewController.xib in Resources */,
 				126C4C4D19EFB4F300F18654 /* Images.xcassets in Resources */,
@@ -492,12 +526,15 @@
 				12C9AB6B19F5FF5F007BA823 /* back_icon@2x.png in Resources */,
 				12C9AB1F19F4CF95007BA823 /* FLChatViewController.xib in Resources */,
 				12C9AB7019F5FF5F007BA823 /* select_up.png in Resources */,
+				30E73F4F19F7E984009FF850 /* delete@2x.png in Resources */,
 				12C9AB4119F4F0DD007BA823 /* recent_connect@2x.png in Resources */,
+				30E73F4C19F7E929009FF850 /* red_point_one@2x.png in Resources */,
 				12C9AB1519F4CF6B007BA823 /* FLLikeMeViewController.xib in Resources */,
 				12C9AB4419F4F0DD007BA823 /* select_icon@2x.png in Resources */,
 				12C9AB4019F4F0DD007BA823 /* predestine@2x.png in Resources */,
 				12C9AB7719F5FF5F007BA823 /* success_word@2x.png in Resources */,
 				12C9AB6E19F5FF5F007BA823 /* go_forward@2x.png in Resources */,
+				30E73F4D19F7E929009FF850 /* smile@2x.png in Resources */,
 				12C9AB7C19F63CEF007BA823 /* FLViewCell.xib in Resources */,
 				30E73F3E19F7708D009FF850 /* FLSearchViewController.xib in Resources */,
 				12C9AB6C19F5FF5F007BA823 /* fill_light_word.png in Resources */,
@@ -505,7 +542,10 @@
 				12C9AB3F19F4F0DD007BA823 /* pic_small@2x.png in Resources */,
 				12C9AB3D19F4F0DD007BA823 /* kaka_word@2x.png in Resources */,
 				12C9AB7319F5FF5F007BA823 /* save@2x.png in Resources */,
+				30E73F4719F7E929009FF850 /* confirm@2x.png in Resources */,
+				30E73F4919F7E929009FF850 /* new@2x.png in Resources */,
 				12C9AB6D19F5FF5F007BA823 /* go_back@2x.png in Resources */,
+				30E73F4A19F7E929009FF850 /* photo@2x.png in Resources */,
 				12C9AB7519F5FF5F007BA823 /* camera_active@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
