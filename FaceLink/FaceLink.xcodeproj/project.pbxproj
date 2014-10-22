@@ -71,6 +71,7 @@
 		30E73F4C19F7E929009FF850 /* red_point_one@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4519F7E929009FF850 /* red_point_one@2x.png */; };
 		30E73F4D19F7E929009FF850 /* smile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4619F7E929009FF850 /* smile@2x.png */; };
 		30E73F4F19F7E984009FF850 /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4E19F7E984009FF850 /* delete@2x.png */; };
+		30E73F5119F7EC38009FF850 /* voice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F5019F7EC38009FF850 /* voice@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +175,7 @@
 		30E73F4519F7E929009FF850 /* red_point_one@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_point_one@2x.png"; sourceTree = "<group>"; };
 		30E73F4619F7E929009FF850 /* smile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smile@2x.png"; sourceTree = "<group>"; };
 		30E73F4E19F7E984009FF850 /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
+		30E73F5019F7EC38009FF850 /* voice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "voice@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -415,6 +417,7 @@
 		30E73F3F19F7E929009FF850 /* chat */ = {
 			isa = PBXGroup;
 			children = (
+				30E73F5019F7EC38009FF850 /* voice@2x.png */,
 				30E73F4019F7E929009FF850 /* confirm@2x.png */,
 				30E73F4119F7E929009FF850 /* more_icon@2x.png */,
 				30E73F4219F7E929009FF850 /* new@2x.png */,
@@ -513,6 +516,7 @@
 				126C4CB319F103C000F18654 /* FLHotViewController.xib in Resources */,
 				12C9AB7619F5FF5F007BA823 /* hand@2x.png in Resources */,
 				12C9AB7119F5FF5F007BA823 /* take_pic@2x.png in Resources */,
+				30E73F5119F7EC38009FF850 /* voice@2x.png in Resources */,
 				12C9AB3E19F4F0DD007BA823 /* pic_big@2x.png in Resources */,
 				12C9AADB19F4B3ED007BA823 /* ProgressHUD.bundle in Resources */,
 				12C9AB6F19F5FF5F007BA823 /* pic.png in Resources */,
