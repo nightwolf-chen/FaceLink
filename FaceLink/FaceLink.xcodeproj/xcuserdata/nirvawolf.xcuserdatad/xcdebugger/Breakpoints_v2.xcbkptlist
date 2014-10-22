@@ -13,25 +13,25 @@
             timestampString = "435632490.881122"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-keyboradWillShow:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FaceLink/ViewControllers/FLChatViewController.m"
-            timestampString = "435632490.881122"
+            filePath = "FaceLink/ViewControllers/FLMainViewController.m"
+            timestampString = "435648269.868451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "-keyboradWillShow:"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "-p_activateViewController:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -13,6 +13,7 @@
 #import "FLHotViewController.h"
 #import "FLCameraViewController.h"
 #import "Globals.h"
+#import "FLSearchViewController.h"
 
 NS_ENUM(NSInteger, FLButtonTag){
     FLButtonCamare,
@@ -32,6 +33,7 @@ NS_ENUM(NSInteger, FLButtonTag){
 
 @property (nonatomic,strong) UIViewController *recentController;
 @property (nonatomic,strong) UIViewController *hotController;
+@property (nonatomic,strong) UIViewController *searchController;
 
 @end
 
@@ -136,21 +138,40 @@ NS_ENUM(NSInteger, FLButtonTag){
 {
     self.recentController = [[FLRecentViewController alloc] initWithNibName:nil bundle:nil];
     self.hotController = [[FLHotViewController alloc] initWithNibName:nil bundle:nil];
+    self.searchController = [[FLSearchViewController alloc] initWithNibName:nil bundle:nil];
     
     [self addChildViewController:_recentController];
     [self addChildViewController:_hotController];
+    [self addChildViewController:_searchController];
     
     [self p_activateViewController:_recentController];
 }
 
 - (void)p_activateViewController:(UIViewController *)viewController
 {
-    [viewController.view removeFromSuperview];
+    if (viewController.view.superview) {
+        [viewController.view removeFromSuperview];
+    }
     viewController.view.frame = _contentViewContainer.bounds;
     [_contentViewContainer addSubview:viewController.view];
     [_contentViewContainer bringSubviewToFront:_controlPanelViewContainer];
     [_contentViewContainer bringSubviewToFront:_headViewContainer];
     [_contentViewContainer bringSubviewToFront:_statusbarContainer];
+}
+
+- (void)activateController:(FLMainViewSubController)subController
+{
+    switch (subController) {
+        case FLMainViewSubControllerHot:
+            [self p_activateViewController:_hotController];
+            break;
+        case FLMainViewSubControllerRecent:
+            [self p_activateViewController:_recentController];
+            break;
+        case FLMainViewSubControllerSearch:
+            [self p_activateViewController:_searchController];
+            break;
+    }
 }
 
 - (KxMenuItem *)p_itemWithName:(NSString *)name

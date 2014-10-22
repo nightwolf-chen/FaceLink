@@ -12,6 +12,7 @@
 #import "FLFaceView.h"
 #import "FLChatViewController.h"
 #import "FLControllerCoordinator.h"
+#include "FLMainViewController.h"
 
 const double kPictureGapHorizontal = 10;
 const double kPictureGapVertical = 10;
@@ -184,7 +185,7 @@ const double kPictureGapVertical = 10;
 
 
 - (IBAction)searchButtonClicked:(id)sender {
-    [_searchTextField becomeFirstResponder];
+    [[FLControllerCoordinator sharedInstance] navigateWithinMain:FLMainViewSubControllerSearch];
 }
 
 #pragma mark - UIScrollViewDelegate

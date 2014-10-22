@@ -61,6 +61,8 @@
 		30D45CF619F3706B00135746 /* FLAppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D45CF519F3706B00135746 /* FLAppSettings.m */; };
 		30D45CFA19F3E19900135746 /* FLPhotoMatchingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D45CF819F3E19900135746 /* FLPhotoMatchingController.m */; };
 		30D45CFB19F3E19900135746 /* FLPhotoMatchingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D45CF919F3E19900135746 /* FLPhotoMatchingController.xib */; };
+		30E73F3D19F7708D009FF850 /* FLSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E73F3B19F7708D009FF850 /* FLSearchViewController.m */; };
+		30E73F3E19F7708D009FF850 /* FLSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F3C19F7708D009FF850 /* FLSearchViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +155,9 @@
 		30D45CF719F3E19900135746 /* FLPhotoMatchingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLPhotoMatchingController.h; sourceTree = "<group>"; };
 		30D45CF819F3E19900135746 /* FLPhotoMatchingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLPhotoMatchingController.m; sourceTree = "<group>"; };
 		30D45CF919F3E19900135746 /* FLPhotoMatchingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLPhotoMatchingController.xib; sourceTree = "<group>"; };
+		30E73F3A19F7708D009FF850 /* FLSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLSearchViewController.h; sourceTree = "<group>"; };
+		30E73F3B19F7708D009FF850 /* FLSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLSearchViewController.m; sourceTree = "<group>"; };
+		30E73F3C19F7708D009FF850 /* FLSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLSearchViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +267,9 @@
 				12C9AB1B19F4CF95007BA823 /* FLChatViewController.h */,
 				12C9AB1C19F4CF95007BA823 /* FLChatViewController.m */,
 				12C9AB1D19F4CF95007BA823 /* FLChatViewController.xib */,
+				30E73F3A19F7708D009FF850 /* FLSearchViewController.h */,
+				30E73F3B19F7708D009FF850 /* FLSearchViewController.m */,
+				30E73F3C19F7708D009FF850 /* FLSearchViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -491,6 +499,7 @@
 				12C9AB7719F5FF5F007BA823 /* success_word@2x.png in Resources */,
 				12C9AB6E19F5FF5F007BA823 /* go_forward@2x.png in Resources */,
 				12C9AB7C19F63CEF007BA823 /* FLViewCell.xib in Resources */,
+				30E73F3E19F7708D009FF850 /* FLSearchViewController.xib in Resources */,
 				12C9AB6C19F5FF5F007BA823 /* fill_light_word.png in Resources */,
 				12C9AB4219F4F0DD007BA823 /* search_icon@2x.png in Resources */,
 				12C9AB3F19F4F0DD007BA823 /* pic_small@2x.png in Resources */,
@@ -523,6 +532,7 @@
 				30CF80E619F2A9B800FDF633 /* Globals.c in Sources */,
 				126C4C4519EFB4F300F18654 /* AppDelegate.m in Sources */,
 				126C4CA919F0FF7F00F18654 /* FLControllerCoordinator.m in Sources */,
+				30E73F3D19F7708D009FF850 /* FLSearchViewController.m in Sources */,
 				12C9AB9A19F6820A007BA823 /* FLMessageModel.m in Sources */,
 				126C4CA619F0FBE900F18654 /* KxMenu.m in Sources */,
 				12C9AB7B19F63CEF007BA823 /* FLViewCell.m in Sources */,

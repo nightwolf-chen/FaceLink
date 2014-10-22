@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "FLMainViewController.h"
 
 @interface FLControllerCoordinator : NSObject
 
@@ -17,5 +18,7 @@
 
 - (void)navigateTo:(UIViewController *)controller;
 - (void)backToRoot;
+
+- (void)navigateWithinMain:(FLMainViewSubController)subController;
 
 @end

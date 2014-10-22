@@ -90,7 +90,6 @@ typedef enum FLViewKeyboardState{
                          _chatTableView.frame = _tableViewFrameRect;
                      }
                      completion:^(BOOL finished){
-                         
                          self.keyboardState = FLViewKeyboardStateHidden;
                          CGPoint offset = CGPointMake(0, _chatTableView.contentSize.height - _chatTableView.frame.size.height);
                          _chatTableView.contentOffset = offset;
@@ -122,8 +121,6 @@ typedef enum FLViewKeyboardState{
     self.textPanelOriginRect = _textPanelView.frame;
     self.tableViewFrameRect = _chatTableView.frame;
     
-    [_chatTableView reloadData];
-    
     _headView.layer.cornerRadius = kRoundedCornerRaduis;
     _headView.layer.masksToBounds = YES;
     
@@ -141,8 +138,9 @@ typedef enum FLViewKeyboardState{
     [self.view bringSubviewToFront:_chatTableView];
     _chatTableView.backgroundColor = [UIColor clearColor];
     _chatTableView.backgroundView.backgroundColor = [UIColor clearColor];
-    
     _nameLabel.text = _username;
+    
+    [_chatTableView reloadData];
     
 }
 
@@ -225,7 +223,6 @@ typedef enum FLViewKeyboardState{
     if (!cell) {
         
         FLMessageModel *model = _msgModels[indexPath.row];
-        
         NSString *cellNibName = model.msgType == FLMessageTypeIn ? @"FLChatInCell" : @"FLChatOutCell";
         
         //将Custom.xib中的所有对象载入
