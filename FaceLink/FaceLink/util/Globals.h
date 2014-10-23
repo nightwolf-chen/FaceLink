@@ -19,5 +19,7 @@ extern const double kCameraButtonWidth;
 extern const double kVerticalGap ;
 extern const double kHorizontalGap ;
 extern const double kRoundedCornerRaduis ;
+extern const double kBubbleStretchableLeft;
+extern const double kBubbleStretchableTop;
 
 #endif /* defined(__FaceLink__Globals__) */

@@ -7,11 +7,21 @@
 //
 
 #import "FLChatInCell.h"
+#import "Globals.h"
 
 @implementation FLChatInCell
 
 - (void)awakeFromNib {
     // Initialization code
+    UIImage *image = [[UIImage imageNamed:@"bubble_in"] stretchableImageWithLeftCapWidth:kBubbleStretchableLeft
+                                                                            topCapHeight:kBubbleStretchableTop];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    
+    imageView.frame = _bubbleBaseView.bounds;
+    
+    [_bubbleBaseView addSubview:imageView];
+    [_bubbleBaseView bringSubviewToFront:_contentTextView];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

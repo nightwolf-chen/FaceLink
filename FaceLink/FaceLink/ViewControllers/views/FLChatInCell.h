@@ -13,4 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
+
+@property (weak, nonatomic) IBOutlet UIView *bubbleBaseView;
+
 @end
