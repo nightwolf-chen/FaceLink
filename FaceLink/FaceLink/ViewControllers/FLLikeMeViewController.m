@@ -43,7 +43,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     FLViewCell *cell;
+    FLViewCell *cell;
     //定义CustomCell的复用标识,这个就是刚才在CustomCell.xib中设置的那个Identifier,一定要相同,否则无法复用
     static NSString *identifier = @"MyTableViewCell";
     //根据复用标识查找TableView里是否有可复用的cell,有则返回给cell

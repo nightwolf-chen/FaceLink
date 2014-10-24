@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FLHotViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIScrollView *baseScrollView;
+@interface FLHotViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+@property (strong, nonatomic) IBOutlet UIView *myPhotoView;
 
 @end
