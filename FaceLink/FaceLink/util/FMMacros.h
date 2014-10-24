@@ -33,4 +33,6 @@
 
 #define CONTROL_BG_COLOR RGB_UICOLOR(221.f,244.f,240.f)
 
+#define TYPE_CHANGE(x,y) ((x)y)
+
 #endif

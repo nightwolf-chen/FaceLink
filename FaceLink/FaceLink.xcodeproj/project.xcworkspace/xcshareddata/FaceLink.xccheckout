@@ -12,6 +12,10 @@
 	<dict>
 		<key>0435CB1D2D0C16BD384E98A44503B45F4CE4AFB3</key>
 		<string>https://github.com/nightwolf-chen/FaceLink.git</string>
+		<key>22138a2e-58fb-11e4-8642-b993c3eb2c6a++3748</key>
+		<string>http://tc-svn.tencent.com/vap/vap_FaceLink_rep/FaceLink_proj</string>
+		<key>22138a2e-58fb-11e4-8642-b993c3eb2c6a++9474</key>
+		<string>https://github.com/nightwolf-chen/FaceLink.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>FaceLink/FaceLink.xcodeproj</string>
@@ -19,15 +23,40 @@
 	<dict>
 		<key>0435CB1D2D0C16BD384E98A44503B45F4CE4AFB3</key>
 		<string>../../..</string>
+		<key>22138a2e-58fb-11e4-8642-b993c3eb2c6a++3748</key>
+		<string>../../../..</string>
+		<key>22138a2e-58fb-11e4-8642-b993c3eb2c6a++9474</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>22138a2e-58fb-11e4-8642-b993c3eb2c6a++3748</key>
+		<string>http://tc-svn.tencent.com/vap/vap_FaceLink_rep</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/nightwolf-chen/FaceLink.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>0435CB1D2D0C16BD384E98A44503B45F4CE4AFB3</string>
+	<string>22138a2e-58fb-11e4-8642-b993c3eb2c6a++9474</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>22138a2e-58fb-11e4-8642-b993c3eb2c6a++3748</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>22138a2e-58fb-11e4-8642-b993c3eb2c6a++9474</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FaceLink</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

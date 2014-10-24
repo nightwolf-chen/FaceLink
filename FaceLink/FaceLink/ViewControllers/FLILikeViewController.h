@@ -11,4 +11,6 @@
 @interface FLILikeViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 
+@property (nonatomic,strong) NSArray *users;
+
 @end

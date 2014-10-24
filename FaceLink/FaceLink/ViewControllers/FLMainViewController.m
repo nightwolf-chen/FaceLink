@@ -15,6 +15,8 @@
 #import "Globals.h"
 #import "FLSearchViewController.h"
 
+#define CONTROL_BUTTON_COLOR RGB_UICOLOR(49, 144, 168)
+
 NS_ENUM(NSInteger, FLButtonTag){
     FLButtonCamare,
     FLButtonRecent,
@@ -36,6 +38,9 @@ NS_ENUM(NSInteger, FLButtonTag){
 @property (nonatomic,strong) UIViewController *searchController;
 
 @property (nonatomic,assign) UIViewController *activeController;
+
+@property (nonatomic,assign) UIButton *recentButton;
+@property (nonatomic,assign) UIButton *hotButton;
 
 @end
 
@@ -105,8 +110,11 @@ NS_ENUM(NSInteger, FLButtonTag){
     [hotButton setImage:[UIImage imageNamed:@"predestine"] forState:UIControlStateSelected];
     
     
-    recentButton.backgroundColor = RGB_UICOLOR(49, 144, 168);
-    hotButton.backgroundColor = RGB_UICOLOR(49, 144, 168);
+    recentButton.backgroundColor = CONTROL_BUTTON_COLOR;
+    hotButton.backgroundColor = CONTROL_BUTTON_COLOR;
+    
+    self.recentButton = recentButton;
+    self.hotButton = hotButton;
     
     [_controlPanelViewContainer addSubview:cameraButton];
     [_controlPanelViewContainer addSubview:recentButton];
@@ -155,6 +163,19 @@ NS_ENUM(NSInteger, FLButtonTag){
         [viewController.view removeFromSuperview];
     }
     
+    if ([viewController isKindOfClass:[FLRecentViewController class]]) {
+        _recentButton.backgroundColor = [UIColor darkGrayColor];
+        if ([_activeController isKindOfClass:[FLHotViewController class]]) {
+            _hotButton.backgroundColor = CONTROL_BUTTON_COLOR;
+        }
+        
+    }else if([viewController isKindOfClass:[FLHotViewController class]]){
+        _hotButton.backgroundColor = [UIColor darkGrayColor];
+        if ([_activeController isKindOfClass:[FLRecentViewController class]]) {
+            _recentButton.backgroundColor = CONTROL_BUTTON_COLOR;
+        }
+    }
+    
     [_activeController.view removeFromSuperview];
     
     viewController.view.frame = _contentViewContainer.bounds;
@@ -163,6 +184,7 @@ NS_ENUM(NSInteger, FLButtonTag){
     [_contentViewContainer bringSubviewToFront:_headViewContainer];
     [_contentViewContainer bringSubviewToFront:_statusbarContainer];
     self.activeController = viewController;
+    
 }
 
 - (void)activateController:(FLMainViewSubController)subController activater:(FLMainViewSubController)caller

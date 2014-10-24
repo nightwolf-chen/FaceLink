@@ -137,6 +137,7 @@
 		12CE737319FA318100060943 /* go_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB5D19F5FF5F007BA823 /* go_back@2x.png */; };
 		12CE737419FA318100060943 /* photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4319F7E929009FF850 /* photo@2x.png */; };
 		12CE737519FA318100060943 /* camera_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB6719F5FF5F007BA823 /* camera_active@2x.png */; };
+		12CE73A019FA4F6900060943 /* FLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CE739F19FA4F6900060943 /* FLUser.m */; };
 		12E0F99219F8E37E00C85182 /* bubble_in@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F99019F8E37E00C85182 /* bubble_in@2x.png */; };
 		12E0F99319F8E37E00C85182 /* bubble_out@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F99119F8E37E00C85182 /* bubble_out@2x.png */; };
 		30CF80E619F2A9B800FDF633 /* Globals.c in Sources */ = {isa = PBXBuildFile; fileRef = 30CF80E419F2A9B800FDF633 /* Globals.c */; };
@@ -247,6 +248,8 @@
 		12C9AB9919F6820A007BA823 /* FLMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLMessageModel.m; sourceTree = "<group>"; };
 		12CE737A19FA318100060943 /* FaceLink copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FaceLink copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CE737B19FA318100060943 /* FaceLink copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FaceLink copy-Info.plist"; path = "/Users/qq/Documents/FaceLink/FaceLink/FaceLink copy-Info.plist"; sourceTree = "<absolute>"; };
+		12CE739E19FA4F6900060943 /* FLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLUser.h; sourceTree = "<group>"; };
+		12CE739F19FA4F6900060943 /* FLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLUser.m; sourceTree = "<group>"; };
 		12E0F99019F8E37E00C85182 /* bubble_in@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_in@2x.png"; sourceTree = "<group>"; };
 		12E0F99119F8E37E00C85182 /* bubble_out@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_out@2x.png"; sourceTree = "<group>"; };
 		30CF80E419F2A9B800FDF633 /* Globals.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Globals.c; sourceTree = "<group>"; };
@@ -513,6 +516,8 @@
 			children = (
 				12C9AB9819F6820A007BA823 /* FLMessageModel.h */,
 				12C9AB9919F6820A007BA823 /* FLMessageModel.m */,
+				12CE739E19FA4F6900060943 /* FLUser.h */,
+				12CE739F19FA4F6900060943 /* FLUser.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -746,7 +751,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		12CE732F19FA309A00060943 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -767,6 +772,7 @@
 				126C4CBC19F1186000F18654 /* FLCameraViewController.m in Sources */,
 				12C9AADC19F4B3ED007BA823 /* ProgressHUD.m in Sources */,
 				12C9AB8019F6577A007BA823 /* FLChatOutCell.m in Sources */,
+				12CE73A019FA4F6900060943 /* FLUser.m in Sources */,
 				12C9AB1E19F4CF95007BA823 /* FLChatViewController.m in Sources */,
 				30D45CFA19F3E19900135746 /* FLPhotoMatchingController.m in Sources */,
 				30CF80E619F2A9B800FDF633 /* Globals.c in Sources */,
@@ -1115,7 +1121,7 @@
 				12CE732519FA2F3B00060943 /* DailyBuild */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		126C4C5F19EFB4F400F18654 /* Build configuration list for PBXNativeTarget "FaceLink" */ = {
 			isa = XCConfigurationList;
@@ -1125,7 +1131,7 @@
 				12CE732619FA2F3B00060943 /* DailyBuild */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		126C4C6219EFB4F400F18654 /* Build configuration list for PBXNativeTarget "FaceLinkTests" */ = {
 			isa = XCConfigurationList;
@@ -1135,7 +1141,7 @@
 				12CE732719FA2F3B00060943 /* DailyBuild */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		12CE732919FA304E00060943 /* Build configuration list for PBXAggregateTarget "dailybuildipa" */ = {
 			isa = XCConfigurationList;
@@ -1145,6 +1151,7 @@
 				12CE732C19FA304E00060943 /* DailyBuild */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 		12CE737619FA318100060943 /* Build configuration list for PBXNativeTarget "dailybuild" */ = {
 			isa = XCConfigurationList;
@@ -1154,7 +1161,7 @@
 				12CE737919FA318100060943 /* DailyBuild */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

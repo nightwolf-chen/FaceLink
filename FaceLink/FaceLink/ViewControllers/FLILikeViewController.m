@@ -9,6 +9,8 @@
 #import "FLILikeViewController.h"
 #import "FLControllerCoordinator.h"
 #import "FLViewCell.h"
+#import "FMMacros.h"
+#import "FLUser.h"
 
 @interface FLILikeViewController ()
 @property (weak, nonatomic) IBOutlet UIView *headView;
@@ -40,16 +42,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FLViewCell *cell;
-    //定义CustomCell的复用标识,这个就是刚才在CustomCell.xib中设置的那个Identifier,一定要相同,否则无法复用
     static NSString *identifier = @"MyTableViewCell";
-    //根据复用标识查找TableView里是否有可复用的cell,有则返回给cell
     cell = (FLViewCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
-    //判断是否获取到复用cell,没有则从xib中初始化一个cell
+    
     if (!cell) {
         //将Custom.xib中的所有对象载入
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FLViewCell" owner:nil options:nil];
         //第一个对象就是CustomCell了
         cell = [nib objectAtIndex:0];
+        
+        int index = indexPath.row;
+        cell.nameLabel.text = TYPE_CHANGE(FLUser *, _users[index]).username;
+        NSString *imageUrl = TYPE_CHANGE(FLUser *, _users[index]).smallImageUrl;
+        NSData *imageData = [NSData dataWithContentsOfFile:imageUrl];
+        cell.headImageView.image = [UIImage imageWithData:imageData];
+        
     }
     
     return cell;
