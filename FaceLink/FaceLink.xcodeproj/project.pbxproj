@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		12CE732819FA304E00060943 /* dailybuildipa */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 12CE732919FA304E00060943 /* Build configuration list for PBXAggregateTarget "dailybuildipa" */;
+			buildPhases = (
+				12CE732F19FA309A00060943 /* ShellScript */,
+			);
+			dependencies = (
+				12CE737D19FA32DD00060943 /* PBXTargetDependency */,
+			);
+			name = dailybuildipa;
+			productName = dailybuildipa;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		126C4C4219EFB4F300F18654 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4C4119EFB4F300F18654 /* main.m */; };
 		126C4C4519EFB4F300F18654 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4C4419EFB4F300F18654 /* AppDelegate.m */; };
@@ -56,6 +71,72 @@
 		12C9AB8519F657D7007BA823 /* FLChatInCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AB8319F657D7007BA823 /* FLChatInCell.m */; };
 		12C9AB8619F657D7007BA823 /* FLChatInCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB8419F657D7007BA823 /* FLChatInCell.xib */; };
 		12C9AB9A19F6820A007BA823 /* FLMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AB9919F6820A007BA823 /* FLMessageModel.m */; };
+		12CE733219FA318100060943 /* FLCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4CBB19F1186000F18654 /* FLCameraViewController.m */; };
+		12CE733319FA318100060943 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AADA19F4B3ED007BA823 /* ProgressHUD.m */; };
+		12CE733419FA318100060943 /* FLChatOutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AB7E19F6577A007BA823 /* FLChatOutCell.m */; };
+		12CE733519FA318100060943 /* FLChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AB1C19F4CF95007BA823 /* FLChatViewController.m */; };
+		12CE733619FA318100060943 /* FLPhotoMatchingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D45CF819F3E19900135746 /* FLPhotoMatchingController.m */; };
+		12CE733719FA318100060943 /* Globals.c in Sources */ = {isa = PBXBuildFile; fileRef = 30CF80E419F2A9B800FDF633 /* Globals.c */; };
+		12CE733819FA318100060943 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4C4419EFB4F300F18654 /* AppDelegate.m */; };
+		12CE733919FA318100060943 /* FLControllerCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4CA819F0FF7F00F18654 /* FLControllerCoordinator.m */; };
+		12CE733A19FA318100060943 /* FLSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E73F3B19F7708D009FF850 /* FLSearchViewController.m */; };
+		12CE733B19FA318100060943 /* FLMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AB9919F6820A007BA823 /* FLMessageModel.m */; };
+		12CE733C19FA318100060943 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4CA519F0FBE900F18654 /* KxMenu.m */; };
+		12CE733D19FA318100060943 /* FLViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AB7919F63CEF007BA823 /* FLViewCell.m */; };
+		12CE733E19FA318100060943 /* FLChatInCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AB8319F657D7007BA823 /* FLChatInCell.m */; };
+		12CE733F19FA318100060943 /* FLAppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D45CF519F3706B00135746 /* FLAppSettings.m */; };
+		12CE734019FA318100060943 /* FLSingleOptionMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D45CF219F35CF700135746 /* FLSingleOptionMenu.m */; };
+		12CE734119FA318100060943 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4C4119EFB4F300F18654 /* main.m */; };
+		12CE734219FA318100060943 /* FLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4C7719F0B11700F18654 /* FLMainViewController.m */; };
+		12CE734319FA318100060943 /* FLILikeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AB1719F4CF83007BA823 /* FLILikeViewController.m */; };
+		12CE734419FA318100060943 /* FLRecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4CAB19F103AA00F18654 /* FLRecentViewController.m */; };
+		12CE734519FA318100060943 /* FLHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4CB019F103C000F18654 /* FLHotViewController.m */; };
+		12CE734619FA318100060943 /* FLFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AB5719F50893007BA823 /* FLFaceView.m */; };
+		12CE734719FA318100060943 /* FLLikeMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9AB1219F4CF6B007BA823 /* FLLikeMeViewController.m */; };
+		12CE734A19FA318100060943 /* FLPhotoMatchingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D45CF919F3E19900135746 /* FLPhotoMatchingController.xib */; };
+		12CE734B19FA318100060943 /* FLILikeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB1819F4CF83007BA823 /* FLILikeViewController.xib */; };
+		12CE734C19FA318100060943 /* FLChatOutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB7F19F6577A007BA823 /* FLChatOutCell.xib */; };
+		12CE734D19FA318100060943 /* bubble_out@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F99119F8E37E00C85182 /* bubble_out@2x.png */; };
+		12CE734E19FA318100060943 /* camera_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB3319F4F0DD007BA823 /* camera_btn@2x.png */; };
+		12CE734F19FA318100060943 /* FLHotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126C4CB119F103C000F18654 /* FLHotViewController.xib */; };
+		12CE735019FA318100060943 /* hand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB6819F5FF5F007BA823 /* hand@2x.png */; };
+		12CE735119FA318100060943 /* take_pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB6119F5FF5F007BA823 /* take_pic@2x.png */; };
+		12CE735219FA318100060943 /* voice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F5019F7EC38009FF850 /* voice@2x.png */; };
+		12CE735319FA318100060943 /* pic_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB3519F4F0DD007BA823 /* pic_big@2x.png */; };
+		12CE735419FA318100060943 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AAD819F4B3ED007BA823 /* ProgressHUD.bundle */; };
+		12CE735519FA318100060943 /* pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB5F19F5FF5F007BA823 /* pic.png */; };
+		12CE735619FA318100060943 /* FLChatInCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB8419F657D7007BA823 /* FLChatInCell.xib */; };
+		12CE735719FA318100060943 /* red_point@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4419F7E929009FF850 /* red_point@2x.png */; };
+		12CE735819FA318100060943 /* more_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4119F7E929009FF850 /* more_icon@2x.png */; };
+		12CE735919FA318100060943 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126C4C4E19EFB4F300F18654 /* LaunchScreen.xib */; };
+		12CE735A19FA318100060943 /* FLRecentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126C4CAC19F103AA00F18654 /* FLRecentViewController.xib */; };
+		12CE735B19FA318100060943 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126C4C4C19EFB4F300F18654 /* Images.xcassets */; };
+		12CE735C19FA318100060943 /* search_word@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB3A19F4F0DD007BA823 /* search_word@2x.png */; };
+		12CE735D19FA318100060943 /* back_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB5B19F5FF5F007BA823 /* back_icon@2x.png */; };
+		12CE735E19FA318100060943 /* FLChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB1D19F4CF95007BA823 /* FLChatViewController.xib */; };
+		12CE735F19FA318100060943 /* select_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB6019F5FF5F007BA823 /* select_up.png */; };
+		12CE736019FA318100060943 /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4E19F7E984009FF850 /* delete@2x.png */; };
+		12CE736119FA318100060943 /* recent_connect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB3819F4F0DD007BA823 /* recent_connect@2x.png */; };
+		12CE736219FA318100060943 /* red_point_one@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4519F7E929009FF850 /* red_point_one@2x.png */; };
+		12CE736319FA318100060943 /* FLLikeMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB1319F4CF6B007BA823 /* FLLikeMeViewController.xib */; };
+		12CE736419FA318100060943 /* select_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB3B19F4F0DD007BA823 /* select_icon@2x.png */; };
+		12CE736519FA318100060943 /* predestine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB3719F4F0DD007BA823 /* predestine@2x.png */; };
+		12CE736619FA318100060943 /* success_word@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB6919F5FF5F007BA823 /* success_word@2x.png */; };
+		12CE736719FA318100060943 /* go_forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB5E19F5FF5F007BA823 /* go_forward@2x.png */; };
+		12CE736819FA318100060943 /* bubble_in@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F99019F8E37E00C85182 /* bubble_in@2x.png */; };
+		12CE736919FA318100060943 /* smile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4619F7E929009FF850 /* smile@2x.png */; };
+		12CE736A19FA318100060943 /* FLViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB7A19F63CEF007BA823 /* FLViewCell.xib */; };
+		12CE736B19FA318100060943 /* FLSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F3C19F7708D009FF850 /* FLSearchViewController.xib */; };
+		12CE736C19FA318100060943 /* fill_light_word.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB5C19F5FF5F007BA823 /* fill_light_word.png */; };
+		12CE736D19FA318100060943 /* search_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB3919F4F0DD007BA823 /* search_icon@2x.png */; };
+		12CE736E19FA318100060943 /* pic_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB3619F4F0DD007BA823 /* pic_small@2x.png */; };
+		12CE736F19FA318100060943 /* kaka_word@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB3419F4F0DD007BA823 /* kaka_word@2x.png */; };
+		12CE737019FA318100060943 /* save@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB6419F5FF5F007BA823 /* save@2x.png */; };
+		12CE737119FA318100060943 /* confirm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4019F7E929009FF850 /* confirm@2x.png */; };
+		12CE737219FA318100060943 /* new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4219F7E929009FF850 /* new@2x.png */; };
+		12CE737319FA318100060943 /* go_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB5D19F5FF5F007BA823 /* go_back@2x.png */; };
+		12CE737419FA318100060943 /* photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4319F7E929009FF850 /* photo@2x.png */; };
+		12CE737519FA318100060943 /* camera_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB6719F5FF5F007BA823 /* camera_active@2x.png */; };
 		12E0F99219F8E37E00C85182 /* bubble_in@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F99019F8E37E00C85182 /* bubble_in@2x.png */; };
 		12E0F99319F8E37E00C85182 /* bubble_out@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F99119F8E37E00C85182 /* bubble_out@2x.png */; };
 		30CF80E619F2A9B800FDF633 /* Globals.c in Sources */ = {isa = PBXBuildFile; fileRef = 30CF80E419F2A9B800FDF633 /* Globals.c */; };
@@ -83,6 +164,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 126C4C3B19EFB4F300F18654;
 			remoteInfo = FaceLink;
+		};
+		12CE737C19FA32DD00060943 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 126C4C3419EFB4F300F18654 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12CE733019FA318100060943;
+			remoteInfo = dailybuild;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -157,6 +245,8 @@
 		12C9AB8419F657D7007BA823 /* FLChatInCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLChatInCell.xib; sourceTree = "<group>"; };
 		12C9AB9819F6820A007BA823 /* FLMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLMessageModel.h; sourceTree = "<group>"; };
 		12C9AB9919F6820A007BA823 /* FLMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLMessageModel.m; sourceTree = "<group>"; };
+		12CE737A19FA318100060943 /* FaceLink copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FaceLink copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		12CE737B19FA318100060943 /* FaceLink copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FaceLink copy-Info.plist"; path = "/Users/qq/Documents/FaceLink/FaceLink/FaceLink copy-Info.plist"; sourceTree = "<absolute>"; };
 		12E0F99019F8E37E00C85182 /* bubble_in@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_in@2x.png"; sourceTree = "<group>"; };
 		12E0F99119F8E37E00C85182 /* bubble_out@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_out@2x.png"; sourceTree = "<group>"; };
 		30CF80E419F2A9B800FDF633 /* Globals.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Globals.c; sourceTree = "<group>"; };
@@ -197,6 +287,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		12CE734819FA318100060943 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -206,6 +303,7 @@
 				126C4C3E19EFB4F300F18654 /* FaceLink */,
 				126C4C5819EFB4F300F18654 /* FaceLinkTests */,
 				126C4C3D19EFB4F300F18654 /* Products */,
+				12CE737B19FA318100060943 /* FaceLink copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,6 +312,7 @@
 			children = (
 				126C4C3C19EFB4F300F18654 /* FaceLink.app */,
 				126C4C5519EFB4F300F18654 /* FaceLinkTests.xctest */,
+				12CE737A19FA318100060943 /* FaceLink copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -473,6 +572,23 @@
 			productReference = 126C4C5519EFB4F300F18654 /* FaceLinkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		12CE733019FA318100060943 /* dailybuild */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12CE737619FA318100060943 /* Build configuration list for PBXNativeTarget "dailybuild" */;
+			buildPhases = (
+				12CE733119FA318100060943 /* Sources */,
+				12CE734819FA318100060943 /* Frameworks */,
+				12CE734919FA318100060943 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dailybuild;
+			productName = FaceLink;
+			productReference = 12CE737A19FA318100060943 /* FaceLink copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -488,6 +604,9 @@
 					126C4C5419EFB4F300F18654 = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = 126C4C3B19EFB4F300F18654;
+					};
+					12CE732819FA304E00060943 = {
+						CreatedOnToolsVersion = 6.1;
 					};
 				};
 			};
@@ -505,6 +624,8 @@
 			projectRoot = "";
 			targets = (
 				126C4C3B19EFB4F300F18654 /* FaceLink */,
+				12CE733019FA318100060943 /* dailybuild */,
+				12CE732819FA304E00060943 /* dailybuildipa */,
 				126C4C5419EFB4F300F18654 /* FaceLinkTests */,
 			);
 		};
@@ -569,7 +690,74 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		12CE734919FA318100060943 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12CE734A19FA318100060943 /* FLPhotoMatchingController.xib in Resources */,
+				12CE734B19FA318100060943 /* FLILikeViewController.xib in Resources */,
+				12CE734C19FA318100060943 /* FLChatOutCell.xib in Resources */,
+				12CE734D19FA318100060943 /* bubble_out@2x.png in Resources */,
+				12CE734E19FA318100060943 /* camera_btn@2x.png in Resources */,
+				12CE734F19FA318100060943 /* FLHotViewController.xib in Resources */,
+				12CE735019FA318100060943 /* hand@2x.png in Resources */,
+				12CE735119FA318100060943 /* take_pic@2x.png in Resources */,
+				12CE735219FA318100060943 /* voice@2x.png in Resources */,
+				12CE735319FA318100060943 /* pic_big@2x.png in Resources */,
+				12CE735419FA318100060943 /* ProgressHUD.bundle in Resources */,
+				12CE735519FA318100060943 /* pic.png in Resources */,
+				12CE735619FA318100060943 /* FLChatInCell.xib in Resources */,
+				12CE735719FA318100060943 /* red_point@2x.png in Resources */,
+				12CE735819FA318100060943 /* more_icon@2x.png in Resources */,
+				12CE735919FA318100060943 /* LaunchScreen.xib in Resources */,
+				12CE735A19FA318100060943 /* FLRecentViewController.xib in Resources */,
+				12CE735B19FA318100060943 /* Images.xcassets in Resources */,
+				12CE735C19FA318100060943 /* search_word@2x.png in Resources */,
+				12CE735D19FA318100060943 /* back_icon@2x.png in Resources */,
+				12CE735E19FA318100060943 /* FLChatViewController.xib in Resources */,
+				12CE735F19FA318100060943 /* select_up.png in Resources */,
+				12CE736019FA318100060943 /* delete@2x.png in Resources */,
+				12CE736119FA318100060943 /* recent_connect@2x.png in Resources */,
+				12CE736219FA318100060943 /* red_point_one@2x.png in Resources */,
+				12CE736319FA318100060943 /* FLLikeMeViewController.xib in Resources */,
+				12CE736419FA318100060943 /* select_icon@2x.png in Resources */,
+				12CE736519FA318100060943 /* predestine@2x.png in Resources */,
+				12CE736619FA318100060943 /* success_word@2x.png in Resources */,
+				12CE736719FA318100060943 /* go_forward@2x.png in Resources */,
+				12CE736819FA318100060943 /* bubble_in@2x.png in Resources */,
+				12CE736919FA318100060943 /* smile@2x.png in Resources */,
+				12CE736A19FA318100060943 /* FLViewCell.xib in Resources */,
+				12CE736B19FA318100060943 /* FLSearchViewController.xib in Resources */,
+				12CE736C19FA318100060943 /* fill_light_word.png in Resources */,
+				12CE736D19FA318100060943 /* search_icon@2x.png in Resources */,
+				12CE736E19FA318100060943 /* pic_small@2x.png in Resources */,
+				12CE736F19FA318100060943 /* kaka_word@2x.png in Resources */,
+				12CE737019FA318100060943 /* save@2x.png in Resources */,
+				12CE737119FA318100060943 /* confirm@2x.png in Resources */,
+				12CE737219FA318100060943 /* new@2x.png in Resources */,
+				12CE737319FA318100060943 /* go_back@2x.png in Resources */,
+				12CE737419FA318100060943 /* photo@2x.png in Resources */,
+				12CE737519FA318100060943 /* camera_active@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		12CE732F19FA309A00060943 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# compress application.\n\n/bin/mkdir $CONFIGURATION_BUILD_DIR/Payload\n\n/bin/cp -R $CONFIGURATION_BUILD_DIR/FaceLink.app $CONFIGURATION_BUILD_DIR/Payload\n\n/bin/cp images/logo_itunes.png $CONFIGURATION_BUILD_DIR/iTunesArtwork\n\ncd $CONFIGURATION_BUILD_DIR\n\n# zip up the HelloWorld directory\n\n/usr/bin/zip -r FaceLink.ipa Payload iTunesArtwork";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		126C4C3819EFB4F300F18654 /* Sources */ = {
@@ -609,6 +797,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		12CE733119FA318100060943 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12CE733219FA318100060943 /* FLCameraViewController.m in Sources */,
+				12CE733319FA318100060943 /* ProgressHUD.m in Sources */,
+				12CE733419FA318100060943 /* FLChatOutCell.m in Sources */,
+				12CE733519FA318100060943 /* FLChatViewController.m in Sources */,
+				12CE733619FA318100060943 /* FLPhotoMatchingController.m in Sources */,
+				12CE733719FA318100060943 /* Globals.c in Sources */,
+				12CE733819FA318100060943 /* AppDelegate.m in Sources */,
+				12CE733919FA318100060943 /* FLControllerCoordinator.m in Sources */,
+				12CE733A19FA318100060943 /* FLSearchViewController.m in Sources */,
+				12CE733B19FA318100060943 /* FLMessageModel.m in Sources */,
+				12CE733C19FA318100060943 /* KxMenu.m in Sources */,
+				12CE733D19FA318100060943 /* FLViewCell.m in Sources */,
+				12CE733E19FA318100060943 /* FLChatInCell.m in Sources */,
+				12CE733F19FA318100060943 /* FLAppSettings.m in Sources */,
+				12CE734019FA318100060943 /* FLSingleOptionMenu.m in Sources */,
+				12CE734119FA318100060943 /* main.m in Sources */,
+				12CE734219FA318100060943 /* FLMainViewController.m in Sources */,
+				12CE734319FA318100060943 /* FLILikeViewController.m in Sources */,
+				12CE734419FA318100060943 /* FLRecentViewController.m in Sources */,
+				12CE734519FA318100060943 /* FLHotViewController.m in Sources */,
+				12CE734619FA318100060943 /* FLFaceView.m in Sources */,
+				12CE734719FA318100060943 /* FLLikeMeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -616,6 +833,11 @@
 			isa = PBXTargetDependency;
 			target = 126C4C3B19EFB4F300F18654 /* FaceLink */;
 			targetProxy = 126C4C5619EFB4F300F18654 /* PBXContainerItemProxy */;
+		};
+		12CE737D19FA32DD00060943 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12CE733019FA318100060943 /* dailybuild */;
+			targetProxy = 12CE737C19FA32DD00060943 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -714,6 +936,7 @@
 				INFOPLIST_FILE = FaceLink/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "14de6699-1551-42a8-9f4f-b4a3fea434ed";
 			};
 			name = Debug;
 		};
@@ -724,6 +947,7 @@
 				INFOPLIST_FILE = FaceLink/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "14de6699-1551-42a8-9f4f-b4a3fea434ed";
 			};
 			name = Release;
 		};
@@ -761,6 +985,125 @@
 			};
 			name = Release;
 		};
+		12CE732519FA2F3B00060943 /* DailyBuild */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = DailyBuild;
+		};
+		12CE732619FA2F3B00060943 /* DailyBuild */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Li Yulong (WUXMB9ZMPQ)";
+				INFOPLIST_FILE = FaceLink/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "14de6699-1551-42a8-9f4f-b4a3fea434ed";
+			};
+			name = DailyBuild;
+		};
+		12CE732719FA2F3B00060943 /* DailyBuild */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FaceLinkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FaceLink.app/FaceLink";
+			};
+			name = DailyBuild;
+		};
+		12CE732A19FA304E00060943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		12CE732B19FA304E00060943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		12CE732C19FA304E00060943 /* DailyBuild */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = DailyBuild;
+		};
+		12CE737719FA318100060943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distruibution: Tencent Techology(ShenZhen)Company Limited\n";
+				INFOPLIST_FILE = "FaceLink copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "FaceLink copy";
+				PROVISIONING_PROFILE = "5C6FF959-8278-49A9-A75B-F2734988BAF8";
+			};
+			name = Debug;
+		};
+		12CE737819FA318100060943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distruibution: Tencent Techology(ShenZhen)Company Limited\n";
+				INFOPLIST_FILE = "FaceLink copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "FaceLink copy";
+				PROVISIONING_PROFILE = "5C6FF959-8278-49A9-A75B-F2734988BAF8";
+			};
+			name = Release;
+		};
+		12CE737919FA318100060943 /* DailyBuild */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distruibution: Tencent Techology(ShenZhen)Company Limited\n";
+				INFOPLIST_FILE = "FaceLink copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "FaceLink copy";
+				PROVISIONING_PROFILE = "5C6FF959-8278-49A9-A75B-F2734988BAF8";
+			};
+			name = DailyBuild;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -769,6 +1112,7 @@
 			buildConfigurations = (
 				126C4C5D19EFB4F400F18654 /* Debug */,
 				126C4C5E19EFB4F400F18654 /* Release */,
+				12CE732519FA2F3B00060943 /* DailyBuild */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -778,6 +1122,7 @@
 			buildConfigurations = (
 				126C4C6019EFB4F400F18654 /* Debug */,
 				126C4C6119EFB4F400F18654 /* Release */,
+				12CE732619FA2F3B00060943 /* DailyBuild */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -787,6 +1132,26 @@
 			buildConfigurations = (
 				126C4C6319EFB4F400F18654 /* Debug */,
 				126C4C6419EFB4F400F18654 /* Release */,
+				12CE732719FA2F3B00060943 /* DailyBuild */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12CE732919FA304E00060943 /* Build configuration list for PBXAggregateTarget "dailybuildipa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12CE732A19FA304E00060943 /* Debug */,
+				12CE732B19FA304E00060943 /* Release */,
+				12CE732C19FA304E00060943 /* DailyBuild */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		12CE737619FA318100060943 /* Build configuration list for PBXNativeTarget "dailybuild" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12CE737719FA318100060943 /* Debug */,
+				12CE737819FA318100060943 /* Release */,
+				12CE737919FA318100060943 /* DailyBuild */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
