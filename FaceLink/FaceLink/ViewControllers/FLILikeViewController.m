@@ -19,6 +19,16 @@
 
 @implementation FLILikeViewController
 
+- (void)loadUsers
+{
+    self.users = [NSArray array];
+}
+
+- (void)setUsers:(NSArray *)users
+{
+    _users = users;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -74,7 +84,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return _users.count;
 }
 
 #pragma mark - UITableViewDelegate

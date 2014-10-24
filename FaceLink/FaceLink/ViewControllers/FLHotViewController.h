@@ -14,4 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 @property (strong, nonatomic) IBOutlet UIView *myPhotoView;
 
+@property (strong, nonatomic) NSArray *hotUsers;
+
 @end
