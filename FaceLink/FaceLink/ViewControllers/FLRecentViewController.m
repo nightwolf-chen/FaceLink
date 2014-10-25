@@ -48,7 +48,7 @@ const double kPictureGapVertical = 2;
 - (void)showPhotos
 {
     NSMutableArray *tmpArray = [NSMutableArray array];
-    NSArray *names = [TestDataCenter recentChatFriends];
+    NSArray *users = [TestDataCenter recentChatFriends];
     const int photoscount = 9;
     for(int i = 0 ;i < photoscount ;i++){
         FLFaceViewType type ;
@@ -57,7 +57,8 @@ const double kPictureGapVertical = 2;
         }else{
             type = FLFaceViewTypeSmall;
         }
-        [tmpArray addObject:[FLFaceView faceViewWithType:type name:names[i]]];
+        FLUser *aUser = users[i];
+        [tmpArray addObject:[FLFaceView faceViewWithType:type name:aUser.username]];
     }
     
     self.pictures = tmpArray;

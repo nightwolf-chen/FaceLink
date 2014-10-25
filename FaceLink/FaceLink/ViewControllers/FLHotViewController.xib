@@ -7,7 +7,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FLHotViewController">
             <connections>
                 <outlet property="headerView" destination="2b8-zb-o0R" id="Oa4-8g-9ED"/>
+                <outlet property="myPhotoImageView" destination="PvE-mQ-dsA" id="SfP-fl-Iye"/>
                 <outlet property="myPhotoView" destination="gLZ-xE-dU9" id="aUq-PK-cqC"/>
+                <outlet property="tableView" destination="Dev-gZ-NNA" id="1vb-Tm-IgM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -10,6 +10,8 @@
 #import "ProgressHUD.h"
 #import "FMMacros.h"
 #import "Globals.h"
+#import "FLUser.h"
+#import "TestDataCenter.h"
 
 static NSString *const kMatchingText = @"正在寻找同时拍照的人...";
 static NSString *const kMatchingSuccessText = @"恭喜你们成功互换了照片";
@@ -24,6 +26,7 @@ NS_ENUM(NSInteger, FLPhotoMatchingState){
 @interface FLPhotoMatchingController ()
 
 @property (nonatomic,assign) NSInteger matchingState;
+@property (nonatomic,assign) BOOL liked;
 
 @end
 
@@ -110,13 +113,19 @@ NS_ENUM(NSInteger, FLPhotoMatchingState){
         [UIView animateWithDuration:0.5 animations:^{
             _userImageView.image = nil;
             _statusLabel.text = @"";
+            self.liked = NO;
+            [_likeButton setImage:[UIImage imageNamed:@"like_normal"] forState:UIControlStateNormal];
+            [_likeButton setImage:[UIImage imageNamed:@"like_normal"] forState:UIControlStateSelected];
             self.view.layer.transform = CATransform3DMakeRotation(M_PI,0.0,2.0,0.0);
         } completion:^(BOOL finished){
             
             self.view.layer.transform = CATransform3DMakeRotation(M_PI,0.0,0.0,0.0);
-            _userImageView.contentMode = UIViewContentModeScaleToFill;
-            _userImageView.image = [UIImage imageNamed:@"pic_big"];
+            
+            //TODO:add matched user data.
+            FLUser *matchedUser = [TestDataCenter getMatchedUser];
+            _userImageView.image = [matchedUser photoBig];
             [self p_hideViews:NO];
+            _nameLabel.text = matchedUser.username;
             _statusLabel.text = kMatchingSuccessText;
             self.matchingState = FLPhotoMatchingStateSuccess;
             
@@ -132,7 +141,16 @@ NS_ENUM(NSInteger, FLPhotoMatchingState){
     [ProgressHUD showSuccess:kComplainSuccessText];
 }
 - (IBAction)likeButtonClicked:(id)sender {
-    _likeButton.backgroundColor = [UIColor redColor];
+    
+    if (_liked) {
+        [_likeButton setImage:[UIImage imageNamed:@"like_normal"] forState:UIControlStateNormal];
+        [_likeButton setImage:[UIImage imageNamed:@"like_normal"] forState:UIControlStateSelected];
+        self.liked = NO;
+    }else{
+        [_likeButton setImage:[UIImage imageNamed:@"like_active"] forState:UIControlStateNormal];
+        [_likeButton setImage:[UIImage imageNamed:@"like_active"] forState:UIControlStateSelected];
+        self.liked = YES;
+    }
 }
 
 - (void)p_hideViews:(BOOL)hide

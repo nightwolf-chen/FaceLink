@@ -15,6 +15,7 @@
 #import "FLViewCell.h"
 #import "FLUser.h"
 #import "TestDataCenter.h"
+#import "FLChatViewController.h"
 
 @interface FLHotViewController ()
 
@@ -25,13 +26,11 @@
 - (void)loadUsers
 {
     self.hotUsers = [TestDataCenter hotUsers];
+    [_tableView reloadData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    CGSize contentSize = SCREEN_SIZE;
-//    contentSize.height *= 1.2f;
-//    _baseScrollView.contentSize = contentSize ;
     
     _headerView.layer.cornerRadius = kRoundedCornerRaduis;
     _headerView.layer.masksToBounds = YES;
@@ -45,6 +44,8 @@
     photoFrame.origin.x = kHorizontalGap;
     photoFrame.origin.y = kVerticalGap;
     _myPhotoView.frame = photoFrame;
+    
+    _myPhotoImageView.image = [[TestDataCenter currentUser] photoSmall];
     
     [self loadUsers];
     
@@ -151,6 +152,16 @@
         cell = [nib objectAtIndex:0];
         
         return cell.frame.size.height;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row > 1) {
+        FLUser *aUser = _hotUsers[indexPath.row - 2];
+        FLChatViewController *chatCtr = [[FLChatViewController alloc] initWithNibName:nil bundle:nil];
+        chatCtr.username = aUser.username;
+        [[FLControllerCoordinator sharedInstance] navigateTo:chatCtr];
     }
 }
 

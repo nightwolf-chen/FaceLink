@@ -12,6 +12,7 @@
 #import "Globals.h"
 #import "FLViewCell.h"
 #import "FLUser.h"
+#import "TestDataCenter.h"
 
 @interface FLLikeMeViewController ()
 
@@ -23,7 +24,8 @@
 
 - (void)loadUsers
 {
-    self.users = [NSArray array];
+    self.users = [TestDataCenter likeMeFriends];
+    [_tableView reloadData];
 }
 
 - (void)viewDidLoad {
@@ -64,9 +66,7 @@
     
         NSInteger index = indexPath.row;
         cell.nameLabel.text = TYPE_CHANGE(FLUser *, _users[index]).username;
-        NSString *imageUrl = TYPE_CHANGE(FLUser *, _users[index]).headSmallUrl;
-        NSData *imageData = [NSData dataWithContentsOfFile:imageUrl];
-        cell.headImageView.image = [UIImage imageWithData:imageData];
+        cell.headImageView.image = [TYPE_CHANGE(FLUser *,_users[index]) headSmallImage];
         
     }
     

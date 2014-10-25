@@ -15,6 +15,8 @@
 #import "ProgressHUD.h"
 #import "FMMacros.h"
 #import "KxMenu.h"
+#import "FLUser.h"
+#import "TestDataCenter.h"
 
 typedef enum FLViewKeyboardState{
     FLViewKeyboardStateShowing,
@@ -231,16 +233,20 @@ typedef enum FLViewKeyboardState{
         cell = [nib objectAtIndex:0];
         
         if (model.msgType == FLMessageTypeIn) {
+            FLUser *inUser = [TestDataCenter findUserByName:model.username];
             FLChatInCell *inCell = (FLChatInCell *)cell;
             inCell.contentTextView.text = model.content;
             inCell.nameLabel.text = model.username;
             inCell.headImageView.layer.borderColor = [UIColor whiteColor].CGColor;
             inCell.headImageView.layer.borderWidth = 2;
+            inCell.headImageView.image = [inUser headSmallImage];
         }else{
+            FLUser *outUser = [TestDataCenter currentUser];
             FLChatOutCell *outCell = (FLChatOutCell *)cell;
             outCell.contentTextView.text = model.content;
             outCell.headImageView.layer.borderColor = [UIColor whiteColor].CGColor;
             outCell.headImageView.layer.borderWidth = 2;
+            outCell.headImageView.image = [outUser headSmallImage];
         }
         
     }

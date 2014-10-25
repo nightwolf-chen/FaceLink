@@ -11,5 +11,6 @@
 @interface FLLikeMeViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (strong,nonatomic) NSArray *users;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "FLMainViewController.h"
 #import "FLControllerCoordinator.h"
-
+#import "TestDataCenter.h"
 @interface AppDelegate ()
 
 @end
@@ -18,8 +18,15 @@
 @implementation AppDelegate
 
 
+- (void)prepareUserData{
+    [TestDataCenter allFriends];
+    [TestDataCenter setCurrentUser:[TestDataCenter randomUser]];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self prepareUserData];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
     [self.window makeKeyAndVisible];

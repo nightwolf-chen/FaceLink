@@ -11,6 +11,8 @@
 #import "Globals.h"
 #import "FLControllerCoordinator.h"
 #import "FLUser.h"
+#import "TestDataCenter.h"
+#import "FLChatViewController.h"
 
 @interface FLSearchViewController ()
 
@@ -34,9 +36,8 @@
 
 - (void)contructTestData
 {
-    NSArray *tmp = @[@"翠翠",@"小花",@"翠花",@"阿花",@"阿美",@"阿龙",@"阿肯",@"阿鬼",@"阿里"];
-    self.originUsers = [tmp copy];
-    self.users = [tmp copy];
+    self.originUsers = [TestDataCenter allFriends];
+    self.users = [[TestDataCenter allFriends] copy];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,6 +110,15 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _users.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (_users) {
+        FLChatViewController *chatController = [[FLChatViewController alloc] initWithNibName:nil bundle:nil];
+        chatController.username =  ((FLUser *)_users[indexPath.row]).username;
+        [[FLControllerCoordinator sharedInstance] navigateTo:chatController];
+    }
 }
 
 #pragma mark - UITextFieldDelegate

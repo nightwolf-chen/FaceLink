@@ -8,7 +8,7 @@
 
 #import "FLFaceView.h"
 #import "FMMacros.h"
-
+#import "TestDataCenter.h"
 @implementation FLFaceView
 
 + (instancetype)faceViewWithType:(FLFaceViewType)type name:(NSString *)name
@@ -23,15 +23,17 @@
        
         _username = name;
         
+        FLUser *currentUser = [TestDataCenter findUserByName:name];
+        
         switch (type) {
             case FLFaceViewTypeBig:
             {
-                imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pic_big"]];
+                imageView = [[UIImageView alloc] initWithImage:[currentUser headBigImage]];
             }
                 break;
             case FLFaceViewTypeSmall:
             {
-                imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pic_small"]];
+                imageView = [[UIImageView alloc] initWithImage:[currentUser headSmallImage]];
             }
                 break;
         }

@@ -11,7 +11,7 @@
 
 @interface FLUser : NSObject
 
-@property (nonatomic,readonly) NSString *username;
+@property (nonatomic,copy) NSString *username;
 @property (nonatomic,copy) NSString *headSmallUrl;
 @property (nonatomic,copy) NSString *headBigUrl;
 @property (nonatomic,copy) NSString *photoSmallUrl;

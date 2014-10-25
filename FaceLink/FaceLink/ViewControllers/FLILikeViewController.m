@@ -11,6 +11,7 @@
 #import "FLViewCell.h"
 #import "FMMacros.h"
 #import "FLUser.h"
+#import "TestDataCenter.h"
 
 @interface FLILikeViewController ()
 @property (weak, nonatomic) IBOutlet UIView *headView;
@@ -21,7 +22,8 @@
 
 - (void)loadUsers
 {
-    self.users = [NSArray array];
+    self.users = [TestDataCenter iLikeFriends];
+    [_tableView reloadData];
 }
 
 - (void)setUsers:(NSArray *)users
@@ -31,6 +33,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadUsers];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -63,9 +66,7 @@
         
         NSInteger index = indexPath.row;
         cell.nameLabel.text = TYPE_CHANGE(FLUser *, _users[index]).username;
-        NSString *imageUrl = TYPE_CHANGE(FLUser *, _users[index]).headSmallUrl;
-        NSData *imageData = [NSData dataWithContentsOfFile:imageUrl];
-        cell.headImageView.image = [UIImage imageWithData:imageData];
+        cell.headImageView.image = [TYPE_CHANGE(FLUser *,_users[index]) headSmallImage];
         
     }
     

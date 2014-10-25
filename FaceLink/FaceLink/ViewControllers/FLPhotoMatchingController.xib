@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A386a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FLPhotoMatchingController">
@@ -9,6 +9,7 @@
                 <outlet property="complainButton" destination="SOm-fa-2IQ" id="Bhc-CU-rsE"/>
                 <outlet property="headView" destination="WRA-0b-1Fo" id="CEG-4n-ThE"/>
                 <outlet property="likeButton" destination="twV-Ls-gMI" id="mkr-kl-Qv8"/>
+                <outlet property="nameLabel" destination="Tzp-yw-O9e" id="qeb-bw-Ezm"/>
                 <outlet property="statusLabel" destination="6zz-dR-h6D" id="F05-PB-Kra"/>
                 <outlet property="userImageView" destination="c5D-RW-0Rj" id="dtz-X0-hgN"/>
                 <outlet property="userInfoContainerView" destination="huM-ih-xdT" id="6ih-p0-MFW"/>
@@ -65,7 +66,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="twV-Ls-gMI">
                             <rect key="frame" x="123" y="0.0" width="75" height="65"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="camera_active.png">
+                            <state key="normal" image="like_normal.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -80,7 +81,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金牛座" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aZX-Gy-95B">
-                            <rect key="frame" x="16" y="41" width="58" height="21"/>
+                            <rect key="frame" x="16" y="41" width="96" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.86666666670000003" green="0.95686274510000002" blue="0.94509803920000002" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -112,7 +113,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="翠翠" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tzp-yw-O9e">
-                            <rect key="frame" x="16" y="8" width="49" height="21"/>
+                            <rect key="frame" x="16" y="8" width="96" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.86666666670000003" green="0.95686274510000002" blue="0.94509803920000002" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -128,8 +129,8 @@
     </objects>
     <resources>
         <image name="back_icon.png" width="24" height="24"/>
-        <image name="camera_active.png" width="75" height="64"/>
         <image name="hand.png" width="24" height="24"/>
+        <image name="like_normal.png" width="75" height="64"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

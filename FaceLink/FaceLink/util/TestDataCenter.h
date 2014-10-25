@@ -23,4 +23,11 @@
 
 + (FLUser *)getMatchedUser;
 
++ (NSArray *)iLikeFriends;
+
++ (NSArray *)likeMeFriends;
+
++ (FLUser *)findUserByName:(NSString *)username;
+
++ (FLUser *)randomUser;
 @end

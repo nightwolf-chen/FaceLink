@@ -12,5 +12,6 @@
 
 
 @property (nonatomic,strong) NSArray *users;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
