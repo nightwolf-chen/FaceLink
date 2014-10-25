@@ -11,6 +11,7 @@
 #import "Globals.h"
 #import "FLSingleOptionMenu.h"
 #import "FLPhotoMatchingController.h"
+#import "TestDataCenter.h"
 
 NS_ENUM(NSInteger, FLCameraViewButtonTag){
     FLCameraViewButtonBack,
@@ -28,7 +29,8 @@ NS_ENUM(NSInteger, FLScrollViewDirection){
 
 typedef enum FLPhotoTemplateState{
     FLPhotoTemplateStateShowing,
-    FLPhotoTemplateStateHidden
+    FLPhotoTemplateStateHidden,
+    FLPhotoTemplateStateFocused
 }FLPhotoTemplateState;
 
 
@@ -37,7 +39,7 @@ static const CGFloat kCameraPreviewHight = 320;
 static const CGFloat kTemplateWidth = 68;
 static const CGFloat kTemplateHeight = 68;
 static const CGFloat kTemplateGap = 15;
-static const int kTemplateCount = 8;
+static const int kTemplateCount = 4;
 
 static const CGFloat kBackButtonWidth = 32;
 static const CGFloat kBackButtonHeight = 32;
@@ -61,8 +63,11 @@ static const CGFloat kCloseTemplateBtnIndicatorHeight = 5;
 @property (nonatomic,strong) UIView *controlPanelViewContainer;
 @property (nonatomic,strong) UIView *templateViewContainer;
 
+@property (nonatomic,strong) UIImageView *templateImageViewMask;
+
 @property (nonatomic,assign) UIScrollView *templateScrollView;
 @property (nonatomic,assign) CGRect templateScrollFrameOrigin;
+
 @property (nonatomic,assign) FLPhotoTemplateState templateState;
 
 @end
@@ -126,6 +131,10 @@ static const CGFloat kCloseTemplateBtnIndicatorHeight = 5;
     
     [_cameraPreviewContainer addSubview:controllerView];
     
+    UIImageView *templateImageMask = [[UIImageView alloc] initWithFrame:_cameraPreviewContainer.bounds];
+    templateImageMask.userInteractionEnabled = YES;
+    self.templateImageViewMask = templateImageMask;
+    
     UIView *mask = [[UIView alloc] initWithFrame:_cameraPreviewContainer.bounds];
     mask.backgroundColor = [UIColor clearColor];
     mask.userInteractionEnabled = YES;
@@ -133,7 +142,9 @@ static const CGFloat kCloseTemplateBtnIndicatorHeight = 5;
     reconizer.direction = UISwipeGestureRecognizerDirectionUp;
     [mask addGestureRecognizer:reconizer];
     
-    [_cameraPreviewContainer addSubview:mask];
+    [templateImageMask addSubview:mask];
+    
+    [_cameraPreviewContainer addSubview:templateImageMask];
     
     [UIView animateWithDuration:0.3
                           delay:0.0
@@ -192,7 +203,7 @@ static const CGFloat kCloseTemplateBtnIndicatorHeight = 5;
     UIScrollView *templateScrollView = [[UIScrollView alloc] initWithFrame:scrollViewFrame];
     templateScrollView.backgroundColor = RGB_UICOLOR(17, 96, 96);
     CGSize contentSize = scrollViewFrame.size;
-    contentSize.width = kTemplateGap * (kTemplateCount + 1) + kTemplateWidth * kTemplateCount;
+    contentSize.width = kTemplateGap * (kTemplateCount + 1 + 1) + kTemplateWidth * (kTemplateCount+1);
     templateScrollView.contentSize = contentSize;
     templateScrollView.showsVerticalScrollIndicator = NO;
     templateScrollView.showsHorizontalScrollIndicator = YES;
@@ -201,17 +212,29 @@ static const CGFloat kCloseTemplateBtnIndicatorHeight = 5;
     self.templateScrollView = templateScrollView;
     
     CGFloat startX = kTemplateGap;
-    for(int i = 0 ; i < kTemplateCount ;i++){
+    NSArray *allUsers = [TestDataCenter allFriends];
+    
+    for(int i = 0 ; i < kTemplateCount + 1;i++){
+        FLUser *currentUser = allUsers[i];
+        if (i == kTemplateCount) {
+            currentUser = [TestDataCenter currentUser];
+        }
         CGRect templateFrame = CGRectMake(startX + (kTemplateGap + kTemplateWidth)*i,
                                           (scrollViewFrame.size.height - kTemplateHeight)/2.0f,
                                           kTemplateWidth,
                                           kTemplateHeight);
         
-        UIImageView *aTemplateView = [[UIImageView alloc] initWithFrame:templateFrame];
+        UIButton *aTemplateView = [[UIButton alloc] initWithFrame:templateFrame];
         aTemplateView.layer.borderWidth = 2.0f;
         aTemplateView.layer.borderColor = [UIColor whiteColor].CGColor;
-        aTemplateView.image = [UIImage imageNamed:@"pic_small"];
+        [aTemplateView setImage:[currentUser headSmallImage] forState:UIControlStateNormal];
+        [aTemplateView setImage:[currentUser headSmallImage] forState:UIControlStateSelected];
+        [aTemplateView addTarget:self action:@selector(templateClicked:) forControlEvents:UIControlEventTouchUpInside];
+        aTemplateView.tag =  (i == kTemplateCount) ?-1:i;
         [templateScrollView addSubview:aTemplateView];
+        
+        aTemplateView.userInteractionEnabled = YES;
+        
     }
     
     UIButton *leftArrowButton = [[UIButton alloc] initWithFrame:CGRectMake(0,
@@ -276,6 +299,56 @@ static const CGFloat kCloseTemplateBtnIndicatorHeight = 5;
     
     self.templateState = FLPhotoTemplateStateShowing;
     _templateViewContainer.alpha = 0.6;
+}
+
+- (void)templateClicked:(id)sender
+{
+    if (_templateState == FLPhotoTemplateStateFocused) {
+        return;
+    }else{
+        self.templateState = FLPhotoTemplateStateFocused;
+    }
+    
+    UIButton *button = (UIButton *)sender;
+    static const CGFloat alphaOrigin  = 0.6;
+    static const CGSize buttonSizeOrigin = {kTemplateWidth, kTemplateHeight};
+    static const CGSize buttonSizeBig = {kTemplateWidth * 1.1, kTemplateHeight * 1.1};
+    
+    int index = button.tag;
+    FLUser *selectedUser = nil;
+    if (index != -1) {
+        selectedUser = [TestDataCenter allFriends][index];
+        _templateImageViewMask.image = [selectedUser photoBig];
+    }else{
+        _templateImageViewMask.image = nil;
+    }
+    _templateImageViewMask.alpha = 0.2;
+    
+    self.templateState = FLPhotoTemplateStateFocused;
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        button.alpha = 1;
+        CGRect buttonBigFrame = button.frame;
+        buttonBigFrame.size = buttonSizeBig;
+        button.frame = buttonBigFrame;
+        
+        _templateViewContainer.alpha = 1;
+    } completion:^(BOOL finished){
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [UIView animateWithDuration:0.2 animations:^{
+                button.alpha = alphaOrigin;
+                _templateViewContainer.alpha = alphaOrigin;
+                
+                CGRect buttonFrame = button.frame;
+                buttonFrame.size = buttonSizeOrigin;
+                button.frame = buttonFrame;
+                
+                self.templateState = FLPhotoTemplateStateShowing;
+            }];
+        });
+        
+    }];
 }
 
 - (void)p_setupControlPanelView

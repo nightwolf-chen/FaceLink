@@ -29,5 +29,4 @@
 
 + (FLUser *)findUserByName:(NSString *)username;
 
-+ (FLUser *)randomUser;
 @end

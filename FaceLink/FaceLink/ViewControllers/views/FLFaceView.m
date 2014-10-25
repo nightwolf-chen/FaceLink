@@ -40,21 +40,23 @@
         
         [imageView.layer setBorderWidth:2];
         [imageView.layer setBorderColor:[UIColor whiteColor].CGColor];
-        
-        CGFloat nameLabelW = 38;
-        CGFloat nameLabelH = 25;
-        CGRect nameFrame = CGRectMake(imageView.frame.size.width-nameLabelW,
-                                      imageView.frame.size.height-nameLabelH,
-                                      nameLabelW,
-                                      nameLabelH);
-        
-        UILabel *nameLabel = [[UILabel alloc] initWithFrame:nameFrame];
-        nameLabel.text = name;
-        nameLabel.textAlignment = NSTextAlignmentCenter;
-        nameLabel.backgroundColor = RGBA_UICOLOR(228, 78, 108,0.5);
+//        
+//        CGFloat nameLabelW = 38;
+//        CGFloat nameLabelH = 25;
+//        CGRect nameFrame = CGRectMake(imageView.frame.size.width-nameLabelW,
+//                                      imageView.frame.size.height-nameLabelH,
+//                                      nameLabelW,
+//                                      nameLabelH);
+//        
+//        UILabel *nameLabel = [[UILabel alloc] initWithFrame:nameFrame];
+//        nameLabel.text = name;
+//        nameLabel.textAlignment = NSTextAlignmentCenter;
+//        nameLabel.backgroundColor = RGBA_UICOLOR(228, 78, 108,0.5);
         
         self.bounds = imageView.bounds;
-        [imageView addSubview:nameLabel];
+        
+//        [imageView addSubview:nameLabel];
+        
         [self addSubview:imageView];
     }
     

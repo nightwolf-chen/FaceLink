@@ -45,30 +45,39 @@ static NSArray *s_allFriends;
     NSMutableArray *tmpUsers = [NSMutableArray array];
     
     for(int i = 1 ; i <= kUsersCount ; i++){
-        NSString *indexStr = nil;
-        
-        if (i < 10) {
-            indexStr = [NSString stringWithFormat:@"0%d",i];
-        }else{
-            indexStr = [NSString stringWithFormat:@"%d",i];
-        }
-        
-        FLUser *aUser = [[FLUser alloc] init];
-        
-        aUser.username = names[i-1];
-        aUser.headSmallUrl = [NSString stringWithFormat:@"head_small_%@",indexStr];
-        aUser.headBigUrl = [NSString stringWithFormat:@"head_big_%@",indexStr];
-        aUser.photoSmallUrl = [NSString stringWithFormat:@"photo_small_%@",indexStr];
-        aUser.photoBigUrl = [NSString stringWithFormat:@"photo_big_%@",indexStr];
-        
-        [tmpUsers addObject:aUser];
+        [tmpUsers addObject:[self userByNumber:i names:names[i-1]]];
     }
     
     return tmpUsers;
 }
 
++ (FLUser *)userByNumber:(int) i names:(NSString *)name
+{
+    NSString *indexStr = nil;
+    
+    if (i < 10) {
+        indexStr = [NSString stringWithFormat:@"0%d",i];
+    }else{
+        indexStr = [NSString stringWithFormat:@"%d",i];
+    }
+    
+    FLUser *aUser = [[FLUser alloc] init];
+    
+    aUser.username = name;
+    aUser.headSmallUrl = [NSString stringWithFormat:@"head_small_%@",indexStr];
+    aUser.headBigUrl = [NSString stringWithFormat:@"head_big_%@",indexStr];
+    aUser.photoSmallUrl = [NSString stringWithFormat:@"photo_small_%@",indexStr];
+    aUser.photoBigUrl = [NSString stringWithFormat:@"photo_big_%@",indexStr];
+    
+    return aUser;
+}
+
 + (FLUser *)currentUser
 {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        s_currentUser = [self userByNumber:0 names:@"Ted"];
+    });
     return s_currentUser;
 }
 
@@ -112,10 +121,4 @@ static NSArray *s_allFriends;
 }
 
 
-+ (FLUser *)randomUser
-{
-    NSArray *all = [self allFriends];
-    
-    return all[(random()*100) % all.count];
-}
 @end

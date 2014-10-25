@@ -15,8 +15,8 @@
 #include "FLMainViewController.h"
 #include "TestDataCenter.h"
 
-const double kPictureGapHorizontal = 10;
-const double kPictureGapVertical = 2;
+const double kPictureGapHorizontal = 8;
+const double kPictureGapVertical = 5;
 
 @interface FLRecentViewController ()
 
@@ -96,12 +96,12 @@ const double kPictureGapVertical = 2;
     
     aView = pictures[index];
     cx = startX;
-    cy = startY + frame.size.height + kPictureGapVertical;
+    cy = startY + frame.size.height + kPictureGapVertical ;
     frame = aView.frame;
     frame.origin.x = cx;
     frame.origin.y = cy;
     aView.frame = frame;
-    lx = frame.size.width + kPictureGapVertical;
+    lx = frame.size.width + kPictureGapHorizontal + 2;
     [self showPicture:aView withIndex:index];
     index++;
     

@@ -13,6 +13,7 @@
 #import "FLUser.h"
 #import "TestDataCenter.h"
 
+static NSString *const kMatchingHeadText = @"照片匹配";
 static NSString *const kMatchingText = @"正在寻找同时拍照的人...";
 static NSString *const kMatchingSuccessText = @"恭喜你们成功互换了照片";
 static NSString *const kComplainSuccessText = @"已经举报该用户，谢谢反馈";
@@ -68,9 +69,7 @@ NS_ENUM(NSInteger, FLPhotoMatchingState){
 {
     [super viewDidAppear:animated];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self p_startMatching];
-    });
+    [self p_startMatching];
 }
 
 - (void)p_setupUserImageView
@@ -101,7 +100,7 @@ NS_ENUM(NSInteger, FLPhotoMatchingState){
     _userImageView.image = _useImage;
     
     self.matchingState = FLPhotoMatchingStateMatching;
-    _statusLabel.text = kMatchingText;
+    _statusLabel.text = kMatchingHeadText;
     
     [self p_hideViews:YES];
 
@@ -129,13 +128,14 @@ NS_ENUM(NSInteger, FLPhotoMatchingState){
             _statusLabel.text = kMatchingSuccessText;
             self.matchingState = FLPhotoMatchingStateSuccess;
             
-            [ProgressHUD showSuccess:kMatchingSuccessText];
+//            [ProgressHUD showSuccess:kMatchingSuccessText];
+            [ProgressHUD dismiss];
         }];
 
     };
     
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(),matchingSuccessBlock);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(),matchingSuccessBlock);
 }
 - (IBAction)comlainButtonClicked:(id)sender {
     [ProgressHUD showSuccess:kComplainSuccessText];
@@ -150,6 +150,12 @@ NS_ENUM(NSInteger, FLPhotoMatchingState){
         [_likeButton setImage:[UIImage imageNamed:@"like_active"] forState:UIControlStateNormal];
         [_likeButton setImage:[UIImage imageNamed:@"like_active"] forState:UIControlStateSelected];
         self.liked = YES;
+        
+        [ProgressHUD showSuccess:@"喜欢TA惹~" Interaction:YES];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self p_startMatching];
+        });
     }
 }
 

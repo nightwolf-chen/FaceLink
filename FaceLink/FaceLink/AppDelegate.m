@@ -20,13 +20,14 @@
 
 - (void)prepareUserData{
     [TestDataCenter allFriends];
-    [TestDataCenter setCurrentUser:[TestDataCenter randomUser]];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
     [self prepareUserData];
+    
+    [NSThread sleepForTimeInterval:2.0];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
     [self.window makeKeyAndVisible];

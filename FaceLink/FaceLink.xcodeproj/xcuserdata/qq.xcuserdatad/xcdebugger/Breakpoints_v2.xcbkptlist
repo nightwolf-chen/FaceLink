@@ -67,5 +67,51 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FaceLink/ViewControllers/FLCameraViewController.m"
+            timestampString = "435926830.321352"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
+            landmarkName = "-templateClicked:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[FLCameraViewController templateClicked:]"
+                  moduleName = "FaceLink"
+                  urlString = "file:///Users/qq/Documents/FackLink_svn/FaceLink_proj/trunk/FaceLink/FaceLink/FaceLink/ViewControllers/FLCameraViewController.m"
+                  timestampString = "435922773.589311"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "292"
+                  endingLineNumber = "292"
+                  offsetFromSymbolStart = "102">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[FLCameraViewController templateClicked:]_block_invoke"
+                  moduleName = "FaceLink"
+                  urlString = "file:///Users/qq/Documents/FackLink_svn/FaceLink_proj/trunk/FaceLink/FaceLink/FaceLink/ViewControllers/FLCameraViewController.m"
+                  timestampString = "435922773.589494"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "292"
+                  endingLineNumber = "292"
+                  offsetFromSymbolStart = "50">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

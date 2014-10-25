@@ -126,8 +126,10 @@ typedef enum FLViewKeyboardState{
     _headView.layer.cornerRadius = kRoundedCornerRaduis;
     _headView.layer.masksToBounds = YES;
     
+    FLUser *chatUser = [TestDataCenter findUserByName:_username];
+    
     UIView *tableBgView = [[UIView alloc] initWithFrame:self.view.bounds];
-    UIImageView *bgImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pic_big"]];
+    UIImageView *bgImgView = [[UIImageView alloc] initWithImage:[chatUser photoBig]];
     bgImgView.frame = tableBgView.bounds;
     bgImgView.contentMode = UIViewContentModeScaleToFill;
     [tableBgView addSubview:bgImgView];
