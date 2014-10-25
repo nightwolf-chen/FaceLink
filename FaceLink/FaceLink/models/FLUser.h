@@ -7,12 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface FLUser : NSObject
 
 @property (nonatomic,readonly) NSString *username;
-@property (nonatomic,copy) NSString *smallImageUrl;
-@property (nonatomic,copy) NSString *bigImageUrl;
+@property (nonatomic,copy) NSString *headSmallUrl;
+@property (nonatomic,copy) NSString *headBigUrl;
+@property (nonatomic,copy) NSString *photoSmallUrl;
+@property (nonatomic,copy) NSString *photoBigUrl;
 
+-  (UIImage *)headSmallImage;
+
+- (UIImage *)headBigImage;
+
+- (UIImage *)photoSmall;
+
+- (UIImage *)photoBig;
 
 @end

@@ -10,4 +10,24 @@
 
 @implementation FLUser
 
+- (UIImage *)headSmallImage
+{
+    return [UIImage imageNamed:_headSmallUrl];
+}
+
+- (UIImage *)headBigImage
+{
+    return [UIImage imageNamed:_headBigUrl];
+}
+
+- (UIImage *)photoSmall
+{
+    return [UIImage imageNamed:_photoSmallUrl];
+}
+
+- (UIImage *)photoBig
+{
+    return [UIImage imageNamed:_photoBigUrl];
+}
+
 @end

@@ -10,6 +10,7 @@
 #import "FLViewCell.h"
 #import "Globals.h"
 #import "FLControllerCoordinator.h"
+#import "FLUser.h"
 
 @interface FLSearchViewController ()
 
@@ -82,7 +83,9 @@
         cell = [nib objectAtIndex:0];
     }
     
-    cell.nameLabel.text = _users[indexPath.row];
+    FLUser *currentUser = _users[indexPath.row];
+    cell.nameLabel.text = currentUser.username;
+    cell.headImageView.image = [currentUser headSmallImage];
     
     return cell;
 }
@@ -139,9 +142,9 @@
 {
     NSMutableArray *tmp = [NSMutableArray array];
     
-    for(NSString *str in _originUsers){
-        if ([str containsString:key]) {
-            [tmp addObject:str];
+    for(FLUser *aUser in _originUsers){
+        if ([aUser.username containsString:key]) {
+            [tmp addObject:aUser];
         }
     }
     

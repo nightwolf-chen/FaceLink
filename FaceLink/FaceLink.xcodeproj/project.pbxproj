@@ -22,6 +22,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		123D618519FB53C300987A4D /* UIImage+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D618419FB53C300987A4D /* UIImage+File.m */; };
+		123D618819FB58B400987A4D /* TestDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D618719FB58B400987A4D /* TestDataCenter.m */; };
 		126C4C4219EFB4F300F18654 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4C4119EFB4F300F18654 /* main.m */; };
 		126C4C4519EFB4F300F18654 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C4C4419EFB4F300F18654 /* AppDelegate.m */; };
 		126C4C4D19EFB4F300F18654 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126C4C4C19EFB4F300F18654 /* Images.xcassets */; };
@@ -176,6 +178,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		123D618319FB53C300987A4D /* UIImage+File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+File.h"; sourceTree = "<group>"; };
+		123D618419FB53C300987A4D /* UIImage+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+File.m"; sourceTree = "<group>"; };
+		123D618619FB58B400987A4D /* TestDataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDataCenter.h; sourceTree = "<group>"; };
+		123D618719FB58B400987A4D /* TestDataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataCenter.m; sourceTree = "<group>"; };
 		126C4C3C19EFB4F300F18654 /* FaceLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		126C4C4019EFB4F300F18654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		126C4C4119EFB4F300F18654 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -406,6 +412,10 @@
 				30CF80E519F2A9B800FDF633 /* Globals.h */,
 				30D45CF419F3706B00135746 /* FLAppSettings.h */,
 				30D45CF519F3706B00135746 /* FLAppSettings.m */,
+				123D618319FB53C300987A4D /* UIImage+File.h */,
+				123D618419FB53C300987A4D /* UIImage+File.m */,
+				123D618619FB58B400987A4D /* TestDataCenter.h */,
+				123D618719FB58B400987A4D /* TestDataCenter.m */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -774,6 +784,7 @@
 				12C9AB8019F6577A007BA823 /* FLChatOutCell.m in Sources */,
 				12CE73A019FA4F6900060943 /* FLUser.m in Sources */,
 				12C9AB1E19F4CF95007BA823 /* FLChatViewController.m in Sources */,
+				123D618519FB53C300987A4D /* UIImage+File.m in Sources */,
 				30D45CFA19F3E19900135746 /* FLPhotoMatchingController.m in Sources */,
 				30CF80E619F2A9B800FDF633 /* Globals.c in Sources */,
 				126C4C4519EFB4F300F18654 /* AppDelegate.m in Sources */,
@@ -787,6 +798,7 @@
 				30D45CF319F35CF700135746 /* FLSingleOptionMenu.m in Sources */,
 				126C4C4219EFB4F300F18654 /* main.m in Sources */,
 				126C4C7819F0B11700F18654 /* FLMainViewController.m in Sources */,
+				123D618819FB58B400987A4D /* TestDataCenter.m in Sources */,
 				12C9AB1919F4CF83007BA823 /* FLILikeViewController.m in Sources */,
 				126C4CAD19F103AA00F18654 /* FLRecentViewController.m in Sources */,
 				126C4CB219F103C000F18654 /* FLHotViewController.m in Sources */,

@@ -61,9 +61,9 @@
         //第一个对象就是CustomCell了
         cell = [nib objectAtIndex:0];
         
-        int index = indexPath.row;
+        NSInteger index = indexPath.row;
         cell.nameLabel.text = TYPE_CHANGE(FLUser *, _users[index]).username;
-        NSString *imageUrl = TYPE_CHANGE(FLUser *, _users[index]).smallImageUrl;
+        NSString *imageUrl = TYPE_CHANGE(FLUser *, _users[index]).headSmallUrl;
         NSData *imageData = [NSData dataWithContentsOfFile:imageUrl];
         cell.headImageView.image = [UIImage imageWithData:imageData];
         

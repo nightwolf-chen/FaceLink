@@ -13,12 +13,19 @@
 #import "FLLikeMeViewController.h"
 #import "FLILikeViewController.h"
 #import "FLViewCell.h"
+#import "FLUser.h"
+#import "TestDataCenter.h"
 
 @interface FLHotViewController ()
 
 @end
 
 @implementation FLHotViewController
+
+- (void)loadUsers
+{
+    self.hotUsers = [TestDataCenter hotUsers];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,6 +45,8 @@
     photoFrame.origin.x = kHorizontalGap;
     photoFrame.origin.y = kVerticalGap;
     _myPhotoView.frame = photoFrame;
+    
+    [self loadUsers];
     
 }
 
@@ -112,6 +121,16 @@
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FLViewCell" owner:nil options:nil];
             //第一个对象就是CustomCell了
             cell = [nib objectAtIndex:0];
+            
+            
+            NSInteger index = indexPath.row - 2;
+            FLUser *userForCell = TYPE_CHANGE(FLUser *, _hotUsers[index]);
+            
+            FLViewCell *customCell = TYPE_CHANGE(FLViewCell *, cell);
+            
+            customCell.nameLabel.text = userForCell.username;
+            customCell.headImageView.image = [userForCell headSmallImage];
+            
         }
         
     }

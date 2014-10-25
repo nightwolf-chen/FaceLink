@@ -13,9 +13,10 @@
 #import "FLChatViewController.h"
 #import "FLControllerCoordinator.h"
 #include "FLMainViewController.h"
+#include "TestDataCenter.h"
 
 const double kPictureGapHorizontal = 10;
-const double kPictureGapVertical = 10;
+const double kPictureGapVertical = 2;
 
 @interface FLRecentViewController ()
 
@@ -47,7 +48,7 @@ const double kPictureGapVertical = 10;
 - (void)showPhotos
 {
     NSMutableArray *tmpArray = [NSMutableArray array];
-    NSArray *names = @[@"翠翠",@"阿花",@"阿花",@"阿花",@"阿美",@"阿花",@"阿花",@"阿花",@"阿花"];
+    NSArray *names = [TestDataCenter recentChatFriends];
     const int photoscount = 9;
     for(int i = 0 ;i < photoscount ;i++){
         FLFaceViewType type ;
