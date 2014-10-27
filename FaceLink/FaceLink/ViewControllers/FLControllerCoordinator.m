@@ -56,12 +56,32 @@
     }
 }
 
-- (void)navigateWithinMain:(FLMainViewSubController)subController caller:(FLMainViewSubController)caller
-{
-    FLMainViewController *main = (FLMainViewController *)_mainViewController;
-    
-    [main activateController:subController activater:caller];
-}
 
+- (void)requestController:(FLViewControllerTag)controllerTag
+{
+    switch (controllerTag) {
+        case FLViewControllerTagCamera:{
+            
+        }
+            break;
+            
+        case FLViewControllerTagChat:{
+        
+        }
+            break;
+        case FLViewControllerTagILike:{
+        
+        }
+            break;
+        case FLViewControllerTagLikeMe:{
+            
+        }
+            break;
+        case FLViewControllerTagMain:{
+        
+        }
+            break;
+    }
+}
 
 @end

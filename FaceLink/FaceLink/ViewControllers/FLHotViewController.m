@@ -16,6 +16,7 @@
 #import "FLUser.h"
 #import "TestDataCenter.h"
 #import "FLChatViewController.h"
+#import "FLMainViewController.h"
 
 @interface FLHotViewController ()
 
@@ -72,7 +73,9 @@
     [[FLControllerCoordinator sharedInstance] navigateTo:controller];
 }
 - (IBAction)searchButtonClicked:(id)sender {
-    [[FLControllerCoordinator sharedInstance] navigateWithinMain:FLMainViewSubControllerSearch caller:FLMainViewSubControllerHot];
+    if ([_delegate respondsToSelector:@selector(subControllerRequestSearch:)]) {
+        [_delegate subControllerRequestSearch:self];
+    }
 }
 
 

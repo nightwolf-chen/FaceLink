@@ -13,7 +13,6 @@
 #import "FLHotViewController.h"
 #import "FLCameraViewController.h"
 #import "Globals.h"
-#import "FLSearchViewController.h"
 
 #define CONTROL_BUTTON_COLOR RGB_UICOLOR(49, 144, 168)
 
@@ -23,6 +22,11 @@ NS_ENUM(NSInteger, FLButtonTag){
     FLButtonHot,
     FLButtonMenu
 };
+
+typedef enum FLMainTabbarTab{
+    FLMainTabbarTabHot,
+    FLMainTabbarTabRecent
+}FLMainTabbarTab;
 
 
 
@@ -41,6 +45,8 @@ NS_ENUM(NSInteger, FLButtonTag){
 
 @property (nonatomic,assign) UIButton *recentButton;
 @property (nonatomic,assign) UIButton *hotButton;
+
+@property (nonatomic,assign) NSInteger selectedTab;
 
 @end
 
@@ -125,12 +131,8 @@ NS_ENUM(NSInteger, FLButtonTag){
 {
     UILabel *usernameLabel = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH*0.2, 0, SCREEN_WIDTH*0.6, kHeadHight)];
     usernameLabel.text = @"咔咔";
-    
     usernameLabel.textAlignment = NSTextAlignmentCenter;
     
-//    UIImageView *kakaImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"kaka_word"]];
-//    kakaImageView.center = CGPointMake(_headViewContainer.frame.size.width/2.0f, _headViewContainer.frame.size.height/2.0f);
-//
     UIButton *menuButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - kMenuLeftMargin - kMenuButtonWidth,
                                                                      (kHeadHight - kMenuButtonWidth) / 2.0f,
                                                                      kMenuButtonWidth,
@@ -150,6 +152,10 @@ NS_ENUM(NSInteger, FLButtonTag){
     self.hotController = [[FLHotViewController alloc] initWithNibName:nil bundle:nil];
     self.searchController = [[FLSearchViewController alloc] initWithNibName:nil bundle:nil];
     
+    TYPE_CHANGE(FLRecentViewController*, _recentController).delegate = self;
+    TYPE_CHANGE(FLHotViewController*, _hotController).delegate = self;
+    TYPE_CHANGE(FLSearchViewController*, _searchController).delegate = self;
+    
     [self addChildViewController:_recentController];
     [self addChildViewController:_hotController];
     [self addChildViewController:_searchController];
@@ -164,12 +170,14 @@ NS_ENUM(NSInteger, FLButtonTag){
     }
     
     if ([viewController isKindOfClass:[FLRecentViewController class]]) {
+        self.selectedTab = FLMainTabbarTabRecent;
         _recentButton.backgroundColor = [UIColor darkGrayColor];
         if ([_activeController isKindOfClass:[FLHotViewController class]]) {
             _hotButton.backgroundColor = CONTROL_BUTTON_COLOR;
         }
         
     }else if([viewController isKindOfClass:[FLHotViewController class]]){
+        self.selectedTab = FLMainTabbarTabHot;
         _hotButton.backgroundColor = [UIColor darkGrayColor];
         if ([_activeController isKindOfClass:[FLRecentViewController class]]) {
             _recentButton.backgroundColor = CONTROL_BUTTON_COLOR;
@@ -185,24 +193,6 @@ NS_ENUM(NSInteger, FLButtonTag){
     [_contentViewContainer bringSubviewToFront:_statusbarContainer];
     self.activeController = viewController;
     
-}
-
-- (void)activateController:(FLMainViewSubController)subController activater:(FLMainViewSubController)caller
-{
-    switch (subController) {
-        case FLMainViewSubControllerHot:
-            [self p_activateViewController:_hotController];
-            break;
-        case FLMainViewSubControllerRecent:
-            [self p_activateViewController:_recentController];
-            break;
-        case FLMainViewSubControllerSearch:
-        {
-            ((FLSearchViewController *)_searchController).searchCaller = caller;
-            [self p_activateViewController:_searchController];
-        }
-            break;
-    }
 }
 
 - (KxMenuItem *)p_itemWithName:(NSString *)name
@@ -278,6 +268,24 @@ NS_ENUM(NSInteger, FLButtonTag){
 - (BOOL)shouldAutorotate
 {
     return NO;
+}
+
+#pragma mark - FLSearchViewControllerDelegate
+
+- (void)searchViewControllerDidEndSearch:(FLSearchViewController *)searchController
+{
+    if (_selectedTab == FLMainTabbarTabHot) {
+        [self p_activateViewController:_hotController];
+    }else{
+        [self p_activateViewController:_recentController];
+    }
+}
+
+#pragma mark - FLMainSubControllerDelegate 
+
+- (void)subControllerRequestSearch:(id)controller
+{
+    [self p_activateViewController:_searchController];
 }
 
 @end

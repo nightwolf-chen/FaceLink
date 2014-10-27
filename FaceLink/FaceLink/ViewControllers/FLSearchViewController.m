@@ -104,7 +104,9 @@
     [_searchTextField resignFirstResponder];
     _searchTextField.text = @"";
     
-    [[FLControllerCoordinator sharedInstance] navigateWithinMain:_searchCaller caller:FLMainViewSubControllerSearch];
+    if ([_delegate respondsToSelector:@selector(searchViewControllerDidEndSearch:)]) {
+        [_delegate searchViewControllerDidEndSearch:self];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

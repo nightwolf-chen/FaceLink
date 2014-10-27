@@ -128,7 +128,6 @@ NS_ENUM(NSInteger, FLPhotoMatchingState){
             _statusLabel.text = kMatchingSuccessText;
             self.matchingState = FLPhotoMatchingStateSuccess;
             
-//            [ProgressHUD showSuccess:kMatchingSuccessText];
             [ProgressHUD dismiss];
         }];
 

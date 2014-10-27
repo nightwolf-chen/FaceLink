@@ -292,6 +292,7 @@
 		123D620419FBAF6100987A4D /* head_small_00@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "head_small_00@2x.png"; sourceTree = "<group>"; };
 		123D620519FBAF6100987A4D /* photo_big_00@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_big_00@2x.png"; sourceTree = "<group>"; };
 		123D620619FBAF6100987A4D /* photo_small_00@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_small_00@2x.png"; sourceTree = "<group>"; };
+		123D620B19FDED0A00987A4D /* FLMainSubControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FLMainSubControllerDelegate.h; path = FaceLink/ViewControllers/FLMainSubControllerDelegate.h; sourceTree = SOURCE_ROOT; };
 		126C4C3C19EFB4F300F18654 /* FaceLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		126C4C4019EFB4F300F18654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		126C4C4119EFB4F300F18654 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -763,6 +764,7 @@
 				12C9AB8219F657D7007BA823 /* FLChatInCell.h */,
 				12C9AB8319F657D7007BA823 /* FLChatInCell.m */,
 				12C9AB8419F657D7007BA823 /* FLChatInCell.xib */,
+				123D620B19FDED0A00987A4D /* FLMainSubControllerDelegate.h */,
 			);
 			path = views;
 			sourceTree = "<group>";

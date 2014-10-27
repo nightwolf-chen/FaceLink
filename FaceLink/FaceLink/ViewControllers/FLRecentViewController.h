@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FLMainSubControllerDelegate;
+
 @interface FLRecentViewController : UIViewController<UITextFieldDelegate,UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *baseScrollView;
 
@@ -15,5 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UIView *photoContainer;
+
+@property (weak, nonatomic) id<FLMainSubControllerDelegate> delegate;
 
 @end

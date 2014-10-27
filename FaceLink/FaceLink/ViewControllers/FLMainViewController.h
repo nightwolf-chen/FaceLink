@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#import "FLSearchViewController.h"
+#import "FLMainSubControllerDelegate.h"
+
 typedef enum FLMainViewSubController{
     FLMainViewSubControllerHot,
     FLMainViewSubControllerRecent,
     FLMainViewSubControllerSearch
 }FLMainViewSubController;
 
-@interface FLMainViewController : UIViewController
+@interface FLMainViewController : UIViewController<FLSearchViewControllerDelegate,FLMainSubControllerDelegate>
 
-- (void)activateController:(FLMainViewSubController)subController activater:(FLMainViewSubController)caller;
 @end

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FLMainSubControllerDelegate;
+
 @interface FLHotViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *headerView;
@@ -17,5 +19,7 @@
 
 @property (strong, nonatomic) NSArray *hotUsers;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (weak, nonatomic) id<FLMainSubControllerDelegate> delegate;
 
 @end
