@@ -167,7 +167,7 @@ typedef enum FLViewKeyboardState{
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)backButtonClicked:(id)sender {
-    [[FLControllerCoordinator sharedInstance] backToRoot];
+    [[FLControllerCoordinator sharedInstance] backToMain];
 }
 
 - (void)setUsername:(NSString *)username

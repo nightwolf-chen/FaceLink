@@ -9,10 +9,16 @@
 #import "FLControllerCoordinator.h"
 #import "FLMainViewController.h"
 #import <UIKit/UIKit.h>
+#import "FLMainViewController.h"
+#import "FLCameraViewController.h"
+#import "FLILikeViewController.h"
+#import "FLLikeMeViewController.h"
+#import "FLChatViewController.h"
 
 @interface FLControllerCoordinator ()
 
 @property (nonatomic,assign) UIViewController *activeViewController;
+@property (nonatomic,strong) NSArray *viewControllerClass;
 
 @end
 
@@ -33,12 +39,19 @@
 {
     self = [super init];
     if (self) {
+        _viewControllerClass = @[[FLMainViewController class],
+                                 [FLCameraViewController class],
+                                 [FLLikeMeViewController class],
+                                 [FLILikeViewController class],
+                                 [FLChatViewController class]
+                                 ];
+        
     }
     
     return self;
 }
 
-- (void)navigateTo:(UIViewController *)controller
+- (void)p_navigateTo:(UIViewController *)controller
 {
     [self.mainViewController
      presentViewController:controller
@@ -49,7 +62,7 @@
     self.activeViewController = controller;
 }
 
-- (void)backToRoot
+- (void)backToMain
 {
     if (_activeViewController && [_activeViewController respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]) {
         [_activeViewController dismissViewControllerAnimated:YES completion:^{}];
@@ -59,29 +72,7 @@
 
 - (void)requestController:(FLViewControllerTag)controllerTag
 {
-    switch (controllerTag) {
-        case FLViewControllerTagCamera:{
-            
-        }
-            break;
-            
-        case FLViewControllerTagChat:{
-        
-        }
-            break;
-        case FLViewControllerTagILike:{
-        
-        }
-            break;
-        case FLViewControllerTagLikeMe:{
-            
-        }
-            break;
-        case FLViewControllerTagMain:{
-        
-        }
-            break;
-    }
+    
 }
 
 @end

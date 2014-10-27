@@ -11,11 +11,12 @@
 #import "FLMainViewController.h"
 
 typedef enum FLViewControllerTag{
-    FLViewControllerTagMain,
+    FLViewControllerTagMain=0,
     FLViewControllerTagCamera,
     FLViewControllerTagLikeMe,
     FLViewControllerTagILike,
-    FLViewControllerTagChat
+    FLViewControllerTagChat,
+    FLViewControllerTagCount
 }FLViewControllerTag;
 
 @interface FLControllerCoordinator : NSObject
@@ -24,10 +25,7 @@ typedef enum FLViewControllerTag{
 
 + (instancetype)sharedInstance;
 
-- (void)navigateTo:(UIViewController *)controller;
-
-- (void)backToRoot;
-
+- (void)backToMain;
 
 - (void)requestController:(FLViewControllerTag)controllerTag;
 

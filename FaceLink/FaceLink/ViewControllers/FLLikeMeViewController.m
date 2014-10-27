@@ -42,7 +42,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)backButtonClicked:(id)sender {
-    [[FLControllerCoordinator sharedInstance] backToRoot];
+    [[FLControllerCoordinator sharedInstance] backToMain];
 }
 
 #pragma mark - UITableViewDataSource
