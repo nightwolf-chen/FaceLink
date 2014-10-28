@@ -194,6 +194,7 @@
 		12CE737319FA318100060943 /* go_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C9AB5D19F5FF5F007BA823 /* go_back@2x.png */; };
 		12CE737419FA318100060943 /* photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4319F7E929009FF850 /* photo@2x.png */; };
 		12CE73A019FA4F6900060943 /* FLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CE739F19FA4F6900060943 /* FLUser.m */; };
+		12CF253D19FF385A003E5D62 /* FLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CF253C19FF385A003E5D62 /* FLViewController.m */; };
 		12E0F99219F8E37E00C85182 /* bubble_in@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F99019F8E37E00C85182 /* bubble_in@2x.png */; };
 		12E0F99319F8E37E00C85182 /* bubble_out@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F99119F8E37E00C85182 /* bubble_out@2x.png */; };
 		30CF80E619F2A9B800FDF633 /* Globals.c in Sources */ = {isa = PBXBuildFile; fileRef = 30CF80E419F2A9B800FDF633 /* Globals.c */; };
@@ -366,6 +367,8 @@
 		12CE737B19FA318100060943 /* FaceLink copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FaceLink copy-Info.plist"; path = "/Users/qq/Documents/FaceLink/FaceLink/FaceLink copy-Info.plist"; sourceTree = "<absolute>"; };
 		12CE739E19FA4F6900060943 /* FLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLUser.h; sourceTree = "<group>"; };
 		12CE739F19FA4F6900060943 /* FLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLUser.m; sourceTree = "<group>"; };
+		12CF253B19FF385A003E5D62 /* FLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLViewController.h; sourceTree = "<group>"; };
+		12CF253C19FF385A003E5D62 /* FLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLViewController.m; sourceTree = "<group>"; };
 		12E0F99019F8E37E00C85182 /* bubble_in@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_in@2x.png"; sourceTree = "<group>"; };
 		12E0F99119F8E37E00C85182 /* bubble_out@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_out@2x.png"; sourceTree = "<group>"; };
 		30CF80E419F2A9B800FDF633 /* Globals.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Globals.c; sourceTree = "<group>"; };
@@ -674,6 +677,8 @@
 				30E73F3A19F7708D009FF850 /* FLSearchViewController.h */,
 				30E73F3B19F7708D009FF850 /* FLSearchViewController.m */,
 				30E73F3C19F7708D009FF850 /* FLSearchViewController.xib */,
+				12CF253B19FF385A003E5D62 /* FLViewController.h */,
+				12CF253C19FF385A003E5D62 /* FLViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1130,6 +1135,7 @@
 				30D45CF619F3706B00135746 /* FLAppSettings.m in Sources */,
 				30D45CF319F35CF700135746 /* FLSingleOptionMenu.m in Sources */,
 				126C4C4219EFB4F300F18654 /* main.m in Sources */,
+				12CF253D19FF385A003E5D62 /* FLViewController.m in Sources */,
 				126C4C7819F0B11700F18654 /* FLMainViewController.m in Sources */,
 				123D618819FB58B400987A4D /* TestDataCenter.m in Sources */,
 				12C9AB1919F4CF83007BA823 /* FLILikeViewController.m in Sources */,

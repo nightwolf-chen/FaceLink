@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface FLPhotoMatchingController : UIViewController<UIGestureRecognizerDelegate>
+#import "FLViewController.h"
+@interface FLPhotoMatchingController : FLViewController<UIGestureRecognizerDelegate>
 
 @property (nonatomic,strong) UIImage *useImage;
 

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "FLMainViewController.h"
+#import "FLViewController.h"
 
 typedef enum FLViewControllerTag{
     FLViewControllerTagMain=0,
@@ -21,12 +22,12 @@ typedef enum FLViewControllerTag{
 
 @interface FLControllerCoordinator : NSObject
 
-@property (nonatomic,strong) UIViewController *mainViewController;
+@property (nonatomic,strong) FLViewController *mainViewController;
 
 + (instancetype)sharedInstance;
 
 - (void)backToMain;
 
-- (void)requestController:(FLViewControllerTag)controllerTag;
+- (void)requestController:(FLViewControllerTag)controllerTag info:(NSDictionary *)userInfo;
 
 @end

@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FLViewController.h"
 
-@interface FLChatViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UIScrollViewDelegate>
+extern NSString *const kFLChatViewControllerInfoUsername;
+
+@interface FLChatViewController : FLViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UIScrollViewDelegate>
 
 @property (nonatomic,copy) NSString *username;
 @property (weak, nonatomic) IBOutlet UIView *headView;

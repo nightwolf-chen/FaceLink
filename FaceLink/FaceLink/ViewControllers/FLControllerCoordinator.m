@@ -14,6 +14,7 @@
 #import "FLILikeViewController.h"
 #import "FLLikeMeViewController.h"
 #import "FLChatViewController.h"
+#import "FMMacros.h"
 
 @interface FLControllerCoordinator ()
 
@@ -70,9 +71,14 @@
 }
 
 
-- (void)requestController:(FLViewControllerTag)controllerTag
+- (void)requestController:(FLViewControllerTag)controllerTag info:(NSDictionary *)userInfo
 {
-    
+    if (controllerTag == FLViewControllerTagMain || controllerTag >= FLViewControllerTagCount) {
+        [self backToMain];
+    }else{
+        FLViewController *aController = [[TYPE_CHANGE(Class, _viewControllerClass[controllerTag]) alloc] initWithRequestInfo:userInfo];
+        [self p_navigateTo:aController];
+    }
 }
 
 @end

@@ -23,6 +23,8 @@ typedef enum FLViewKeyboardState{
     FLViewKeyboardStateHidden
 }FLViewKeyboardState;
 
+NSString *const kFLChatViewControllerInfoUsername = @"kFLChatViewControllerInfoUsername";
+
 
 @interface FLChatViewController ()
 
@@ -321,4 +323,12 @@ typedef enum FLViewKeyboardState{
     [KxMenu showMenuInView:self.view fromRect:targetView.frame menuItems:menuItems];
     [KxMenu setTintColor:RGB_UICOLOR(228, 78, 108)];
 }
+
+#pragma - mark overide methods
+
+- (void)loadUserInfo
+{
+    self.username = self.requestInfo[kFLChatViewControllerInfoUsername];
+}
+
 @end

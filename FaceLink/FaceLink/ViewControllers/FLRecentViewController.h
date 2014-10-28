@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FLViewController.h"
 
 @protocol FLMainSubControllerDelegate;
 
-@interface FLRecentViewController : UIViewController<UITextFieldDelegate,UIScrollViewDelegate>
+@interface FLRecentViewController : FLViewController<UITextFieldDelegate,UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *baseScrollView;
 
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;

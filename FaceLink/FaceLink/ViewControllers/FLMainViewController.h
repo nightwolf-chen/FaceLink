@@ -10,6 +10,7 @@
 
 #import "FLSearchViewController.h"
 #import "FLMainSubControllerDelegate.h"
+#import "FLViewController.h"
 
 typedef enum FLMainViewSubController{
     FLMainViewSubControllerHot,
@@ -17,6 +18,6 @@ typedef enum FLMainViewSubController{
     FLMainViewSubControllerSearch
 }FLMainViewSubController;
 
-@interface FLMainViewController : UIViewController<FLSearchViewControllerDelegate,FLMainSubControllerDelegate>
+@interface FLMainViewController : FLViewController<FLSearchViewControllerDelegate,FLMainSubControllerDelegate>
 
 @end

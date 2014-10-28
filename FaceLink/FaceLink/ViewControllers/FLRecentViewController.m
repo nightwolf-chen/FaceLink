@@ -156,9 +156,7 @@ const double kPictureGapVertical = 5;
     
     if (username) {
         //Start a chatview controller.
-        FLChatViewController *chatController = [[FLChatViewController alloc] initWithNibName:nil bundle:nil];
-        chatController.username = username;
-        [[FLControllerCoordinator sharedInstance] navigateTo:chatController];
+        [[FLControllerCoordinator sharedInstance] requestController:FLViewControllerTagChat info:@{kFLChatViewControllerInfoUsername:username}];
     }
 }
 - (void)scrollViewDidTap:(UIGestureRecognizer *)recognizer

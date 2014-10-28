@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FLViewController.h"
 
 @protocol FLMainSubControllerDelegate;
 
-@interface FLHotViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
+@interface FLHotViewController : FLViewController<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;

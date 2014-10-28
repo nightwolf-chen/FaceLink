@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface FLCameraViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+#import "FLViewController.h"
+@interface FLCameraViewController : FLViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @end

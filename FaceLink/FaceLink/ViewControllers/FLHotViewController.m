@@ -65,12 +65,10 @@
     [_searchTextField resignFirstResponder];
 }
 - (IBAction)likeMeClicked:(id)sender {
-    FLLikeMeViewController *controller = [[FLLikeMeViewController alloc] initWithNibName:nil bundle:nil];
-    [[FLControllerCoordinator sharedInstance] navigateTo:controller];
+    [[FLControllerCoordinator sharedInstance] requestController:FLViewControllerTagLikeMe info:nil];
 }
 - (IBAction)ILikeClicked:(id)sender {
-    FLILikeViewController *controller = [[FLILikeViewController alloc] initWithNibName:nil bundle:nil];
-    [[FLControllerCoordinator sharedInstance] navigateTo:controller];
+    [[FLControllerCoordinator sharedInstance] requestController:FLViewControllerTagILike info:nil];
 }
 - (IBAction)searchButtonClicked:(id)sender {
     if ([_delegate respondsToSelector:@selector(subControllerRequestSearch:)]) {
@@ -162,9 +160,7 @@
 {
     if (indexPath.row > 1) {
         FLUser *aUser = _hotUsers[indexPath.row - 2];
-        FLChatViewController *chatCtr = [[FLChatViewController alloc] initWithNibName:nil bundle:nil];
-        chatCtr.username = aUser.username;
-        [[FLControllerCoordinator sharedInstance] navigateTo:chatCtr];
+        [[FLControllerCoordinator sharedInstance] requestController:FLViewControllerTagChat info:nil];
     }
 }
 

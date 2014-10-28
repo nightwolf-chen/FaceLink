@@ -11,6 +11,7 @@
 #import "FLMainViewController.h"
 #import "FLControllerCoordinator.h"
 #import "TestDataCenter.h"
+
 @interface AppDelegate ()
 
 @end
@@ -32,7 +33,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
     [self.window makeKeyAndVisible];
     
-    FLMainViewController *rootViewController = [[FLMainViewController alloc] initWithNibName:nil bundle:nil];
+    FLMainViewController *rootViewController = [[FLMainViewController alloc] initWithRequestInfo:@{}];
     
     self.window.rootViewController = rootViewController;
     

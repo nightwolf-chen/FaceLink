@@ -117,9 +117,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (_users) {
-        FLChatViewController *chatController = [[FLChatViewController alloc] initWithNibName:nil bundle:nil];
-        chatController.username =  ((FLUser *)_users[indexPath.row]).username;
-        [[FLControllerCoordinator sharedInstance] navigateTo:chatController];
+        [[FLControllerCoordinator sharedInstance] requestController:FLViewControllerTagChat info:nil];
     }
 }
 

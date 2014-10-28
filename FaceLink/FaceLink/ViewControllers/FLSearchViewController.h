@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FLViewController.h"
 @protocol FLSearchViewControllerDelegate;
 
-@interface FLSearchViewController : UIViewController<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+@interface FLSearchViewController : FLViewController<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *headView;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
@@ -18,8 +18,6 @@
 @property (weak, nonatomic) id<FLSearchViewControllerDelegate> delegate;
 
 @end
-
-
 
 
 @protocol FLSearchViewControllerDelegate <NSObject>
