@@ -117,7 +117,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (_users) {
-        [[FLControllerCoordinator sharedInstance] requestController:FLViewControllerTagChat info:nil];
+        FLUser *selectedUser = _users[indexPath.row];
+        [[FLControllerCoordinator sharedInstance] requestController:FLViewControllerTagChat
+                                                               info:@{kFLChatViewControllerInfoUsername:selectedUser.username}];
     }
 }
 

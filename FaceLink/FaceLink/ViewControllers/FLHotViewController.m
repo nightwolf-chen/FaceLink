@@ -160,7 +160,7 @@
 {
     if (indexPath.row > 1) {
         FLUser *aUser = _hotUsers[indexPath.row - 2];
-        [[FLControllerCoordinator sharedInstance] requestController:FLViewControllerTagChat info:nil];
+        [[FLControllerCoordinator sharedInstance] requestController:FLViewControllerTagChat info:@{kFLChatViewControllerInfoUsername:aUser.username}];
     }
 }
 

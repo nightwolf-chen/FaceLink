@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FLViewController.h"
 
-@interface FLLikeMeViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface FLLikeMeViewController : FLViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (strong,nonatomic) NSArray *users;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

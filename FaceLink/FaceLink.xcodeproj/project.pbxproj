@@ -195,6 +195,10 @@
 		12CE737419FA318100060943 /* photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4319F7E929009FF850 /* photo@2x.png */; };
 		12CE73A019FA4F6900060943 /* FLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CE739F19FA4F6900060943 /* FLUser.m */; };
 		12CF253D19FF385A003E5D62 /* FLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CF253C19FF385A003E5D62 /* FLViewController.m */; };
+		12CF254119FF4509003E5D62 /* BasicDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CF254019FF4509003E5D62 /* BasicDatabaseManager.m */; };
+		12CF254419FF7519003E5D62 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CF254319FF7519003E5D62 /* FMDatabase.m */; };
+		12CF254619FF7561003E5D62 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12CF254519FF7561003E5D62 /* CoreData.framework */; };
+		12D49B4C1A01D86900B923B4 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D49B4B1A01D86900B923B4 /* libsqlite3.0.dylib */; };
 		12E0F99219F8E37E00C85182 /* bubble_in@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F99019F8E37E00C85182 /* bubble_in@2x.png */; };
 		12E0F99319F8E37E00C85182 /* bubble_out@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F99119F8E37E00C85182 /* bubble_out@2x.png */; };
 		30CF80E619F2A9B800FDF633 /* Globals.c in Sources */ = {isa = PBXBuildFile; fileRef = 30CF80E419F2A9B800FDF633 /* Globals.c */; };
@@ -369,6 +373,12 @@
 		12CE739F19FA4F6900060943 /* FLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLUser.m; sourceTree = "<group>"; };
 		12CF253B19FF385A003E5D62 /* FLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLViewController.h; sourceTree = "<group>"; };
 		12CF253C19FF385A003E5D62 /* FLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLViewController.m; sourceTree = "<group>"; };
+		12CF253F19FF4509003E5D62 /* BasicDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicDatabaseManager.h; sourceTree = "<group>"; };
+		12CF254019FF4509003E5D62 /* BasicDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicDatabaseManager.m; sourceTree = "<group>"; };
+		12CF254219FF7519003E5D62 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		12CF254319FF7519003E5D62 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		12CF254519FF7561003E5D62 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		12D49B4B1A01D86900B923B4 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		12E0F99019F8E37E00C85182 /* bubble_in@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_in@2x.png"; sourceTree = "<group>"; };
 		12E0F99119F8E37E00C85182 /* bubble_out@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_out@2x.png"; sourceTree = "<group>"; };
 		30CF80E419F2A9B800FDF633 /* Globals.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Globals.c; sourceTree = "<group>"; };
@@ -399,6 +409,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12D49B4C1A01D86900B923B4 /* libsqlite3.0.dylib in Frameworks */,
+				12CF254619FF7561003E5D62 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +598,9 @@
 		126C4C3319EFB4F300F18654 = {
 			isa = PBXGroup;
 			children = (
+				12C9AB3119F4F0DD007BA823 /* images */,
+				12D49B4B1A01D86900B923B4 /* libsqlite3.0.dylib */,
+				12CF254519FF7561003E5D62 /* CoreData.framework */,
 				126C4C3E19EFB4F300F18654 /* FaceLink */,
 				126C4C5819EFB4F300F18654 /* FaceLinkTests */,
 				126C4C3D19EFB4F300F18654 /* Products */,
@@ -606,8 +621,8 @@
 		126C4C3E19EFB4F300F18654 /* FaceLink */ = {
 			isa = PBXGroup;
 			children = (
+				12CF253E19FF4509003E5D62 /* database */,
 				12C9AB9719F681F1007BA823 /* models */,
-				12C9AB3119F4F0DD007BA823 /* images */,
 				126C4CA319F0FBE900F18654 /* controls */,
 				126C4C7919F0B54900F18654 /* util */,
 				126C4C7519F0B07C00F18654 /* ViewControllers */,
@@ -735,7 +750,8 @@
 				12C9AB6519F5FF5F007BA823 /* MatchingCtr */,
 				12C9AB3219F4F0DD007BA823 /* ControllerMain */,
 			);
-			path = images;
+			name = images;
+			path = FaceLink/images;
 			sourceTree = "<group>";
 		};
 		12C9AB3219F4F0DD007BA823 /* ControllerMain */ = {
@@ -814,6 +830,17 @@
 				12CE739F19FA4F6900060943 /* FLUser.m */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		12CF253E19FF4509003E5D62 /* database */ = {
+			isa = PBXGroup;
+			children = (
+				12CF254219FF7519003E5D62 /* FMDatabase.h */,
+				12CF254319FF7519003E5D62 /* FMDatabase.m */,
+				12CF253F19FF4509003E5D62 /* BasicDatabaseManager.h */,
+				12CF254019FF4509003E5D62 /* BasicDatabaseManager.m */,
+			);
+			path = database;
 			sourceTree = "<group>";
 		};
 		30E73F3F19F7E929009FF850 /* chat */ = {
@@ -1120,6 +1147,7 @@
 				126C4CBC19F1186000F18654 /* FLCameraViewController.m in Sources */,
 				12C9AADC19F4B3ED007BA823 /* ProgressHUD.m in Sources */,
 				12C9AB8019F6577A007BA823 /* FLChatOutCell.m in Sources */,
+				12CF254419FF7519003E5D62 /* FMDatabase.m in Sources */,
 				12CE73A019FA4F6900060943 /* FLUser.m in Sources */,
 				12C9AB1E19F4CF95007BA823 /* FLChatViewController.m in Sources */,
 				123D618519FB53C300987A4D /* UIImage+File.m in Sources */,
@@ -1138,6 +1166,7 @@
 				12CF253D19FF385A003E5D62 /* FLViewController.m in Sources */,
 				126C4C7819F0B11700F18654 /* FLMainViewController.m in Sources */,
 				123D618819FB58B400987A4D /* TestDataCenter.m in Sources */,
+				12CF254119FF4509003E5D62 /* BasicDatabaseManager.m in Sources */,
 				12C9AB1919F4CF83007BA823 /* FLILikeViewController.m in Sources */,
 				126C4CAD19F103AA00F18654 /* FLRecentViewController.m in Sources */,
 				126C4CB219F103C000F18654 /* FLHotViewController.m in Sources */,

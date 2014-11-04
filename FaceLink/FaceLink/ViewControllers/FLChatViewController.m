@@ -59,6 +59,26 @@ NSString *const kFLChatViewControllerInfoUsername = @"kFLChatViewControllerInfoU
     return self;
 }
 
+- (id)initWithRequestInfo:(NSDictionary *)info
+{
+    if (self = [super initWithRequestInfo:info]) {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(keyboradWillShow:)
+                                                     name:UIKeyboardWillShowNotification
+                                                   object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(keyboardWillHide:)
+                                                     name:UIKeyboardWillHideNotification
+                                                   object:nil];
+        
+        _keyboardState = FLViewKeyboardStateHidden;
+ 
+    }
+    
+    return self;
+}
+
 - (void)keyboradWillShow:(NSNotification *)notification
 {
     NSDictionary *userInfo = notification.userInfo;

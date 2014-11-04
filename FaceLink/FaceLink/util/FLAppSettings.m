@@ -64,15 +64,14 @@ static NSString *const kImageUrl = @"kImageUrl";
 {
     NSDictionary *info = [[NSUserDefaults standardUserDefaults] objectForKey:_userKey];
     NSMutableDictionary *mutableInfo = [info mutableCopy] ;
-    [mutableInfo setObject:obj forKey:key];
-    
+    mutableInfo[key] = obj;
     [[NSUserDefaults standardUserDefaults] setObject:mutableInfo forKey:_userKey];
 }
 
 - (id)p_objectForKey:(NSString *)key
 {
     NSDictionary *info = [[NSUserDefaults standardUserDefaults] objectForKey:_userKey];
-    return [info objectForKey:key];
+    return info[key];
 }
 
 #pragma mark - Getters and Setters
