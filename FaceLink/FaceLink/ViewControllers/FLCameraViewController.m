@@ -12,6 +12,7 @@
 #import "FLSingleOptionMenu.h"
 #import "FLPhotoMatchingController.h"
 #import "TestDataCenter.h"
+#import "FLLocationManager.h"
 
 NS_ENUM(NSInteger, FLCameraViewButtonTag){
     FLCameraViewButtonBack,
@@ -80,6 +81,10 @@ static const CGFloat kCloseTemplateBtnIndicatorHeight = 5;
     if (self) {
         self.view.backgroundColor = RGB_UICOLOR(112, 196, 241);
     }
+    
+    //TODO:
+    [[FLLocationManager sharedManager] startUpdateingLocation];
+    
     return self;
 }
 

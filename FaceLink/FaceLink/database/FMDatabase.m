@@ -93,7 +93,6 @@ static NSString *const kDatabaseName = @"FMDatabase.xcdatamodeld";
     fRequest.entity = desciption;
     
     NSError *error = nil;
-    
     NSArray *result = [_context executeFetchRequest:fRequest error:&error];
     
     if (error) {

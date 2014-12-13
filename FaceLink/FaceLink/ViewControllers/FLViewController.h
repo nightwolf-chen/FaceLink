@@ -13,8 +13,6 @@
 @property (nonatomic, strong) NSDictionary *requestInfo;
 
 - (id)initWithRequestInfo:(NSDictionary *)info;
-
-
 - (void)loadUserInfo;
 
 @end
