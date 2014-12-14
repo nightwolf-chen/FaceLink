@@ -208,6 +208,8 @@
 		30D45CFB19F3E19900135746 /* FLPhotoMatchingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D45CF919F3E19900135746 /* FLPhotoMatchingController.xib */; };
 		30D81F2A1A3C7DAD00666185 /* FLLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D81F291A3C7DAD00666185 /* FLLocationManager.m */; };
 		30D81F2C1A3C7DC600666185 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D81F2B1A3C7DC600666185 /* CoreLocation.framework */; };
+		30D81F301A3D902E00666185 /* FLUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D81F2F1A3D902E00666185 /* FLUploadManager.m */; };
+		30D81F331A3D94B300666185 /* FLHTTPLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D81F321A3D94B300666185 /* FLHTTPLoader.m */; };
 		30E73F3D19F7708D009FF850 /* FLSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E73F3B19F7708D009FF850 /* FLSearchViewController.m */; };
 		30E73F3E19F7708D009FF850 /* FLSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F3C19F7708D009FF850 /* FLSearchViewController.xib */; };
 		30E73F4719F7E929009FF850 /* confirm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E73F4019F7E929009FF850 /* confirm@2x.png */; };
@@ -396,6 +398,10 @@
 		30D81F281A3C7DAD00666185 /* FLLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLLocationManager.h; sourceTree = "<group>"; };
 		30D81F291A3C7DAD00666185 /* FLLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLLocationManager.m; sourceTree = "<group>"; };
 		30D81F2B1A3C7DC600666185 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		30D81F2E1A3D902E00666185 /* FLUploadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLUploadManager.h; sourceTree = "<group>"; };
+		30D81F2F1A3D902E00666185 /* FLUploadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLUploadManager.m; sourceTree = "<group>"; };
+		30D81F311A3D94B300666185 /* FLHTTPLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLHTTPLoader.h; sourceTree = "<group>"; };
+		30D81F321A3D94B300666185 /* FLHTTPLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLHTTPLoader.m; sourceTree = "<group>"; };
 		30E73F3A19F7708D009FF850 /* FLSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLSearchViewController.h; sourceTree = "<group>"; };
 		30E73F3B19F7708D009FF850 /* FLSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLSearchViewController.m; sourceTree = "<group>"; };
 		30E73F3C19F7708D009FF850 /* FLSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLSearchViewController.xib; sourceTree = "<group>"; };
@@ -635,6 +641,7 @@
 		126C4C3E19EFB4F300F18654 /* FaceLink */ = {
 			isa = PBXGroup;
 			children = (
+				30D81F2D1A3D900200666185 /* engine */,
 				30D81F271A3C796600666185 /* location */,
 				12CF253E19FF4509003E5D62 /* database */,
 				12C9AB9719F681F1007BA823 /* models */,
@@ -865,6 +872,17 @@
 				30D81F291A3C7DAD00666185 /* FLLocationManager.m */,
 			);
 			path = location;
+			sourceTree = "<group>";
+		};
+		30D81F2D1A3D900200666185 /* engine */ = {
+			isa = PBXGroup;
+			children = (
+				30D81F2E1A3D902E00666185 /* FLUploadManager.h */,
+				30D81F2F1A3D902E00666185 /* FLUploadManager.m */,
+				30D81F311A3D94B300666185 /* FLHTTPLoader.h */,
+				30D81F321A3D94B300666185 /* FLHTTPLoader.m */,
+			);
+			path = engine;
 			sourceTree = "<group>";
 		};
 		30E73F3F19F7E929009FF850 /* chat */ = {
@@ -1224,6 +1242,7 @@
 				12C9AB8019F6577A007BA823 /* FLChatOutCell.m in Sources */,
 				12CF254419FF7519003E5D62 /* FMDatabase.m in Sources */,
 				12CE73A019FA4F6900060943 /* FLUser.m in Sources */,
+				30D81F331A3D94B300666185 /* FLHTTPLoader.m in Sources */,
 				12C9AB1E19F4CF95007BA823 /* FLChatViewController.m in Sources */,
 				123D618519FB53C300987A4D /* UIImage+File.m in Sources */,
 				30D45CFA19F3E19900135746 /* FLPhotoMatchingController.m in Sources */,
@@ -1241,6 +1260,7 @@
 				126C4C4219EFB4F300F18654 /* main.m in Sources */,
 				12CF253D19FF385A003E5D62 /* FLViewController.m in Sources */,
 				126C4C7819F0B11700F18654 /* FLMainViewController.m in Sources */,
+				30D81F301A3D902E00666185 /* FLUploadManager.m in Sources */,
 				123D618819FB58B400987A4D /* TestDataCenter.m in Sources */,
 				12CF254119FF4509003E5D62 /* BasicDatabaseManager.m in Sources */,
 				12C9AB1919F4CF83007BA823 /* FLILikeViewController.m in Sources */,
