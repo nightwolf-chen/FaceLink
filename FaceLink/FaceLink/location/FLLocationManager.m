@@ -9,6 +9,12 @@
 #import <CoreLocation/CoreLocation.h>
 #import "FLLocationManager.h"
 
+@interface FLLocationManager ()
+
+@property (nonatomic,strong) NSMutableArray *callBacks;
+
+@end
+
 @implementation FLLocationManager
 
 + (instancetype)sharedManager
@@ -34,6 +40,8 @@
         _clManager = [[CLLocationManager alloc] init];
         _clManager.delegate = self;
         _clManager.desiredAccuracy = kCLLocationAccuracyBest;
+        
+        _callBacks = [[NSMutableArray alloc] init];
     }
 
     return self;
@@ -41,12 +49,16 @@
 
 - (void)startUpdateingLocation
 {
- #ifdef DEBUG
     if ([_clManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [_clManager requestWhenInUseAuthorization];
     }
     [_clManager startUpdatingLocation];
-#endif
+}
+
+- (void)startUpdateingLocation:(FLLocationBlock)completionBlock
+{
+    [_callBacks addObject:completionBlock];
+    [self startUpdateingLocation];
 }
 
 #pragma mark - CLLocationDelegate
@@ -54,16 +66,24 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     NSLog(@"Did recieve location data");
-    
-    for(CLLocation *location in locations){
-        NSLog(@"location:%f %f",location.coordinate.latitude,location.coordinate.longitude);
-        [_clManager stopUpdatingLocation];
-    }
+    [self nofityCallBacks:YES location:locations.lastObject];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"%@",[error localizedDescription]);
+    [self nofityCallBacks:NO location:nil];
+}
+
+- (void)nofityCallBacks:(BOOL)succ location:(id)location
+{
+    [_clManager stopUpdatingLocation];
+    
+    for(FLLocationBlock aBlock in _callBacks){
+        aBlock(succ,location);
+    }
+    
+    [_callBacks removeAllObjects];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status

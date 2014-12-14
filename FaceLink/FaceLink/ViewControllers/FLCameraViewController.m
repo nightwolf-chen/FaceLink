@@ -83,7 +83,9 @@ static const CGFloat kCloseTemplateBtnIndicatorHeight = 5;
     }
     
     //TODO:
-    [[FLLocationManager sharedManager] startUpdateingLocation];
+    [[FLLocationManager sharedManager] startUpdateingLocation:^(BOOL success,id location){
+        NSLog(@"Location callback did call.");
+    }];
     
     return self;
 }

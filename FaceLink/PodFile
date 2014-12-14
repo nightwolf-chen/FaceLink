@@ -1,1 +1,9 @@
-pod 'PubNub', '3.7.3'
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+
+pod "PubNub","~> 3.7.3"
+
+platform :ios, '7.0'
+pod "AFNetworking", "~> 2.0"
+
+pod "Qiniu", "~> 7.0"

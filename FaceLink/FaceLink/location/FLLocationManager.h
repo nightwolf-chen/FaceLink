@@ -8,12 +8,14 @@
 
 #import <CoreLocation/CoreLocation.h>
 
+typedef  void (^FLLocationBlock)(BOOL , id);
+
 @interface FLLocationManager : NSObject<CLLocationManagerDelegate>
 
 @property (nonatomic,strong) CLLocationManager *clManager;
 
 + (instancetype)sharedManager;
 
-- (void)startUpdateingLocation;
+- (void)startUpdateingLocation:(FLLocationBlock)completionBlock;
 
 @end
