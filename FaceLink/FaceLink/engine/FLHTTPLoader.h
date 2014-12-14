@@ -8,11 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^LoaderCompletionBlock)(BOOL,id);
+
 @interface FLHTTPLoader : NSObject
 
 + (instancetype)sharedLoader;
 
 - (void)requestQNUploadToken:(NSDictionary *)userInfo
-              comletionBlock:(void (^)(BOOL success,NSString *token))completBlock;
+              completionBlock:(LoaderCompletionBlock)completBlock;
+
+- (void)requestUserRegister:(NSDictionary *)parameters
+                 completion:(LoaderCompletionBlock)block;
+
+- (void)requestUserLogin:(NSDictionary *)parameters
+              completion:(LoaderCompletionBlock)block;
 
 @end

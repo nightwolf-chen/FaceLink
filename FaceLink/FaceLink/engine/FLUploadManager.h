@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @class QNResponseInfo;
 
@@ -20,6 +21,7 @@ typedef void (^UploadCompleteBlock)(QNResponseInfo*,NSString*,NSDictionary*);
 - (void)upldateImage:(UIImage *)image
                  key:(NSString *)key
                token:(NSString *)token
+            location:(CLLocation *)location
           completion:(UploadCompleteBlock)block;
 
 @end

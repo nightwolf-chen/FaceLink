@@ -38,21 +38,33 @@
 }
 
 - (void)requestQNUploadToken:(NSDictionary *)userInfo
-              comletionBlock:(void (^)(BOOL, NSString *))completBlock
+             completionBlock:(LoaderCompletionBlock)completBlock
 {
-    NSString *const kJsonUrl = @"";
+    static NSString *const kJsonUrl = @"http://face.zerojetlag.com/meets/upload_token";
+    static NSString *const kAPPToken = @"app_token";
     
-    NSDictionary *parameters = @{};
+    NSDictionary *parameters = @{kAPPToken:@""};
     
     [_httpManager GET:kJsonUrl parameters:parameters
               success:^(AFHTTPRequestOperation *op,id obj){
-                  completBlock(YES,nil);
+                  completBlock(YES,obj);
               }
               failure:^(AFHTTPRequestOperation *op,NSError *eror){
                   completBlock(NO,nil);
               }];
 }
 
+- (void)requestUserLogin:(NSDictionary *)parameters
+              completion:(LoaderCompletionBlock)block
+{
+    NSString *const loginUrl = @"http://face.zerojetlag.com/users/login";
+}
+
+- (void)requestUserRegister:(NSDictionary *)parameters
+                 completion:(LoaderCompletionBlock)block
+{
+    NSString *const loginUrl = @"http://face.zerojetlag.com/users";
+}
 
 
 @end

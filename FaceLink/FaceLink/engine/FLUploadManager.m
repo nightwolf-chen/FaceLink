@@ -47,14 +47,34 @@
 - (void)upldateImage:(UIImage *)image
                  key:(NSString *)key
                token:(NSString *)token
+            location:(CLLocation *)location
           completion:(UploadCompleteBlock)block
 {
+    static NSString *const kAppToken = @"x:app_token";
+    static NSString *const kLatitude = @"x:latitude";
+    static NSString *const kLongitude = @"x:longitude";
+    
     NSData *imageData = UIImagePNGRepresentation(image);
+    NSDictionary *parameters = @{kAppToken:token,
+                                 kLatitude:@(location.coordinate.latitude),
+                                 kLongitude:@(location.coordinate.longitude)};
+    
+    QNUploadOption *option = [[QNUploadOption alloc] initWithMime:@"application/octet-stream"
+                                                  progressHandler:^(NSString *key,float percent){
+                                                      
+                                                  }
+                                                           params:parameters
+                                                         checkCrc:YES
+                                               cancellationSignal:^BOOL(){
+                                                   return YES;
+                                               }];
+    
     [_qnUploadManager putData:imageData
                           key:key
                         token:token
                      complete:block
-                       option:nil];
+                       option:option];
+    
 }
 
 @end

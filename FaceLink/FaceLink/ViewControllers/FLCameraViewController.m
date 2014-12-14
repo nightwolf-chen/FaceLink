@@ -13,6 +13,8 @@
 #import "FLPhotoMatchingController.h"
 #import "TestDataCenter.h"
 #import "FLLocationManager.h"
+#import "FLHTTPLoader.h"
+#import "FLUploadManager.h"
 
 NS_ENUM(NSInteger, FLCameraViewButtonTag){
     FLCameraViewButtonBack,
@@ -83,9 +85,9 @@ static const CGFloat kCloseTemplateBtnIndicatorHeight = 5;
     }
     
     //TODO:
-    [[FLLocationManager sharedManager] startUpdateingLocation:^(BOOL success,id location){
-        NSLog(@"Location callback did call.");
-    }];
+//    [[FLLocationManager sharedManager] startUpdateingLocation:^(BOOL success,id location){
+//        NSLog(@"Location callback did call.");
+//    }];
     
     return self;
 }
@@ -475,6 +477,33 @@ static const CGFloat kCloseTemplateBtnIndicatorHeight = 5;
     UIImage *originImage = info[UIImagePickerControllerOriginalImage];
     FLPhotoMatchingController *photoControl = [[FLPhotoMatchingController alloc] initWithNibName:nil bundle:nil];
     photoControl.useImage = originImage;
+    
+    [[FLLocationManager sharedManager] startUpdateingLocation:^(BOOL succe, id location){
+    
+        if (!succe) {
+            return ;
+        }
+        
+        [[FLHTTPLoader sharedLoader] requestQNUploadToken:nil completionBlock:^(BOOL suc,id obj){
+            NSDictionary *data = obj;
+            
+            if (data) {
+                NSString *upToken = data[@"upToken"];
+                [[FLUploadManager sharedManager] upldateImage:originImage
+                                                          key:nil
+                                                        token:upToken
+                                                     location:location
+                                                   completion:^(QNResponseInfo *info,NSString *key,NSDictionary *userInfo){
+                                                       NSLog(@"%@-%@-%@",info,key,userInfo);
+                                                       
+                                                   }];
+            }
+        
+        }];
+        
+    }];
+    
+    
     
     [self presentViewController:photoControl animated:YES completion:^{}];
 }
