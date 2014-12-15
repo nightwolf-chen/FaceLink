@@ -75,6 +75,8 @@
                      complete:block
                        option:option];
     
+    _qnUploadManager s
+    
 }
 
 @end

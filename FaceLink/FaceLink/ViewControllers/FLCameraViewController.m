@@ -488,7 +488,7 @@ static const CGFloat kCloseTemplateBtnIndicatorHeight = 5;
             NSDictionary *data = obj;
             
             if (data) {
-                NSString *upToken = data[@"upToken"];
+                NSString *upToken = data[@"uptoken"];
                 [[FLUploadManager sharedManager] upldateImage:originImage
                                                           key:nil
                                                         token:upToken
@@ -496,7 +496,7 @@ static const CGFloat kCloseTemplateBtnIndicatorHeight = 5;
                                                    completion:^(QNResponseInfo *info,NSString *key,NSDictionary *userInfo){
                                                        NSLog(@"%@-%@-%@",info,key,userInfo);
                                                        
-                                                   }];
+                                                       }];
             }
         
         }];
